@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1867917686049705969}
   - component: {fileID: 6517622908365049973}
   - component: {fileID: 2719531122140994270}
+  - component: {fileID: 3407246357540244395}
   - component: {fileID: -8858020034396140293}
   m_Layer: 7
   m_Name: BasicTower
@@ -134,10 +135,27 @@ MonoBehaviour:
   target: {fileID: 0}
   projectile: {fileID: 6192291539944984805, guid: cf5582961985b8d468ebd7cf6747f2d8, type: 3}
   shooter: {fileID: 2666106112684912608}
-  range: 5
-  projectileSpeed: 10000
-  fireRate: 0.5
+  range: 10
+  projectileSpeed: 40000
+  fireRate: 0.2
   cooldown: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &3407246357540244395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249391688688165472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e591e395158654780f9f09057e4dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  sprite: {fileID: 0}
 --- !u!58 &-8858020034396140293
 CircleCollider2D:
   m_ObjectHideFlags: 0

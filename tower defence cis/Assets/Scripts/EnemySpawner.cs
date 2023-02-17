@@ -7,6 +7,9 @@ public class EnemySpawner : MonoBehaviour
     // variables and objects set
     public GameObject enemy;
 
+    //cooldown variable for spawning enemies 
+    public float cd = 2.0f;
+
     // timer initiated for enemies
     void Start()
     {
@@ -33,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(cd);
             spawnEnemy();
         }
     }
