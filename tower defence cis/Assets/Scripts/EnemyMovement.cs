@@ -14,6 +14,9 @@ public class EnemyMovement : MonoBehaviour
     //target to move at 
     public GameObject[] targetList;
     public GameObject target;
+    public string targetTag;
+    public int allySpawnTargetWeight;
+    public bool targetingSpawns;
 
     //vectors for movement
     Vector2 targetLocation;
@@ -23,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
     //attack variables 
     public float attackCD;
+    public float chargeCD;
     float maxCD;
     public int damage;
     bool attacking; 
@@ -33,6 +37,12 @@ public class EnemyMovement : MonoBehaviour
     {
         pathfinder = GetComponent<AIDestinationSetter>();
         maxCD = attackCD;
+
+        //determines if the enemy can attack ally spawns or not
+        if (Random.Range(0, 100) >= 100 - allySpawnTargetWeight)
+            targetingSpawns = true;
+        else
+            targetingSpawns = false;
     }
 
     // Update is called once per frame
@@ -49,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
     private void getClosestTarget()
     {
         //list of all possible targets
-        targetList = GameObject.FindGameObjectsWithTag("PlayerTower");
+        targetList = GameObject.FindGameObjectsWithTag(targetTag);
         target = null;
 
         //setting up a for each loop
@@ -62,8 +72,19 @@ public class EnemyMovement : MonoBehaviour
             float distance = Vector2.Distance(enemy.transform.position, location);
             if (distance < closestDistance)
             {
-                closestDistance = distance;
-                target = enemy;
+                if (enemy.GetComponent<EnemyMovement>() == null)
+                {
+                    closestDistance = distance;
+                    target = enemy;
+                }
+
+                else if(targetingSpawns)
+                {
+                    
+                    closestDistance = distance;
+                    target = enemy;
+                }
+                
             }
         }
     }
@@ -90,11 +111,11 @@ public class EnemyMovement : MonoBehaviour
     //when colliding with something, check if its a tower, then begin to attack it
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "PlayerTower")
+        if (collision.gameObject == target)
         {
-            //on initial collision the enemy attacks the tower
+            //on initial collision the enemy attacks the tower faster
             if (attackCD == maxCD)
-                attackCD = 0;
+                attackCD = chargeCD;
             attacking = true;
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
         }
@@ -104,7 +125,7 @@ public class EnemyMovement : MonoBehaviour
     //when no longer touching the tower, stop attacking
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "PlayerTower")
+        if (collision.gameObject == target)
         {
             attacking = false;
             attackCD = maxCD;
@@ -113,6 +134,29 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    //these do the same thing as collision but allow some enemies to move through ally spawns
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject == target)
+        {
+            //on initial collision the enemy attacks the tower faster
+            if (attackCD == maxCD)
+                attackCD = chargeCD;
+            attacking = true;
+            damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
+        }
+    }
+
+    //these do the same thing as collision but allow some enemies to move through ally spawns
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject == target)
+        {
+            attacking = false;
+            attackCD = maxCD;
+            damageScript = null;
+        }
+    }
     //use a cooldown to damage the tower every so often 
     private void attack()
     {
@@ -123,6 +167,12 @@ public class EnemyMovement : MonoBehaviour
         {
             damageScript.takeDamage(damage);
             attackCD = maxCD;
+
+            //re asses targetingspawns after each attack, simulates soldiers distracting enemies .
+            if (Random.Range(0, 100) >= 100 - allySpawnTargetWeight)
+                targetingSpawns = true;
+            else
+                targetingSpawns = false;
         }
             
         else

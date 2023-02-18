@@ -81,7 +81,7 @@ public class BasicTowerScript : MonoBehaviour
         Debug.DrawRay(transform.position, targetLocation - location);
 
         //if the ray collides with something, dont attack
-        if (aimRay.collider !=  null)
+        if (aimRay.collider !=  null && aimRay.collider.tag != "enemy")
         {
             return;
         }
