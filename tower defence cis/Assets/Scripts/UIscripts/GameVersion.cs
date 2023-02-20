@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameVersion : MonoBehaviour
 {
+    // variables and objects set
     public Text gameVersion;
 
 
