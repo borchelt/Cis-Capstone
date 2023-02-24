@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour
 {
     //variables for taking damage
-    public int hp;
+    public float hp;
     public SpriteRenderer sprite;
     Color originalColor;
     float colorCD = .01f;
@@ -26,7 +26,7 @@ public class EnemyTakeDamage : MonoBehaviour
     }
 
     //reduce health by however much damage
-    public void takeDamage(int damage)
+    public void takeDamage(float damage)
     {
         sprite.color = Color.red;
         hp -= damage;
@@ -35,7 +35,7 @@ public class EnemyTakeDamage : MonoBehaviour
     //check if dealth is below 1, if it is, die.
     void die()
     {
-        if (hp < 1 && sprite.color == originalColor)
+        if (hp <= 0 && sprite.color == originalColor)
             Destroy(gameObject);
     }
 

@@ -49,7 +49,9 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         getClosestTarget();
-        pathfinder.target = target.transform;
+
+        if(target)
+            pathfinder.target = target.transform;
         //movement();
         if (attacking)
             attack();

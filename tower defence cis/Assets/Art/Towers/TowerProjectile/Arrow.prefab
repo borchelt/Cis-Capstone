@@ -105,6 +105,11 @@ MonoBehaviour:
   targetList: []
   target: {fileID: 0}
   speed: 50
+  aoe: 0
+  ticks: 0
+  tickRate: 0
+  cd: 0
+  explosion: {fileID: 0}
 --- !u!50 &-487298627990060939
 Rigidbody2D:
   serializedVersion: 4

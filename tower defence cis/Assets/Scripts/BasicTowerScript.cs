@@ -16,7 +16,10 @@ public class BasicTowerScript : MonoBehaviour
     public float projectileSpeed;
     public float fireRate;
     public float cooldown;
+    public int projectileLimit;
     bool onCD;
+    public int projectileCount;
+    public float spread;
     Vector2 targetLocation;
     Vector2 location;
     Vector2 targetVector;
@@ -69,6 +72,9 @@ public class BasicTowerScript : MonoBehaviour
     //fires a projectile
     private void fireProjectile()
     {
+        if (shooter.transform.childCount >= projectileLimit)
+            return;
+
         //get the location of the target
         targetLocation = target.transform.position;
 
@@ -77,7 +83,6 @@ public class BasicTowerScript : MonoBehaviour
 
         //casts a ray to check if the target is behind anything (usually a wall)
         RaycastHit2D aimRay = Physics2D.Raycast(transform.position, targetLocation - location, range, mask);
-        Debug.Log(aimRay.collider);
         Debug.DrawRay(transform.position, targetLocation - location);
 
         //if the ray collides with something, dont attack
@@ -91,29 +96,77 @@ public class BasicTowerScript : MonoBehaviour
         {
             return;
         }
+        //Debug.Log("targeted");
 
-        //get the projectile rigidbody for movement 
-        GameObject proj = Instantiate(projectile, shooter.transform);
-        proj.transform.parent = null;
-        Rigidbody2D projRB = proj.GetComponent<Rigidbody2D>();
-       
-        //set the fire direction towards the target location
-        targetVector = (targetLocation - location);
+        //for each projectile count, shoot a projectile
+        for(int i = projectileCount; i>0 ;i--)
+        {
+            //Debug.Log("shot");
+            //get the projectile rigidbody for movement 
+            GameObject proj = Instantiate(projectile, shooter.transform);
 
-        //face the target
-        proj.transform.up = (targetVector);
+            //proj.transform.parent = null;
+            Rigidbody2D projRB = proj.GetComponent<Rigidbody2D>();
 
-        //fire projectile towards the target
-        projRB.AddForce(targetVector.normalized * projectileSpeed * Time.fixedDeltaTime / 2);
+            //set the fire direction towards the target location
+            targetVector = (targetLocation - location);
+            float relativeSpread = spread;
 
-        onCD = true;
-        cooldown = fireRate;
+            //this section makes sure the projectiles arent offset if multiple are shot 
+            bool even;
+            int modnum;
+            if (projectileCount % 2 == 0)
+            {
+                even = true;
+                modnum = -1;
+            }
+
+            else
+            {
+                even = false;
+                modnum = 1;
+            }
+
+            //this section sets the rotation of projectiles in the case of multiple being shot
+            if (i == 1 && !even)
+            {
+                relativeSpread = 0;
+            }
+
+            else if (i%2==0)
+            {
+                relativeSpread = spread * (i + modnum);
+                Debug.Log(relativeSpread);
+            }
+            else
+            {
+                relativeSpread = (spread * i) * -1;
+                Debug.Log(relativeSpread);
+            }
+
+            
+            //rotates the target to introduce spread
+            targetVector = Quaternion.AngleAxis(relativeSpread, Vector3.forward) * targetVector;
+
+
+            //face the target
+            proj.transform.up = (targetVector);
+
+            //fire projectile towards the target
+            projRB.AddForce(targetVector.normalized * projectileSpeed * Time.fixedDeltaTime / 2);
+
+            onCD = true;
+            cooldown = fireRate;
+        }
+        
+
+        
     }
 
     //handles the cooldown on firing projectiles
     private void HandleCooldown()
     {
-        
+        //Debug.Log("cd")   
         if (cooldown > 0)
             cooldown -= Time.deltaTime;
         else

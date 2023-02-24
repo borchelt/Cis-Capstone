@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 31800995358926412}
   - component: {fileID: 4089244016692188496}
   - component: {fileID: 5099814311078477651}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: 'Footsoldier '
   m_TagString: PlayerTower
   m_Icon: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   targetList: []
   target: {fileID: 0}
   targetTag: enemy
-  attacksSpawns: 1
   allySpawnTargetWeight: 999
+  targetingSpawns: 0
   attackCD: 1
   chargeCD: 1
   damage: 1
@@ -145,7 +145,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -221,14 +221,14 @@ MonoBehaviour:
   enableRotation: 1
   autoRepath:
     mode: 1
-    interval: 1
+    interval: 0.3
     sensitivity: 10
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 1
+  slowdownDistance: 0
   pickNextWaypointDist: 0.5
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5020632409045127510}
   - component: {fileID: 7575930535689309123}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

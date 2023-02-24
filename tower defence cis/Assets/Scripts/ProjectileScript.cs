@@ -6,43 +6,69 @@ public class ProjectileScript : MonoBehaviour
 {
     //setting up variables
     EnemyTakeDamage damageScript;
-    public int damage;
+    public float damage;
     public float duration;
 
     //list of tags that will modify projectiles. 
     //current tags:
     //tracking - tracks enemies
     //ghost - can go through walls
+    //static - locks projectile in place
+    //instant - projectile teleports to the closest target, only works with tracking turned on.
+    //exploding - projectile explodes into aoe on impact, dealing damage to enemies within it's aoe x amount of times (x = ticks ) at y speed (y = tickrate)
+    //note: for some unknown reason, exploding only works while tracking is also enabled. To turn on tracking without any actual tracking just set the projectile speed to 0
     public List<string> tags = new List<string>();
 
     Rigidbody2D rb;
 
-    //this stuff is for the tracking tag
+    //this stuff is for the tracking and instant tags
     Vector2 targetLocation;
     Vector2 location;
     Vector2 targetVector;
     public GameObject[] targetList;
     public GameObject target;
     public int speed;
+    bool hasTeleported = false;
+
+    //this stuff is for the exploding tag
+    public float aoe;
+    public int ticks;
+    public float tickRate;
+    public float cd;
+    bool exploded;
+    public GameObject spriteHandler;
+    SpriteRenderer explosionSprite;
+    public Sprite explosion;
+    public float initialCD;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        //setting up explosion sprite stuff
+        if (spriteHandler != null)
+        {
+            explosionSprite = spriteHandler.GetComponent<SpriteRenderer>();
+            explosionSprite.enabled = false;
+        }
     }
 
     //when hitting something, check if its an enemy or a wall and respond accordingly 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (exploded)
+            return;
+
         if (collision.gameObject.tag == "enemy")
         {
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
             damageScript.takeDamage(damage);
-            Destroy(gameObject);
+            checkDestroy();
         }
 
         if (collision.gameObject.tag == "wall" && !tags.Contains("ghost"))
-            Destroy(gameObject);
-            
+            checkDestroy();
+
     }
 
     private void FixedUpdate()
@@ -50,14 +76,21 @@ public class ProjectileScript : MonoBehaviour
         //counting down until the projectile despawns
         duration -= Time.deltaTime;
         if (duration <= 0)
-            Destroy(gameObject);
+            checkDestroy();
+        //if the projectile has exploded start using the explosion handler 
+        if (exploded)
+            explosionHandler();
 
         //use the tracking specific functions if the projectile is tracking
-        if(tags.Contains("tracking"))
+        if (tags.Contains("tracking"))
         {
             getClosestTarget();
             movement();
         }
+
+        //if static freeze position
+        if (tags.Contains("static"))
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
     }
 
     //move at the target
@@ -66,6 +99,20 @@ public class ProjectileScript : MonoBehaviour
 
         //get the location of the target
         targetLocation = target.transform.position;
+
+        //if instant tag, teleport to target location
+        if(tags.Contains("instant") && !hasTeleported)
+        {
+            transform.position = target.transform.position;
+            hasTeleported = true;
+            return;
+        }
+        //if instant 
+        else if(tags.Contains("instant"))
+        {
+            return;
+        }
+
 
         //get self location
         location = transform.position;
@@ -98,6 +145,66 @@ public class ProjectileScript : MonoBehaviour
                 closestDistance = distance;
                 target = enemy;
             }
+        }
+    }
+
+    //handles exploded projectiles
+    private void explosionHandler()
+    {
+        //set up explosion size and sprite
+        targetList = GameObject.FindGameObjectsWithTag("enemy");
+        spriteHandler.transform.localScale = new Vector3(aoe / 5, aoe / 5);
+        explosionSprite.enabled = true;
+
+        //if the last tick was long enough ag, do another
+        if (cd <= 0)
+        {
+            //if no ticks left, destroy self
+            if (ticks <= 0)
+                Destroy(gameObject);
+
+            cd = tickRate;
+
+            //damage each enemy within the aoe
+            foreach (GameObject enemy in targetList)
+            {
+                float distance = Vector2.Distance(enemy.transform.position, location);
+                if (distance < aoe)
+                {
+                    damageScript = enemy.GetComponent<EnemyTakeDamage>();
+                    damageScript.takeDamage(damage);
+                    explosionSprite.color = Color.red;
+                }
+            }
+
+            //subtract one from the tick count
+            ticks--;
+
+        }
+
+        //lower the cooldown
+        cd -= Time.deltaTime;
+    }
+
+    //checks if a projectile should explode instead of being destroyed
+    private void checkDestroy()
+    {
+        if (tags.Contains("exploding") && !exploded)
+        {
+            exploded = true;
+            cd = initialCD;
+            explosionSprite.sprite = explosion;
+
+        }
+
+        else if(exploded)
+        {
+            return;
+        }
+
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

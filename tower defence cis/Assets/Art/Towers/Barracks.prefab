@@ -108,6 +108,9 @@ MonoBehaviour:
   projectileSpeed: 5
   fireRate: 3
   cooldown: 0
+  projectileLimit: 3
+  projectileCount: 1
+  spread: 0
   mask:
     serializedVersion: 2
     m_Bits: 0
