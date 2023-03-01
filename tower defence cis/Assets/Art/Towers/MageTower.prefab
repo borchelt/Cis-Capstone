@@ -106,7 +106,7 @@ MonoBehaviour:
   shooter: {fileID: 6102708027311253792}
   range: 5
   projectileSpeed: 30
-  fireRate: 0.3
+  fireRate: 0.5
   cooldown: 0
   projectileLimit: 999
   projectileCount: 1

@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 31800995358926412}
   - component: {fileID: 4089244016692188496}
   - component: {fileID: 5099814311078477651}
-  m_Layer: 12
+  - component: {fileID: -64563623612199492}
+  m_Layer: 10
   m_Name: 'Footsoldier '
   m_TagString: PlayerTower
   m_Icon: {fileID: 0}
@@ -104,7 +105,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -135,6 +136,7 @@ MonoBehaviour:
   attackCD: 1
   chargeCD: 1
   damage: 1
+  score: 0
 --- !u!58 &3151309732425365051
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -192,7 +194,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!114 &4089244016692188496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,8 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 1
-  height: 2
+  radius: 3
+  height: 4
   canMove: 1
   maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -218,9 +220,9 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   autoRepath:
-    mode: 1
+    mode: 2
     interval: 0.3
     sensitivity: 10
     maximumInterval: 2
@@ -249,6 +251,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &-64563623612199492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594885974187666303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 30
+  stuckTime: 3
+  countdown: 0
 --- !u!1 &9082210437859368779
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5020632409045127510}
   - component: {fileID: 7575930535689309123}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +308,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

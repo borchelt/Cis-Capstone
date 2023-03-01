@@ -15,7 +15,7 @@ public class ProjectileScript : MonoBehaviour
     //ghost - can go through walls
     //static - locks projectile in place
     //instant - projectile teleports to the closest target, only works with tracking turned on.
-    //exploding - projectile explodes into aoe on impact, dealing damage to enemies within it's aoe x amount of times (x = ticks ) at y speed (y = tickrate)
+    //exploding - projectile explodes into aoe on impact, dealing damage to enemies within its aoe x amount of times (x = ticks ) at y speed (y = tickrate)
     //note: for some unknown reason, exploding only works while tracking is also enabled. To turn on tracking without any actual tracking just set the projectile speed to 0
     public List<string> tags = new List<string>();
 

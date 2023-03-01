@@ -129,11 +129,12 @@ MonoBehaviour:
   targetList: []
   target: {fileID: 0}
   targetTag: PlayerTower
-  attacksSpawns: 1
   allySpawnTargetWeight: 33
+  targetingSpawns: 0
   attackCD: 1
   chargeCD: 0.5
   damage: 5
+  score: 50
 --- !u!58 &5352154600504123805
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!114 &6431973722371965686
 MonoBehaviour:
   m_ObjectHideFlags: 0

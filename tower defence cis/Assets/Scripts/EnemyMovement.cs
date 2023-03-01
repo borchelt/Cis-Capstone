@@ -32,6 +32,9 @@ public class EnemyMovement : MonoBehaviour
     bool attacking; 
     EnemyTakeDamage damageScript;
 
+    //for calculating wave spawns
+    public int score;
+
     // Start is called before the first frame update
     void Start()
     {
