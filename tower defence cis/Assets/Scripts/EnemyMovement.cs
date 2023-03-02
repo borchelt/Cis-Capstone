@@ -29,8 +29,8 @@ public class EnemyMovement : MonoBehaviour
     public float chargeCD;
     float maxCD;
     public int damage;
-    bool attacking; 
-    EnemyTakeDamage damageScript;
+    public bool attacking; 
+    public EnemyTakeDamage damageScript;
 
     //for calculating wave spawns
     public int score;
@@ -92,6 +92,7 @@ public class EnemyMovement : MonoBehaviour
                 
             }
         }
+
     }
 
     //move at the target (depricated)
@@ -162,6 +163,18 @@ public class EnemyMovement : MonoBehaviour
             damageScript = null;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject == target)
+        {
+           //on initial collision the enemy attacks the tower faster
+           attacking = true;
+           damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
+         }
+
+    }
+
     //use a cooldown to damage the tower every so often 
     private void attack()
     {
@@ -170,9 +183,10 @@ public class EnemyMovement : MonoBehaviour
 
         if (attackCD == 0)
         {
+
             damageScript.takeDamage(damage);
             attackCD = maxCD;
-
+            
             //re asses targetingspawns after each attack, simulates soldiers distracting enemies .
             if (Random.Range(0, 100) >= 100 - allySpawnTargetWeight)
                 targetingSpawns = true;

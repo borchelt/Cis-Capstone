@@ -98,7 +98,8 @@ public class ProjectileScript : MonoBehaviour
     {
 
         //get the location of the target
-        targetLocation = target.transform.position;
+        if(target != null)
+            targetLocation = target.transform.position;
 
         //if instant tag, teleport to target location
         if(tags.Contains("instant") && !hasTeleported)

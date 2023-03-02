@@ -63,13 +63,14 @@ public class WaveManager : MonoBehaviour
         for(int i = 1; i <= wave.count; i++)
         {
             GameObject enemyOBJ;
-            Vector2 randomVector = new Vector2(Random.Range(0, 5.0f), Random.Range(0, 5.0f));
+            Vector2 randomVector = new Vector2(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));
             // Enemy object is made in-game at the spawner XY coords + the random vector
             enemyOBJ = Instantiate(wave.enemy, new Vector2(transform.position.x + randomVector.x, transform.position.y + randomVector.y), Quaternion.identity);
         }
 
         //once the wave is spawned, move to the next wave
-        waveIndex++;
+        if(waveIndex < levelLayout.Count-1)
+            waveIndex++;
     }
 
 

@@ -109,7 +109,7 @@ MonoBehaviour:
   fireRate: 0.5
   cooldown: 0
   projectileLimit: 999
-  projectileCount: 3
+  projectileCount: 1
   spread: 0
   mask:
     serializedVersion: 2
