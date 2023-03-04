@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7437574930662135703}
   - component: {fileID: 7437574930662135696}
   - component: {fileID: 7437574930662135697}
+  - component: {fileID: -8018353175968074942}
   m_Layer: 0
   m_Name: SmallEnemySpawner
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 35554596503920338, guid: b89dc38fffbd8b94e8490b0974db22fa, type: 3}
   cd: 0.5
+--- !u!114 &-8018353175968074942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437574930662135698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15
+  stuckTime: 999
+  countdown: 0

@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ee2159a674c0fe4f9a96eec00f0b23b, type: 3}
-  m_Color: {r: 1, g: 0.20000345, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 26ad1a2b797726e4294be096455a26da, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,6 +134,8 @@ MonoBehaviour:
   attackCD: 1
   chargeCD: 0.5
   damage: 5
+  attacking: 0
+  damageScript: {fileID: 0}
   score: 50
 --- !u!58 &5352154600504123805
 CircleCollider2D:

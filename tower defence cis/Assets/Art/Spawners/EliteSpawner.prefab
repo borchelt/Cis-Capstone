@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1790203773722776289}
   - component: {fileID: 1790203773722776294}
   - component: {fileID: 1790203773722776295}
+  - component: {fileID: 6517867617998489060}
   m_Layer: 0
   m_Name: EliteSpawner
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5773199652137073881, guid: b02945824f5b7a047b3136d7c943f2e5, type: 3}
   cd: 10
+--- !u!114 &6517867617998489060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790203773722776292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 30
+  stuckTime: 999
+  countdown: 0

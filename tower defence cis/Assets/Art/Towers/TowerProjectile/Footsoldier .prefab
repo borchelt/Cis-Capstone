@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7272a2a477e4ea705151500c6f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stayClose: 1
+  patrolPointEmpty: {fileID: 6635351702590421157, guid: 9d600d17c28668e4d98f578d994ff12e, type: 3}
   speed: 125
   rb: {fileID: 4287800464856425973}
   targetList: []
@@ -136,6 +138,8 @@ MonoBehaviour:
   attackCD: 1
   chargeCD: 1
   damage: 1
+  attacking: 0
+  damageScript: {fileID: 0}
   score: 0
 --- !u!58 &3151309732425365051
 CircleCollider2D:

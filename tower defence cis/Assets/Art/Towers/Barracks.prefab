@@ -104,13 +104,14 @@ MonoBehaviour:
   target: {fileID: 0}
   projectile: {fileID: 3594885974187666303, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
   shooter: {fileID: 8930229506454372285}
-  range: 9999
+  range: 10
   projectileSpeed: 5
   fireRate: 3
   cooldown: 0
   projectileLimit: 3
   projectileCount: 1
   spread: 0
+  prefire: 1
   mask:
     serializedVersion: 2
     m_Bits: 0

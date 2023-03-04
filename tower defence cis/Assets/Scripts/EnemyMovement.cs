@@ -5,6 +5,12 @@ using Pathfinding;
 
 public class EnemyMovement : MonoBehaviour
 {
+
+    //for allied units to stay close 
+    GameObject parentTower;
+    public bool stayClose;
+    public GameObject patrolPointEmpty;
+    GameObject destination;
     //enemy movement speed
     public float speed;
 
@@ -38,6 +44,10 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //moves two objects up 
+
+        if(stayClose)
+            parentTower = gameObject.transform.parent.gameObject.transform.parent.gameObject;
         pathfinder = GetComponent<AIDestinationSetter>();
         maxCD = attackCD;
 
@@ -53,8 +63,24 @@ public class EnemyMovement : MonoBehaviour
     {
         getClosestTarget();
 
-        if(target)
+        //checks if the target is within the tower's range
+        if (stayClose && target && Vector2.Distance(target.transform.position, parentTower.transform.position) < parentTower.GetComponent<BasicTowerScript>().range)
             pathfinder.target = target.transform;
+        else if (!stayClose && target)
+            pathfinder.target = target.transform;
+        else if (stayClose)
+        {
+            if(destination == null)
+            {
+                float range = parentTower.GetComponent<BasicTowerScript>().range;
+                Vector3 patrolPoint = new Vector3(Random.Range(-range, range), Random.Range(-range, range)) + parentTower.transform.position;
+                destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);
+                pathfinder.target = destination.transform;
+            }
+            else
+                pathfinder.target = destination.transform;
+        }
+            
         //movement();
         if (attacking)
             attack();

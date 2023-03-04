@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicTowerScript : MonoBehaviour
 {
 
-    //target to move at 
+    //target to shoot at
     public GameObject[] targetList;
     public GameObject target;
     public GameObject projectile;
@@ -23,6 +23,7 @@ public class BasicTowerScript : MonoBehaviour
     Vector2 targetLocation;
     Vector2 location;
     Vector2 targetVector;
+    public bool prefire;
 
     //this mask determines what the tower can see through: basic towers cant see through walls, so the mask includes walls. 
     //Mage towers can see through walls, so the mask includes nothing.
@@ -42,8 +43,9 @@ public class BasicTowerScript : MonoBehaviour
 
         if (onCD)
             HandleCooldown();
-        else if(target!= null)
+        else if(target != null || prefire == true)
             fireProjectile();
+           
     }
 
     //gets the closest enemy
@@ -75,8 +77,15 @@ public class BasicTowerScript : MonoBehaviour
         if (shooter.transform.childCount >= projectileLimit)
             return;
 
-        //get the location of the target
-        targetLocation = target.transform.position;
+        if (prefire && target == null)
+        {
+            targetLocation = transform.up;
+        }
+        else
+        {
+            //get the location of the target
+            targetLocation = target.transform.position;
+        }
 
         //get self location
         location = shooter.transform.position;
@@ -86,13 +95,13 @@ public class BasicTowerScript : MonoBehaviour
         Debug.DrawRay(transform.position, targetLocation - location);
 
         //if the ray collides with something, dont attack
-        if (aimRay.collider !=  null && aimRay.collider.tag != "enemy")
+        if (aimRay.collider !=  null && aimRay.collider.tag != "enemy" && prefire == false)
         {
             return;
         }
 
         //if the target it out of range, dont attack
-        if( Vector2.Distance(target.transform.position, location) > range)
+        if( Vector2.Distance(target.transform.position, location) > range && prefire == false)
         {
             return;
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 858810535441855703}
   - component: {fileID: 858810535441855696}
   - component: {fileID: 858810535441855697}
+  - component: {fileID: 9134908366672620490}
   m_Layer: 0
   m_Name: GiantSpawner
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4675832983928441164, guid: eb5e649e2b92a9c4589cd37aa4252335, type: 3}
   cd: 15
+--- !u!114 &9134908366672620490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858810535441855698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 60
+  stuckTime: 999
+  countdown: 0
