@@ -7,9 +7,10 @@ public class PauseMenuUI : MonoBehaviour
 {
     // variables and objects initialized here
     public GameObject pauseMenu;
+
     public Button resumeButton;
     public Button menuButton;
-    public string sceneName;
+
     public static bool gameStopped = false;
 
     // actions done at start
@@ -17,13 +18,14 @@ public class PauseMenuUI : MonoBehaviour
     {
         // listeners for both buttons
         resumeButton.onClick.AddListener(Resume);
-        menuButton.onClick.AddListener(LoadMainMenu);
+        menuButton.onClick.AddListener(loadExitPrompt);
     }
 
     // to go to the main menu scene
-    public void LoadMainMenu()
+    public void loadExitPrompt()
     {
-        GameSceneManager.Instance.LoadScene(sceneName);
+        // load prompt to exit level
+        PauseExitUI.pauseExitPrompt.SetActive(false);
     }
 
     // done every game frame
