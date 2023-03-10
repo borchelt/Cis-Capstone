@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StoryUI : MonoBehaviour
 {
     // variables and objects set
+    public static GameObject storyText;
     public Button okayButton;
 
     // listeners are initiated
@@ -18,5 +19,7 @@ public class StoryUI : MonoBehaviour
     public void onOkay()
     {
         // exit to level select
+        storyText.SetActive(false);
+        MainMenuUI.mainMenu.SetActive(true);
     }
 }

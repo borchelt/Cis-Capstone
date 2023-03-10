@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class StructureUI : MonoBehaviour
 {
     // variables and objects set
+    public GameObject structureMenu;
+
     public Button upgradeButton;
     public Button moveButton;
     public Button sellButton;
@@ -16,12 +18,6 @@ public class StructureUI : MonoBehaviour
         upgradeButton.onClick.AddListener(onUpgrade);
         moveButton.onClick.AddListener(onMove);
         sellButton.onClick.AddListener(onSell);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     // upgrade structure
@@ -35,6 +31,7 @@ public class StructureUI : MonoBehaviour
             // upgrade
 
             // deactivate button listener
+            structureMenu.SetActive(false);
         }
         else
         {
@@ -55,6 +52,8 @@ public class StructureUI : MonoBehaviour
             {
                 // move units to new area
             }
+            
+            structureMenu.SetActive(false);
         }
         else
         {
@@ -67,5 +66,6 @@ public class StructureUI : MonoBehaviour
     public void onSell()
     {
         // sell
+        structureMenu.SetActive(false);
     }
 }

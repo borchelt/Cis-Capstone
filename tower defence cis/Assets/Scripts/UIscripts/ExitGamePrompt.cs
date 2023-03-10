@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ExitGamePrompt : MonoBehaviour
 {
     // variables and objects set
+    public static GameObject exitGamePrompt;
+
     public Button yesButton;
     public Button noButton;
 
@@ -28,5 +30,7 @@ public class ExitGamePrompt : MonoBehaviour
     public void OnNo()
     {
         // exit out of prompt to main menu
+        exitGamePrompt.SetActive(false);
+        MainMenuUI.mainMenu.SetActive(true);
     }
 }
