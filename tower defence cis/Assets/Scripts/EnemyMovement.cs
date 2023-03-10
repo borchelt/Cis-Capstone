@@ -11,6 +11,11 @@ public class EnemyMovement : MonoBehaviour
     public bool stayClose;
     public GameObject patrolPointEmpty;
     GameObject destination;
+
+    public bool worm;
+    bool worming;
+    float wormCD;
+
     //enemy movement speed
     public float speed;
 
@@ -201,6 +206,16 @@ public class EnemyMovement : MonoBehaviour
                 targetingSpawns = true;
             else
                 targetingSpawns = false;
+
+            if (worm && Random.Range(0,6) >= 3)
+            {
+                float range = 30;
+                Vector3 patrolPoint = new Vector3(Random.Range(-range, range), Random.Range(-range, range)) + transform.position;
+                destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);
+                pathfinder.target = destination.transform;
+                worming = true;
+                wormCD = 5;
+            }
         }
             
         else
@@ -210,6 +225,13 @@ public class EnemyMovement : MonoBehaviour
     //checks if the target is within the tower's range if an ally unit, if not within range, it creates a random point to move to to simulate patroling 
     private void setDestination()
     {
+        if (worming)
+        {
+            wormCD -= Time.deltaTime;
+            if (wormCD <= 0)
+                worming = false;
+            return;
+        }
         //if it needs to stay close to a parent, check if the target is within the parent range
         if (stayClose && target && Vector2.Distance(target.transform.position, parentTower.transform.position) < parentTower.GetComponent<BasicTowerScript>().range)
             pathfinder.target = target.transform;
@@ -231,6 +253,15 @@ public class EnemyMovement : MonoBehaviour
             else
                 pathfinder.target = destination.transform;
         }
+
+        if (worm)
+        {
+            Vector3 vector = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+            Vector3 patrolPoint = vector + pathfinder.target.transform.position;
+            destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);
+            pathfinder.target = destination.transform;
+        }
+           
     }
     
 }

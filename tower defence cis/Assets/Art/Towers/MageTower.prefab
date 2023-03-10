@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369326e75e3c22f4a90bcce25a908269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: enemy
   targetList: []
   target: {fileID: 0}
   projectile: {fileID: 3024347219652558758, guid: 94816538293987c41a557197909e94ea, type: 3}
@@ -111,6 +112,7 @@ MonoBehaviour:
   projectileLimit: 999
   projectileCount: 1
   spread: 0
+  prefire: 0
   mask:
     serializedVersion: 2
     m_Bits: 0

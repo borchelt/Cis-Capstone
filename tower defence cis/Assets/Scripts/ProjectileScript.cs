@@ -8,6 +8,7 @@ public class ProjectileScript : MonoBehaviour
     EnemyTakeDamage damageScript;
     public float damage;
     public float duration;
+    public string targetTag;
 
     //list of tags that will modify projectiles. 
     //current tags:
@@ -59,7 +60,7 @@ public class ProjectileScript : MonoBehaviour
         if (exploded)
             return;
 
-        if (collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == targetTag)
         {
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
             damageScript.takeDamage(damage);
@@ -130,7 +131,7 @@ public class ProjectileScript : MonoBehaviour
     private void getClosestTarget()
     {
         //list of all possible targets
-        targetList = GameObject.FindGameObjectsWithTag("enemy");
+        targetList = GameObject.FindGameObjectsWithTag(targetTag);
         target = null;
 
         //setting up a for each loop
@@ -153,7 +154,7 @@ public class ProjectileScript : MonoBehaviour
     private void explosionHandler()
     {
         //set up explosion size and sprite
-        targetList = GameObject.FindGameObjectsWithTag("enemy");
+        targetList = GameObject.FindGameObjectsWithTag(targetTag);
         spriteHandler.transform.localScale = new Vector3(aoe / 5, aoe / 5);
         explosionSprite.enabled = true;
 

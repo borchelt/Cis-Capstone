@@ -39,7 +39,8 @@ public class WaveManager : MonoBehaviour
         foreach(GameObject enemy in targetList)
         {
             EnemyMovement scorefinder = enemy.GetComponent<EnemyMovement>();
-            currentScore += scorefinder.score;
+            if(scorefinder!=null)
+                currentScore += scorefinder.score;
 
         }
         

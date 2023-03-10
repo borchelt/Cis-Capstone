@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   duration: 3
+  targetTag: enemy
   tags:
   - exploding
   - tracking

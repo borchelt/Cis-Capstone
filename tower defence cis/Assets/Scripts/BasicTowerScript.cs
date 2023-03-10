@@ -6,6 +6,7 @@ public class BasicTowerScript : MonoBehaviour
 {
 
     //target to shoot at
+    public string targetTag;
     public GameObject[] targetList;
     public GameObject target;
     public GameObject projectile;
@@ -52,7 +53,7 @@ public class BasicTowerScript : MonoBehaviour
     private void getClosestTarget()
     {
         //list of all possible targets
-        targetList = GameObject.FindGameObjectsWithTag("enemy");
+        targetList = GameObject.FindGameObjectsWithTag(targetTag);
         target = null;
 
         //setting up a for each loop
@@ -95,7 +96,7 @@ public class BasicTowerScript : MonoBehaviour
         Debug.DrawRay(transform.position, targetLocation - location);
 
         //if the ray collides with something, dont attack
-        if (aimRay.collider !=  null && aimRay.collider.tag != "enemy" && prefire == false)
+        if (aimRay.collider !=  null && aimRay.collider.tag != targetTag && prefire == false)
         {
             return;
         }
