@@ -105,6 +105,7 @@ public class ProjectileScript : MonoBehaviour
         //if instant tag, teleport to target location
         if(tags.Contains("instant") && !hasTeleported)
         {
+            Debug.Log("target: "+target);
             transform.position = target.transform.position;
             hasTeleported = true;
             return;

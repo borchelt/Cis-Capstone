@@ -7,6 +7,8 @@ public class EnemyTakeDamage : MonoBehaviour
     //variables for taking damage
     public float hp;
     public SpriteRenderer sprite;
+    public bool killParent = false;
+    public GameObject parent;
     Color originalColor;
     float colorCD = .01f;
 
@@ -36,7 +38,14 @@ public class EnemyTakeDamage : MonoBehaviour
     void die()
     {
         if (hp <= 0 && sprite.color == originalColor)
+        {
+            if(killParent)
+            {
+                Destroy(parent);
+            }
             Destroy(gameObject);
+        }
+            
     }
 
     //handles the timing on color flashes for damage.
