@@ -22,7 +22,7 @@ public class ExitGamePrompt : MonoBehaviour
     public void OnYes()
     {
         // in case it was not already, game realtime is stopped
-        Time.timeScale = 1f;
+        timeController.timeRate = 0f;
         Application.Quit();
     }
 

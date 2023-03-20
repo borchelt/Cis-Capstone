@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class timeController : MonoBehaviour
 {
-    public float timeRate;
+    public static float timeRate;
+    //public float timeRate;                original line
 
     void Update()
     {

@@ -30,7 +30,7 @@ public class GameSceneManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         // time set, in case of integration from paused game
-        Time.timeScale = 1f;
+        timeController.timeRate = 1f;
         StartCoroutine(LoadNewScene(sceneName));
     }
 
@@ -39,7 +39,7 @@ public class GameSceneManager : MonoBehaviour
     {
         // case if scene fails to load
         yield return null;
-        Time.timeScale = 0f; // game is paused
+        timeController.timeRate = 0f; // game is paused
 
         // loading the scene
         yield return new WaitForSecondsRealtime(uiLoadTime);

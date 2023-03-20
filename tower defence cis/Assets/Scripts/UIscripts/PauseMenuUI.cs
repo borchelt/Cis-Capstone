@@ -19,6 +19,10 @@ public class PauseMenuUI : MonoBehaviour
         // listeners for both buttons
         resumeButton.onClick.AddListener(Resume);
         menuButton.onClick.AddListener(loadExitPrompt);
+
+        // pause menu is inactive at start
+        pauseMenu.SetActive(false);
+        timeController.timeRate = 1f;
     }
 
     // to go to the main menu scene
@@ -50,7 +54,7 @@ public class PauseMenuUI : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        timeController.timeRate = 1f;
         gameStopped = false;
     }
 
@@ -58,7 +62,7 @@ public class PauseMenuUI : MonoBehaviour
     void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        timeController.timeRate = 0f;
         gameStopped = true;
     }
 }
