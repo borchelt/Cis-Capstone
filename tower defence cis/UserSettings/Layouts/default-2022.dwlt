@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 77
+  controlID: 137
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -408,8 +408,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 481b0000
-      m_LastClickedID: 0
+      m_SelectedIDs: 3af9ffff
+      m_LastClickedID: -1734
       m_ExpandedIDs: 28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -554,7 +554,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -725,9 +725,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.5677717, y: -0.4570527, z: 5.849162}
+    m_Target: {x: 5.443564, y: 2.3249636, z: 5.79571}
     speed: 2
-    m_Value: {x: 2.5677717, y: -0.4570527, z: 5.849162}
+    m_Value: {x: 5.443564, y: 2.3249636, z: 5.79571}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -777,9 +777,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.017551
+    m_Target: 18.362774
     speed: 2
-    m_Value: 13.017551
+    m_Value: 18.362774
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -873,21 +873,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UIscripts
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UIscripts
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jPenn\Documents\GitHub\Cis-Capstone\tower defence cis
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 96630000
-    m_LastClickedID: 25494
+    m_SelectedIDs: 90630000
+    m_LastClickedID: 25488
     m_ExpandedIDs: 000000005c6300005e630000606300009063000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

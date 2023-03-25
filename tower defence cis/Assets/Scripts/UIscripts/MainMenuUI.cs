@@ -21,6 +21,8 @@ public class MainMenuUI : MonoBehaviour
         startButton.onClick.AddListener(OnStart);
         resetButton.onClick.AddListener(ResetProgressPrompt);
         exitButton.onClick.AddListener(QuitGamePrompt);
+
+        CameraScript.gameScreenActive = false;
     }
 
     // action to load the level select screen

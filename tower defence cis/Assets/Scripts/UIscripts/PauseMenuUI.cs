@@ -23,6 +23,7 @@ public class PauseMenuUI : MonoBehaviour
         // pause menu is inactive at start
         pauseMenu.SetActive(false);
         timeController.timeRate = 1f;
+        CameraScript.gameScreenActive = true;
     }
 
     // to go to the main menu scene
@@ -56,6 +57,7 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenu.SetActive(false);
         timeController.timeRate = 1f;
         gameStopped = false;
+        CameraScript.gameScreenActive = true;
     }
 
     // action to pause game
@@ -64,5 +66,6 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenu.SetActive(true);
         timeController.timeRate = 0f;
         gameStopped = true;
+        CameraScript.gameScreenActive = false;
     }
 }

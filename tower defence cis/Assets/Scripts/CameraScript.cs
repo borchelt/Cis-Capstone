@@ -15,78 +15,85 @@ public class CameraScript : MonoBehaviour
     Vector3 mouseSpeed;
     Vector3 lastMousePos;
     Vector3 position;
+
+    // variable to assist with UI and mouse interactivity
+    public static bool gameScreenActive;
+
     // Update is called once per frame
     void Update()
     {
-        position = transform.position;
-
-        if(Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
+        if (gameScreenActive == true)
         {
-            position.y += speed * Time.deltaTime;
+            position = transform.position;
+
+            if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
+            {
+                position.y += speed * Time.deltaTime;
+            }
+
+            if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
+            {
+                position.y -= speed * Time.deltaTime;
+            }
+
+            if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
+            {
+                position.x -= speed * Time.deltaTime;
+            }
+
+            if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+            {
+                position.x += speed * Time.deltaTime;
+            }
+
+            mouseDrag();
+
+            position.x = Mathf.Clamp(position.x, -xMax, xMax);
+            position.y = Mathf.Clamp(position.y, -yMax, yMax);
+
+            transform.position = position;
+
+            if (Input.mouseScrollDelta.y > 0)
+            {
+                cam.orthographicSize -= zoom * Time.deltaTime;
+                cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
+            }
+            if (Input.mouseScrollDelta.y < 0)
+            {
+                cam.orthographicSize += zoom * Time.deltaTime;
+                cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
+            }
+
+            lastMousePos = Input.mousePosition;
+
         }
-
-        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
-        {
-            position.y -= speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
-        {
-            position.x -= speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
-        {
-            position.x += speed * Time.deltaTime;
-        }
-
-        mouseDrag();
-
-        position.x = Mathf.Clamp(position.x, -xMax, xMax);
-        position.y = Mathf.Clamp(position.y, -yMax, yMax);
-
-        transform.position = position;
-
-        if (Input.mouseScrollDelta.y > 0)
-        {
-            cam.orthographicSize -= zoom * Time.deltaTime;
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
-        }
-        if (Input.mouseScrollDelta.y < 0)
-        {
-            cam.orthographicSize += zoom * Time.deltaTime;
-            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 20);
-        }
-
-        lastMousePos = Input.mousePosition;
-
-
     }
 
     void mouseDrag()
     {
-
-        if (Input.GetMouseButton(0))
+        if (gameScreenActive == true)
         {
-            mouseVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
-            if (!mouseDown)
+            if (Input.GetMouseButton(0))
             {
-                mouseDown = true;
-                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
+                if (!mouseDown)
+                {
+                    mouseDown = true;
+                    mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                }
+
+            }
+            else
+            {
+                mouseDown = false;
             }
 
-        }
-        else
-        {
-            mouseDown = false;
-        }
-            
 
-        if (mouseDown)
-        {
-            position = mousePos - mouseVec;
+            if (mouseDown)
+            {
+                position = mousePos - mouseVec;
+            }
         }
-
 
     }
 
