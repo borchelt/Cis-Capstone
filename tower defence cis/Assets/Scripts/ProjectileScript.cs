@@ -9,7 +9,7 @@ public class ProjectileScript : MonoBehaviour
     public float damage;
     public float duration;
     public string targetTag;
-
+    public bool small;
     //list of tags that will modify projectiles. 
     //current tags:
     //tracking - tracks enemies
@@ -18,6 +18,7 @@ public class ProjectileScript : MonoBehaviour
     //instant - projectile teleports to the closest target, only works with tracking turned on.
     //exploding - projectile explodes into aoe on impact, dealing damage to enemies within its aoe x amount of times (x = ticks ) at y speed (y = tickrate)
     //note: for some unknown reason, exploding only works while tracking is also enabled. To turn on tracking without any actual tracking just set the projectile speed to 0
+    //persistent - projectile doesnt dissapear on contact with an enemy 
     public List<string> tags = new List<string>();
 
     Rigidbody2D rb;
@@ -41,6 +42,9 @@ public class ProjectileScript : MonoBehaviour
     SpriteRenderer explosionSprite;
     public Sprite explosion;
     public float initialCD;
+
+    //this stuff is for the persistent tag
+    public float collisions;
 
     private void Start()
     {
@@ -71,6 +75,8 @@ public class ProjectileScript : MonoBehaviour
             checkDestroy();
 
     }
+
+    
 
     private void FixedUpdate()
     {
@@ -159,7 +165,7 @@ public class ProjectileScript : MonoBehaviour
         spriteHandler.transform.localScale = new Vector3(aoe / 5, aoe / 5);
         explosionSprite.enabled = true;
 
-        //if the last tick was long enough ag, do another
+        //if the last tick was long enough ago, do another
         if (cd <= 0)
         {
             //if no ticks left, destroy self
@@ -190,8 +196,16 @@ public class ProjectileScript : MonoBehaviour
     }
 
     //checks if a projectile should explode instead of being destroyed
-    private void checkDestroy()
+    public void checkDestroy()
     {
+        if (tags.Contains("persistent") && duration > 0 && collisions > 0)
+        {
+            collisions -= 1;
+            return;
+        }
+            
+           
+
         if (tags.Contains("exploding") && !exploded)
         {
             exploded = true;

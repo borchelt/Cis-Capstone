@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     GameObject destination;
 
     public bool worm;
+    public bool small;
     bool worming;
     float wormCD;
 
@@ -34,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
     Vector2 location;
     Vector2 targetVector;
     AIDestinationSetter pathfinder;
+    float trapCd = .1f; 
 
     //attack variables 
     public float attackCD;
@@ -66,6 +68,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        trapCd -= Time.deltaTime;
         getClosestTarget();
         setDestination();
             
@@ -164,6 +167,20 @@ public class EnemyMovement : MonoBehaviour
                 attackCD = chargeCD;
             attacking = true;
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
+        }
+
+        if(collision.gameObject.layer == 15)
+        {
+            
+            ProjectileScript trap = collision.gameObject.GetComponent<ProjectileScript>();
+            if (!small && trap.small)
+                return;
+            
+
+                damageScript = gameObject.GetComponent<EnemyTakeDamage>();
+                damageScript.takeDamage(trap.damage);
+                trap.checkDestroy();
+
         }
     }
 
