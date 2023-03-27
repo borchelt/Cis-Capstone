@@ -58,6 +58,8 @@ public class PauseMenuUI : MonoBehaviour
         timeController.timeRate = 1f;
         gameStopped = false;
         CameraScript.gameScreenActive = true;
+
+        Debug.Log("Game unpaused");
     }
 
     // action to pause game
@@ -67,5 +69,7 @@ public class PauseMenuUI : MonoBehaviour
         timeController.timeRate = 0f;
         gameStopped = true;
         CameraScript.gameScreenActive = false;
+
+        Debug.Log("Game paused");
     }
 }

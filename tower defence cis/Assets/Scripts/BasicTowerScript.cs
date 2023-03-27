@@ -44,7 +44,7 @@ public class BasicTowerScript : MonoBehaviour
 
         if (onCD)
             HandleCooldown();
-        else if(target != null || prefire == true)
+        else if (target != null || prefire == true) // possible fix: else if(target != null && prefire == true)
             fireProjectile();
            
     }
