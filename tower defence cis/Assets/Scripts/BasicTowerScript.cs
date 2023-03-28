@@ -102,7 +102,7 @@ public class BasicTowerScript : MonoBehaviour
         }
 
         //if the target it out of range, dont attack
-        if( Vector2.Distance(target.transform.position, location) > range && prefire == false)
+        if( Vector2.Distance(targetLocation, location) > range && prefire == false)
         {
             return;
         }
