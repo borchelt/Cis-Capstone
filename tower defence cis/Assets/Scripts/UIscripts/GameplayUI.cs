@@ -35,36 +35,38 @@ public class GameplayUI : MonoBehaviour
     // activate placement for tower
     public void on1()
     {
-        
+        Debug.Log("button1");
     }
 
     // activate placement for tower
     public void on2()
     {
-
+        Debug.Log("button2");
     }
 
     // activate placement for tower
     public void on3()
     {
-
+        Debug.Log("button3");
     }
 
     // activate placement for tower
     public void on4()
     {
-
+        Debug.Log("button4");
     }
 
     // activate placement for tower
     public void on5()
     {
-
+        Debug.Log("button5");
     }
 
     // activate placement for trap
     public void on6()
     {
+
+        Debug.Log("button6");
         /*
         if (trapnum >= 0)
         {
@@ -80,6 +82,7 @@ public class GameplayUI : MonoBehaviour
     // activate spell use
     public void onSpell()
     {
+        Debug.Log("spell");
         /*
         if(spellReady == true)
         {

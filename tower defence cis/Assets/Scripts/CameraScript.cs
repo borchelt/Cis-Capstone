@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraScript : MonoBehaviour
 {
@@ -15,14 +16,16 @@ public class CameraScript : MonoBehaviour
     Vector3 mouseSpeed;
     Vector3 lastMousePos;
     Vector3 position;
+    bool canDrag;
 
     // variable to assist with UI and mouse interactivity
     public static bool gameScreenActive;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (gameScreenActive == true && PauseMenuUI.gameStopped == false)
+       
+        if (gameScreenActive == true && PauseMenuUI.gameStopped == false )
         {
             position = transform.position;
 
@@ -71,25 +74,38 @@ public class CameraScript : MonoBehaviour
     
     void mouseDrag()
     {
+            
         if (gameScreenActive == true)
         {
             if (Input.GetMouseButton(0))
             {
+
+                
                 mouseVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
+
                 if (!mouseDown)
                 {
                     mouseDown = true;
                     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                    if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                        canDrag = false;
+                    }
+                    else
+                    {
+                        canDrag = true;
+                    }
                 }
 
             }
             else
             {
                 mouseDown = false;
+                canDrag = true;
             }
 
-
-            if (mouseDown)
+            if (mouseDown && canDrag)
             {
                 position = mousePos - mouseVec;
             }
