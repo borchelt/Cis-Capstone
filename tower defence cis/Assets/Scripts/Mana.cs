@@ -16,6 +16,8 @@ public class Mana : MonoBehaviour
     private float manaGenerationRate;
     private float boostedManaGenerationRate;
 
+    private string structureName;
+
     bool manaTowersExist;
     bool useSpell;
     bool buildTower;
@@ -123,23 +125,99 @@ public class Mana : MonoBehaviour
         {
             if (towerLevel == 1)
             {
-                manaCost = 500;
+                if (structureName == "Mana Tower")
+                {
+                    manaCost = 500;
+                }
+                else if (structureName == "Barracks")
+                {
+                    manaCost = 300;
+                }
+                else if (structureName == "Shooter Tower")
+                {
+                    manaCost = 450;
+                }
+                else if (structureName == "AOE Tower")
+                {
+                    manaCost = 700;
+                }
+                
             }
             else if (towerLevel == 2)
             {
-                manaCost = 1000;
+                if (structureName == "Mana Tower")
+                {
+                    manaCost = 1000;
+                }
+                else if (structureName == "Barracks")
+                {
+                    manaCost = 600;
+                }
+                else if (structureName == "Shooter Tower")
+                {
+                    manaCost = 900;
+                }
+                else if (structureName == "AOE Tower")
+                {
+                    manaCost = 700;
+                }
             }
             else if (towerLevel == 3)
             {
-                manaCost = 3000;
+                if (structureName == "Mana Tower")
+                {
+                    manaCost = 3000;
+                }
+                else if (structureName == "Barracks")
+                {
+                    manaCost = 1800;
+                }
+                else if (structureName == "Shooter Tower")
+                {
+                    manaCost = 2700;
+                }
+                else if (structureName == "AOE Tower")
+                {
+                    manaCost = 4200;
+                }
             }
             else if (towerLevel == 4)
             {
-                manaCost = 12000;
+                if (structureName == "Mana Tower")
+                {
+                    manaCost = 12000;
+                }
+                else if (structureName == "Barracks")
+                {
+                    manaCost = 7200;
+                }
+                else if (structureName == "Shooter Tower")
+                {
+                    manaCost = 10800;
+                }
+                else if (structureName == "AOE Tower")
+                {
+                    manaCost = 16800;
+                }
             }
             else if (towerLevel == 5)
             {
-                manaCost = 60000;
+                if (structureName == "Mana Tower")
+                {
+                    manaCost = 60000;
+                }
+                else if (structureName == "Barracks")
+                {
+                    manaCost = 36000;
+                }
+                else if (structureName == "Shooter Tower")
+                {
+                    manaCost = 54000;
+                }
+                else if (structureName == "AOE Tower")
+                {
+                    manaCost = 84000;
+                }
             }
         }
 
@@ -149,6 +227,12 @@ public class Mana : MonoBehaviour
     private void AddMana()
     {
         currentManaAmount += DetermineTowerManaAmount();
+    }
+
+    private void ReturnMana()
+    {
+        manaCost = DetermineManaCostAmount();
+        currentManaAmount += (manaCost / towerLevel);
     }
 
     private void LoseMana()
