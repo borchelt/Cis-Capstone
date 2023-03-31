@@ -22,7 +22,7 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameScreenActive == true)
+        if (gameScreenActive == true && PauseMenuUI.gameStopped == false)
         {
             position = transform.position;
 
@@ -68,7 +68,7 @@ public class CameraScript : MonoBehaviour
 
         }
     }
-
+    
     void mouseDrag()
     {
         if (gameScreenActive == true)
@@ -96,6 +96,7 @@ public class CameraScript : MonoBehaviour
         }
 
     }
+    
 
 
 }
