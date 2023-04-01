@@ -24,7 +24,6 @@ public class Mana : MonoBehaviour
 
     public GameObject manaBar;
     Text manaBarText;
-    
 
     private void Start()
     {
@@ -115,7 +114,6 @@ public class Mana : MonoBehaviour
 
             boostedManaGenerationRate += boostedManaGenerationRate;
         }
-        
         manaGenerationRate = 25 / (1 + boostedManaGenerationRate);
     }
 
@@ -166,7 +164,7 @@ public class Mana : MonoBehaviour
         manaCost = DetermineManaCostAmount();
         currentManaAmount -= manaCost;
     }
- 
+
     IEnumerator GenerateMana()
     {
         Debug.Log("mana: generating");
@@ -179,6 +177,6 @@ public class Mana : MonoBehaviour
     private void updateManaBar()
     {
         Debug.Log("mana amount: " + currentManaAmount);
-        manaBarText.text = currentManaAmount+"";
+        manaBarText.text = currentManaAmount + "";
     }
 }
