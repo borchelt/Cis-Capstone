@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8839671255715875459}
   - component: {fileID: 8095675026333129718}
   - component: {fileID: 6485351398085893286}
+  - component: {fileID: 3467184203670094008}
   m_Layer: 7
   m_Name: Barracks
   m_TagString: PlayerTower
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 8389702243422729431}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &387972064175472680
 SpriteRenderer:
@@ -100,6 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369326e75e3c22f4a90bcce25a908269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 1000
   targetTag: enemy
   targetList: []
   target: {fileID: 0}
@@ -130,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   sprite: {fileID: 0}
+  killParent: 0
+  parent: {fileID: 0}
 --- !u!58 &6485351398085893286
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,6 +152,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!58 &3467184203670094008
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3272673274955903549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
 --- !u!1 &8930229506454372285
 GameObject:
   m_ObjectHideFlags: 0

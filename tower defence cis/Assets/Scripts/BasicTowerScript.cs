@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BasicTowerScript : MonoBehaviour
 {
-
+    //placement variables 
+    public bool active = true;
+    public bool overlapping = false;
+    public int cost;
     //target to shoot at
     public string targetTag;
     public GameObject[] targetList;
@@ -40,12 +43,16 @@ public class BasicTowerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        getClosestTarget();
+        if(active)
+        {
+            getClosestTarget();
 
-        if (onCD)
-            HandleCooldown();
-        else if (target != null || prefire == true) // possible fix: else if(target != null && prefire == true)
-            fireProjectile();
+            if (onCD)
+                HandleCooldown();
+            else if (target != null || prefire == true)
+                fireProjectile();
+        }
+
            
     }
 
@@ -183,4 +190,29 @@ public class BasicTowerScript : MonoBehaviour
             onCD = false;
     }
 
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collision: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        {
+            overlapping = true;
+
+        }
+        else
+        {
+            overlapping = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("collision: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        {
+            overlapping = false;
+
+        }
+
+    }
 }

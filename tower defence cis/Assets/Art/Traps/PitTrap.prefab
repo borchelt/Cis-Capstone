@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a4323fb0e66c84ebc7644fec07c9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 300
   damage: 99999
   duration: 9999
   targetTag: enemy

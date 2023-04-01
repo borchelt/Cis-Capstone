@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9124341628229113247
 SpriteRenderer:
@@ -99,9 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a4323fb0e66c84ebc7644fec07c9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 500
   damage: 1
   duration: 999
   targetTag: enemy
+  small: 0
   tags:
   - persistent
   targetList: []

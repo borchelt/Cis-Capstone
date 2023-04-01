@@ -5,6 +5,9 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     //setting up variables
+    public bool active = true;
+    public bool overlapping = false;
+    public int cost;
     EnemyTakeDamage damageScript;
     public float damage;
     public float duration;
@@ -71,7 +74,7 @@ public class ProjectileScript : MonoBehaviour
             checkDestroy();
         }
 
-        if (collision.gameObject.tag == "wall" && !tags.Contains("ghost"))
+        if (collision.gameObject.layer == 8 && !tags.Contains("ghost"))
             checkDestroy();
 
     }
@@ -80,24 +83,29 @@ public class ProjectileScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //counting down until the projectile despawns
-        duration -= Time.deltaTime;
-        if (duration <= 0)
-            checkDestroy();
-        //if the projectile has exploded start using the explosion handler 
-        if (exploded)
-            explosionHandler();
 
-        //use the tracking specific functions if the projectile is tracking
-        if (tags.Contains("tracking"))
+        if(active)
         {
-            getClosestTarget();
-            movement();
-        }
+            //counting down until the projectile despawns
+            duration -= Time.deltaTime;
+            if (duration <= 0)
+                checkDestroy();
+            //if the projectile has exploded start using the explosion handler 
+            if (exploded)
+                explosionHandler();
 
-        //if static freeze position
-        if (tags.Contains("static"))
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            //use the tracking specific functions if the projectile is tracking
+            if (tags.Contains("tracking"))
+            {
+                getClosestTarget();
+                movement();
+            }
+
+            //if static freeze position
+            if (tags.Contains("static"))
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
+       
     }
 
     //move at the target
@@ -223,5 +231,30 @@ public class ProjectileScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collision: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        {
+            overlapping = true;
+
+        }
+        else
+        {
+            overlapping = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("collision: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        {
+            overlapping = false;
+
+        }
+
     }
 }

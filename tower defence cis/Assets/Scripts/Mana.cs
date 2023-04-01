@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //This script is for mana generation and usage
 
 public class Mana : MonoBehaviour
 {
     private int towerManaAmount;
-    private int currentManaAmount;
+    public  int currentManaAmount;
     private int boostedTowerManaAmount;
     private int numberOfManaTowers;
     private int towerLevel;
@@ -21,19 +22,28 @@ public class Mana : MonoBehaviour
     bool buildTower;
     bool upgradeTower;
 
+    public GameObject manaBar;
+    Text manaBarText;
+    
+
+    private void Start()
+    {
+        manaBarText = manaBar.GetComponent<Text>();
+    }
     // Update is called once per frame
     void Update()
     {
-        CheckForManaTowers();
+        //CheckForManaTowers();
 
-        if (manaTowersExist)
-        {
-            StartCoroutine("GenerateMana");
-        }
-        else if (!manaTowersExist)
-        {
-            StopCoroutine("GenerateMana");
-        }
+        //if (manaTowersExist)
+        //{
+        //    StartCoroutine("GenerateMana");
+        //}
+        //else if (!manaTowersExist)
+        //{
+        //    StopCoroutine("GenerateMana");
+        //}
+        updateManaBar();
     }
 
     private void CheckForManaTowers()
@@ -106,7 +116,7 @@ public class Mana : MonoBehaviour
             boostedManaGenerationRate += boostedManaGenerationRate;
         }
         
-        manaGenerationRate = 100 / (1 + boostedManaGenerationRate);
+        manaGenerationRate = 25 / (1 + boostedManaGenerationRate);
     }
 
     private int DetermineManaCostAmount()
@@ -159,9 +169,16 @@ public class Mana : MonoBehaviour
  
     IEnumerator GenerateMana()
     {
+        Debug.Log("mana: generating");
         DetermineManaGenerationRate();
         yield return new WaitForSeconds(manaGenerationRate);
         AddMana();
         yield return null;
+    }
+
+    private void updateManaBar()
+    {
+        Debug.Log("mana amount: " + currentManaAmount);
+        manaBarText.text = currentManaAmount+"";
     }
 }
