@@ -216,30 +216,33 @@ public class GameplayUI : MonoBehaviour
     {
        if(towerScript !=null)
        {
-            if ((towerScript && towerScript.overlapping) || towerScript.cost > manaManager.currentManaAmount)
-            {
-                canPlace = false;
-                sprite.color = Color.red;
-            }
-            else
+            if (!towerScript.overlapping && towerScript.cost <= manaManager.currentManaAmount)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
                     sprite.color = originalColor;
+                
+            }
+            else
+            {
+                Debug.Log("cantPlace");
+                canPlace = false;
+                sprite.color = Color.red;
             }
        }
        else if (ProjScript != null)
        {
-           if ((ProjScript && ProjScript.overlapping) || ProjScript.cost > manaManager.currentManaAmount)
-            {
-                canPlace = false;
-                sprite.color = Color.red;
-            }
-            else
+           if (!ProjScript.overlapping && ProjScript.cost <= manaManager.currentManaAmount)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
                     sprite.color = originalColor;
+            }
+            else
+            {
+                Debug.Log("cantPlace");
+                canPlace = false;
+                sprite.color = Color.red;
             }
        }
         
