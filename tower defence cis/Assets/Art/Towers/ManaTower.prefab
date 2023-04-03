@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3023195608661972909}
   - component: {fileID: 4994913129469727542}
   - component: {fileID: 2256577468978059753}
+  - component: {fileID: 374055972495531253}
   m_Layer: 7
   m_Name: ManaTower
   m_TagString: PlayerTower
@@ -223,3 +224,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.8
+--- !u!114 &374055972495531253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964897925059110002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369326e75e3c22f4a90bcce25a908269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 1000
+  targetTag: NoTag
+  targetList: []
+  target: {fileID: 0}
+  projectile: {fileID: 0}
+  shooter: {fileID: 0}
+  range: 0
+  projectileSpeed: 0
+  fireRate: 0
+  cooldown: 0
+  projectileLimit: 0
+  projectileCount: 0
+  spread: 0
+  prefire: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0

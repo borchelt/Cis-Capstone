@@ -16,6 +16,8 @@ public class GameplayUI : MonoBehaviour
     public Button button6;
     public Button spellButton;
 
+    Button[] buttonArr;
+
     // objects for placement
 
     public GameObject[] objects;
@@ -35,7 +37,7 @@ public class GameplayUI : MonoBehaviour
     // listeners are initiated
     void Start()
     {
-       
+        buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton };
         manaManager = FindObjectOfType<Mana>();
         //button1.onClick.AddListener(on1);
         //button2.onClick.AddListener(on2);
@@ -50,7 +52,7 @@ public class GameplayUI : MonoBehaviour
     void Update()
     {
         Debug.Log("obj: " + selectedObj);
-
+        checkButtonPrice();
         getPlaceRay();
         collisionCheck();
 
@@ -58,10 +60,16 @@ public class GameplayUI : MonoBehaviour
         {
             selectedObj.transform.position = new Vector2(snapToGrid(position.x), snapToGrid(position.y));
 
+            if(Input.GetMouseButtonDown(1))
+            {
+                Destroy(selectedObj);
+                place(false);
+            }
             if(Input.GetMouseButtonDown(0) && canPlace)
             {
-                place();
+                place(true);
             }
+            
 
         }
     }
@@ -171,7 +179,7 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-    public void place()
+    public void place(bool subtractCost)
     {
         if (selectedObj.layer == 8)
         {
@@ -183,7 +191,7 @@ public class GameplayUI : MonoBehaviour
         sprite = null;
         selectedObj = null;
         Debug.Log("obj: placed");
-        if(towerScript)
+        if(towerScript && subtractCost)
         {
             towerScript.active = true;
             manaManager.currentManaAmount -= towerScript.cost;
@@ -191,7 +199,7 @@ public class GameplayUI : MonoBehaviour
             
         towerScript = null;
         Debug.Log("obj: tower activated");
-        if (ProjScript)
+        if (ProjScript && subtractCost)
         {
             ProjScript.active = true;
             manaManager.currentManaAmount -= ProjScript.cost;
@@ -216,7 +224,7 @@ public class GameplayUI : MonoBehaviour
     {
        if(towerScript !=null)
        {
-            if (!towerScript.overlapping && towerScript.cost <= manaManager.currentManaAmount)
+            if (!towerScript.overlapping)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
@@ -232,7 +240,7 @@ public class GameplayUI : MonoBehaviour
        }
        else if (ProjScript != null)
        {
-           if (!ProjScript.overlapping && ProjScript.cost <= manaManager.currentManaAmount)
+           if (!ProjScript.overlapping)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
@@ -248,5 +256,36 @@ public class GameplayUI : MonoBehaviour
         
 
 
+    }
+
+    public void checkButtonPrice()
+    {
+        foreach(Button button in buttonArr)
+        {
+            int cost;
+            int index = System.Array.IndexOf(buttonArr, button);
+            GameObject tower = objects[index];
+            if(tower.GetComponent<BasicTowerScript>() != null)
+            {
+                cost = tower.GetComponent<BasicTowerScript>().cost;
+            }
+            else if (tower.GetComponent<ProjectileScript>() != null)
+            {
+                cost = tower.GetComponent<ProjectileScript>().cost;
+            }
+            else
+            {
+                cost = 0;
+            }
+
+            if(cost > manaManager.currentManaAmount)
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
+        }
     }
 }

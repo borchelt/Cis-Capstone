@@ -1660,6 +1660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2798666121245512004, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7206427523434247581, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
       propertyPath: m_Name
       value: GameMechUI
@@ -1744,11 +1748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418596528283978211, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.22642
+      value: -1.873
       objectReference: {fileID: 0}
     - target: {fileID: 3418596528283978211, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3020964
+      value: -3.715
       objectReference: {fileID: 0}
     - target: {fileID: 3418596528283978211, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: m_LocalPosition.z

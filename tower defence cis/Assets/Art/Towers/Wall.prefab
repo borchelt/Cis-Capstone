@@ -178,7 +178,7 @@ MonoBehaviour:
   active: 1
   overlapping: 0
   cost: 500
-  targetTag: 
+  targetTag: NoTag
   targetList: []
   target: {fileID: 0}
   projectile: {fileID: 0}
