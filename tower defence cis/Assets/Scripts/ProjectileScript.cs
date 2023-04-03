@@ -45,12 +45,14 @@ public class ProjectileScript : MonoBehaviour
     SpriteRenderer explosionSprite;
     public Sprite explosion;
     public float initialCD;
+    SpriteRenderer sprite;
 
     //this stuff is for the persistent tag
     public float collisions;
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
         //setting up explosion sprite stuff
@@ -58,6 +60,11 @@ public class ProjectileScript : MonoBehaviour
         {
             explosionSprite = spriteHandler.GetComponent<SpriteRenderer>();
             explosionSprite.enabled = false;
+        }
+
+        if (tags.Contains("instant"))
+        {
+            sprite.enabled = false;
         }
     }
 
@@ -83,9 +90,14 @@ public class ProjectileScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        if(active)
+        if (tags.Contains("instant"))
         {
+            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+
+        if (active)
+        {
+           
             //counting down until the projectile despawns
             duration -= Time.deltaTime;
             if (duration <= 0)
@@ -122,6 +134,7 @@ public class ProjectileScript : MonoBehaviour
             Debug.Log("target: "+target);
             transform.position = target.transform.position;
             hasTeleported = true;
+            sprite.enabled = true;
             return;
         }
         //if instant 
@@ -216,6 +229,7 @@ public class ProjectileScript : MonoBehaviour
 
         if (tags.Contains("exploding") && !exploded)
         {
+            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             exploded = true;
             cd = initialCD;
             explosionSprite.sprite = explosion;
@@ -224,6 +238,7 @@ public class ProjectileScript : MonoBehaviour
 
         else if(exploded)
         {
+            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             return;
         }
 

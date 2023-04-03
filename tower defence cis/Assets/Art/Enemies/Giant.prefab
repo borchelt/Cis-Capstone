@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7272a2a477e4ea705151500c6f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stayClose: 0
+  patrolPointEmpty: {fileID: 0}
+  worm: 0
+  small: 0
   speed: 125
   rb: {fileID: 5368624055637559238}
   targetList: []
@@ -151,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   sprite: {fileID: 0}
+  killParent: 0
+  parent: {fileID: 0}
 --- !u!114 &8174180908564087935
 MonoBehaviour:
   m_ObjectHideFlags: 0

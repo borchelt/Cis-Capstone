@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 495755965157545360}
   - component: {fileID: 835116141453002175}
   - component: {fileID: -487298627990060939}
-  - component: {fileID: 6354398467146452730}
+  - component: {fileID: 4128487401118181946}
   m_Layer: 11
   m_Name: Arrow
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6192291539944984805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2304, y: 0.2304, z: 0.2304}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.9584457, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 503ded488e9e36a4d9bfce012f4ee396, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,9 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a4323fb0e66c84ebc7644fec07c9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 0
   damage: 1
   duration: 3
   targetTag: enemy
+  small: 0
   tags: []
   targetList: []
   target: {fileID: 0}
@@ -113,6 +117,7 @@ MonoBehaviour:
   spriteHandler: {fileID: 0}
   explosion: {fileID: 0}
   initialCD: 0
+  collisions: 0
 --- !u!50 &-487298627990060939
 Rigidbody2D:
   serializedVersion: 4
@@ -134,8 +139,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &6354398467146452730
-CircleCollider2D:
+--- !u!70 &4128487401118181946
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,6 +152,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133336}
-  serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.52000004, y: 0.8533335}
+  m_Direction: 0
