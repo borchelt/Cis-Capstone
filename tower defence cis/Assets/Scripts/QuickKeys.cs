@@ -5,6 +5,8 @@ using UnityEngine;
 public class QuickKeys : MonoBehaviour
 {
 
+    //public object GameplayUI;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +26,7 @@ public class QuickKeys : MonoBehaviour
             // checks if game paused or not
             if (CameraScript.gameScreenActive == true)
             {
-                //SelectConEco();
+                //GameplayUI.gameplayUIobj.on1();
             }
         }
 

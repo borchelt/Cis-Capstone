@@ -7,6 +7,8 @@ using Pathfinding;
 
 public class GameplayUI : MonoBehaviour
 {
+    public static GameObject gameplayUIobj;
+
     // variables and objects set
     public Button button1;
     public Button button2;
