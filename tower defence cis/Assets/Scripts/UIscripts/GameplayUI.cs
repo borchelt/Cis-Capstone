@@ -197,6 +197,7 @@ public class GameplayUI : MonoBehaviour
         {
             towerScript.active = true;
             manaManager.currentManaAmount -= towerScript.cost;
+            manaManager.UpdateManaBar();
         }
             
         towerScript = null;
@@ -205,6 +206,7 @@ public class GameplayUI : MonoBehaviour
         {
             ProjScript.active = true;
             manaManager.currentManaAmount -= ProjScript.cost;
+            manaManager.UpdateManaBar();
         }
 
         ProjScript = null;

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &40413808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798666120670635224, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+  m_PrefabInstance: {fileID: 2092190540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &420074118
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaTower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4994913129469727542, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
+      propertyPath: manaTowerLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
@@ -1036,6 +1045,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e52fc7b6e421ca34ea0f4e0ea34971d5, type: 3}
+--- !u!1 &1448114397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798666121301065814, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+  m_PrefabInstance: {fileID: 2092190540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1448114399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448114397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fdff09261d448468bf63dbf0832f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentManaAmount: 0
+  manaCost: 0
+  manaBar: {fileID: 40413808}
 --- !u!1 &1478482578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaTower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4994913129469727542, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
+      propertyPath: manaTowerLevel
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
@@ -1789,6 +1822,10 @@ PrefabInstance:
     - target: {fileID: 4964897925059110002, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: m_Name
       value: ManaTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994913129469727542, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
+      propertyPath: manaTowerLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
