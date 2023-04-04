@@ -973,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994913129469727542, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: manaTowerLevel
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1063,7 +1063,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentManaAmount: 0
-  manaCost: 0
   manaBar: {fileID: 40413808}
 --- !u!1 &1476516178
 GameObject:
@@ -1097,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b20c4f29c592247813da9e17221b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragonSwordHP: 0
 --- !u!61 &1476516180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1646,7 +1646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994913129469727542, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
       propertyPath: manaTowerLevel
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

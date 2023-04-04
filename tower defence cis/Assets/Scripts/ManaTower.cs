@@ -7,7 +7,6 @@ public class ManaTower : MonoBehaviour
 {
     Mana manaManager;
 
-    public int cost;
     public int manaTowerLevel;
 
     private int towerManaAmount;
@@ -75,7 +74,7 @@ public class ManaTower : MonoBehaviour
             boostedManaGenerationRate = 8.0f;
         }
 
-        manaGenerationRate = 25 / (1 + boostedManaGenerationRate);
+        manaGenerationRate = 10 / (1 + boostedManaGenerationRate);
     }
 
     IEnumerator GenerateMana()

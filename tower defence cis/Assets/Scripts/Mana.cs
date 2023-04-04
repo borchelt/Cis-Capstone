@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Mana : MonoBehaviour
 {
     public  int currentManaAmount;
-    public int manaCost;
     
     public GameObject manaBar;
     Text manaBarText;
