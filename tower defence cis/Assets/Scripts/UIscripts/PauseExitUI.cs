@@ -7,6 +7,7 @@ public class PauseExitUI : MonoBehaviour
 {
     // variables and objects set
     public static GameObject pauseExitPrompt;
+    public MainMenuUI mainMenuOBJ;
 
     public Button yesButton;
     public Button noButton;

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class LevelSelectUI : MonoBehaviour
 {
     // variables and objects set
-    public static GameObject levelList;
+    public GameObject levelList;
+    public MainMenuUI mainMenuOBJ;
+    public StoryUI storyOBJ;
 
     public Button tutorButton;
     public Button level1Button;
@@ -98,13 +100,14 @@ public class LevelSelectUI : MonoBehaviour
     public void onStory()
     {
         // load story
-        StoryUI.storyText.SetActive(true);
+        levelList.SetActive(false);
+        storyOBJ.storyText.SetActive(true);
     }
 
     // go back to main menu
     public void onBack()
     {
         levelList.SetActive(false);
-        MainMenuUI.mainMenu.SetActive(true);
+        mainMenuOBJ.mainMenu.SetActive(true);
     }
 }

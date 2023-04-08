@@ -6,17 +6,22 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     // variables and objects set
-    public static GameObject mainMenu;
+    public GameObject mainMenu;
 
     public Button startButton;
     public Button resetButton;
     public Button exitButton;
+
+    public LevelSelectUI levelSelectOBJ;
+    public StoryUI storyOBJ;
 
     // listeners are initiated
     private void Start()
     {
         // menu ui is loaded in case it didn't load
         mainMenu.SetActive(true);
+        levelSelectOBJ.levelList.SetActive(false);
+        storyOBJ.storyText.SetActive(false);
 
         startButton.onClick.AddListener(OnStart);
         resetButton.onClick.AddListener(ResetProgressPrompt);
@@ -33,12 +38,12 @@ public class MainMenuUI : MonoBehaviour
         if (GameProgress.firstStart == true)
         {
             //load story UI. when player clicks 'okay', firstStart is set to false
-            StoryUI.storyText.SetActive(true);
+            storyOBJ.storyText.SetActive(true);
         }
         else
         {
             // load level select
-            LevelSelectUI.levelList.SetActive(true);
+            levelSelectOBJ.levelList.SetActive(true);
         }
     }
 

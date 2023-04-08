@@ -11,6 +11,8 @@ public class ResetPromptUI : MonoBehaviour
     public Button yesButton;
     public Button noButton;
 
+    public MainMenuUI mainMenuOBJ;
+
     // listeners are initiated
     void Start()
     {
@@ -24,7 +26,8 @@ public class ResetPromptUI : MonoBehaviour
         GameProgress.ResetProgress();
         // exit out of prompt to main menu
         resetPrompt.SetActive(false);
-        MainMenuUI.mainMenu.SetActive(true);
+        //MainMenuUI.mainMenu.SetActive(true);
+        mainMenuOBJ.mainMenu.SetActive(true);
     }
 
     // Cancels prompt
@@ -32,6 +35,6 @@ public class ResetPromptUI : MonoBehaviour
     {
         // exit out of prompt to main menu
         resetPrompt.SetActive(false);
-        MainMenuUI.mainMenu.SetActive(true);
+        mainMenuOBJ.mainMenu.SetActive(true);
     }
 }
