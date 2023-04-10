@@ -22,6 +22,7 @@ public class ProjectileScript : MonoBehaviour
     //exploding - projectile explodes into aoe on impact, dealing damage to enemies within its aoe x amount of times (x = ticks ) at y speed (y = tickrate)
     //note: for some unknown reason, exploding only works while tracking is also enabled. To turn on tracking without any actual tracking just set the projectile speed to 0
     //persistent - projectile doesnt dissapear on contact with an enemy 
+    //trap - used to denote a trap for some sprite stuff
     public List<string> tags = new List<string>();
 
     Rigidbody2D rb;
@@ -49,6 +50,13 @@ public class ProjectileScript : MonoBehaviour
 
     //this stuff is for the persistent tag
     public float collisions;
+
+    //for traps
+    public Sprite staticTrap;
+    public Sprite activeTrap;
+    bool trapActive = false;
+    float activeCD = .5f;
+    float currentCD = .5f;
 
     private void Start()
     {
@@ -90,6 +98,25 @@ public class ProjectileScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(tags.Contains("trap"))
+        {
+            if (trapActive)
+            {
+                sprite.sprite = activeTrap;
+                currentCD -= Time.deltaTime;
+            }
+            if(trapActive == false)
+            {
+                sprite.sprite = staticTrap;
+                currentCD = activeCD;
+            }
+            if (currentCD <= 0)
+            {
+                sprite.sprite = staticTrap;
+                trapActive = false;
+                currentCD = activeCD;
+            }
+        }
         if (tags.Contains("instant"))
         {
             gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -248,27 +275,33 @@ public class ProjectileScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("collision: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10) || collision.gameObject.tag == "trap")
         {
             overlapping = true;
 
         }
-        else
-        {
-            overlapping = false;
-        }
+
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("collision: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        Debug.Log("exit: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10) || collision.gameObject.tag == "trap")
         {
             overlapping = false;
 
+        }
+
+    }
+
+    public void trapAnim()
+    {
+        if(tags.Contains("trap"))
+        {
+            trapActive = true;
         }
 
     }

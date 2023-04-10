@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3905240698093503768}
   m_Layer: 11
   m_Name: mine
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,8 +161,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.54934883, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9935f3bda4b49b44bb290b40d3e238a3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   - exploding
   - tracking
   - static
+  - trap
   targetList: []
   target: {fileID: 0}
   speed: 0
@@ -206,6 +207,8 @@ MonoBehaviour:
   explosion: {fileID: 21300000, guid: 514ae3b08c69af9488270f3fff4dcd97, type: 3}
   initialCD: 0
   collisions: 0
+  staticTrap: {fileID: 21300000, guid: 9935f3bda4b49b44bb290b40d3e238a3, type: 3}
+  activeTrap: {fileID: 0}
 --- !u!50 &1666802997303184279
 Rigidbody2D:
   serializedVersion: 4

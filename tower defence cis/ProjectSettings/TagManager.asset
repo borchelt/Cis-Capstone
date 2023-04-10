@@ -9,6 +9,7 @@ TagManager:
   - wall
   - allyLayer
   - ManaTower
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3979157617
+    locked: 0
+  - name: Portal
+    uniqueID: 88841273
+    locked: 0
+  - name: enemy
+    uniqueID: 1400262201
     locked: 0

@@ -177,6 +177,7 @@ public class GameplayUI : MonoBehaviour
         if (selectedObj.GetComponent<ProjectileScript>() != null)
         {
             ProjScript = selectedObj.GetComponent<ProjectileScript>();
+            ProjScript.active = false;
 
         }
     }

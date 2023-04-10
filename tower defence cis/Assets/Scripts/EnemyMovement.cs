@@ -169,17 +169,19 @@ public class EnemyMovement : MonoBehaviour
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
         }
 
-        if(collision.gameObject.layer == 15)
+        if(collision.gameObject.layer == 15 && targetTag == "PlayerTower")
         {
             
             ProjectileScript trap = collision.gameObject.GetComponent<ProjectileScript>();
+            if (!trap.active)
+                return;
             if (!small && trap.small)
                 return;
-            
 
-                damageScript = gameObject.GetComponent<EnemyTakeDamage>();
-                damageScript.takeDamage(trap.damage);
-                trap.checkDestroy();
+            trap.trapAnim();
+            damageScript = gameObject.GetComponent<EnemyTakeDamage>();
+            damageScript.takeDamage(trap.damage);
+            trap.checkDestroy();
 
         }
     }

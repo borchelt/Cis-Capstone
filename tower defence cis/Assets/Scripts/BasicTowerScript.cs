@@ -194,7 +194,7 @@ public class BasicTowerScript : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("collision: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10) || collision.gameObject.tag == "trap")
         {
             overlapping = true;
 
@@ -205,7 +205,7 @@ public class BasicTowerScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("exit: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10))
+        if (collision.gameObject.tag == "wall" || (collision.gameObject.tag == "PlayerTower" && collision.gameObject.layer != 10) || collision.gameObject.tag == "trap")
         {
             overlapping = false;
 
