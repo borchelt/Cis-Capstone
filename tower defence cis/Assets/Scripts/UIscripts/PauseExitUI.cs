@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PauseExitUI : MonoBehaviour
 {
     // variables and objects set
-    public static GameObject pauseExitPrompt;
-    public MainMenuUI mainMenuOBJ;
+    public GameObject pauseExitPrompt;
+    public PauseMenuUI pauseOBJ;
+    //public MainMenuUI mainMenuOBJ;
 
     public Button yesButton;
     public Button noButton;
@@ -17,6 +18,8 @@ public class PauseExitUI : MonoBehaviour
     {
         yesButton.onClick.AddListener(OnYes);
         noButton.onClick.AddListener(OnNo);
+
+        pauseExitPrompt.SetActive(false);
     }
 
     public void OnYes()
@@ -29,5 +32,6 @@ public class PauseExitUI : MonoBehaviour
     {
         // exit out of prompt to pause menu
         pauseExitPrompt.SetActive(false);
+        pauseOBJ.pauseMenu.SetActive(true);
     }
 }

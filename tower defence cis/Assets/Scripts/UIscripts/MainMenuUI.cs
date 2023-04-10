@@ -14,15 +14,19 @@ public class MainMenuUI : MonoBehaviour
 
     public LevelSelectUI levelSelectOBJ;
     public StoryUI storyOBJ;
+    public ResetPromptUI resetOBJ;
+    public ExitGamePrompt exitOBJ;
 
-    // listeners are initiated
     private void Start()
     {
-        // menu ui is loaded in case it didn't load
+        // menu ui is loaded in case it didn't load. Other UI is disabled at start
         mainMenu.SetActive(true);
         levelSelectOBJ.levelList.SetActive(false);
         storyOBJ.storyText.SetActive(false);
+        resetOBJ.resetPrompt.SetActive(false);
+        exitOBJ.exitGamePrompt.SetActive(false);
 
+        // button listeners are initiated
         startButton.onClick.AddListener(OnStart);
         resetButton.onClick.AddListener(ResetProgressPrompt);
         exitButton.onClick.AddListener(QuitGamePrompt);
@@ -52,14 +56,14 @@ public class MainMenuUI : MonoBehaviour
     {
         // load prompt
         mainMenu.SetActive(false);
-        ResetPromptUI.resetPrompt.SetActive(true);
+        resetOBJ.resetPrompt.SetActive(true);
     }
 
     // action to exit the game application
     public void QuitGamePrompt()
     {
         // load prompt
-        mainMenu.SetActive(false);
-        ExitGamePrompt.exitGamePrompt.SetActive(true);
+       mainMenu.SetActive(false);
+        exitOBJ.exitGamePrompt.SetActive(true);
     }
 }

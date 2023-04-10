@@ -7,6 +7,7 @@ public class PauseMenuUI : MonoBehaviour
 {
     // variables and objects initialized here
     public GameObject pauseMenu;
+    public PauseExitUI pExitOBJ;
 
     public Button resumeButton;
     public Button menuButton;
@@ -22,6 +23,7 @@ public class PauseMenuUI : MonoBehaviour
 
         // pause menu is inactive at start
         pauseMenu.SetActive(false);
+        pExitOBJ.pauseExitPrompt.SetActive(false);
         timeController.timeRate = 1f;
         CameraScript.gameScreenActive = true;
     }
@@ -30,7 +32,8 @@ public class PauseMenuUI : MonoBehaviour
     public void loadExitPrompt()
     {
         // load prompt to exit level
-        PauseExitUI.pauseExitPrompt.SetActive(false);
+        pauseMenu.SetActive(false);
+        pExitOBJ.pauseExitPrompt.SetActive(true);
     }
 
     // done every game frame
@@ -58,8 +61,6 @@ public class PauseMenuUI : MonoBehaviour
         timeController.timeRate = 1f;
         gameStopped = false;
         CameraScript.gameScreenActive = true;
-
-        Debug.Log("Game unpaused");
     }
 
     // action to pause game
@@ -69,7 +70,5 @@ public class PauseMenuUI : MonoBehaviour
         timeController.timeRate = 0f;
         gameStopped = true;
         CameraScript.gameScreenActive = false;
-
-        Debug.Log("Game paused");
     }
 }

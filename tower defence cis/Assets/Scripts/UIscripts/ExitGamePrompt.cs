@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ExitGamePrompt : MonoBehaviour
 {
     // variables and objects set
-    public static GameObject exitGamePrompt;
+    public GameObject exitGamePrompt;
     public MainMenuUI mainMenuOBJ;
 
     public Button yesButton;
@@ -25,6 +25,7 @@ public class ExitGamePrompt : MonoBehaviour
         // in case it was not already, game realtime is stopped
         timeController.timeRate = 0f;
         Application.Quit();
+        Debug.Log("Game Quit");
     }
 
     // Cancels prompt
