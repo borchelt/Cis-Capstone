@@ -120,7 +120,7 @@ MonoBehaviour:
   prefire: 0
   mask:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 0
 --- !u!114 &7905834155937213270
 MonoBehaviour:
   m_ObjectHideFlags: 0
