@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     // variables and objects set
     public GameObject enemy;
+    Rigidbody2D rb;
 
     //cooldown variable for spawning enemies 
     public float cd = 2.0f;
@@ -13,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     // timer initiated for enemies
     void Start()
     {
+        rb = enemy.GetComponent<Rigidbody2D>();
         StartCoroutine(SpawnTimerEnemy());
     }
 
@@ -27,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
     {
         // Game object set for XY spawning coords
         GameObject enemyOBJ;
+        rb.mass = Random.Range(1, 15);
         // Enemy object is made in-game at the spawner XY coords
         enemyOBJ = Instantiate(enemy, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
     }
