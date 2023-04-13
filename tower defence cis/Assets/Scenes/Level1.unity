@@ -885,9 +885,10 @@ GameObject:
   - component: {fileID: 1476516181}
   - component: {fileID: 1476516180}
   - component: {fileID: 1476516179}
+  - component: {fileID: 1476516184}
   m_Layer: 0
   m_Name: DragonSword
-  m_TagString: Untagged
+  m_TagString: PlayerTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -951,7 +952,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &1476516182
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1012,13 +1013,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476516178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.809716, y: 1.1336032, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1476516184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476516178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e591e395158654780f9f09057e4dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  sprite: {fileID: 0}
+  killParent: 0
+  parent: {fileID: 0}
 --- !u!1 &1478482578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1263,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30.000002, y: 30.000002}
   m_EdgeRadius: 0
+--- !u!1 &2062619308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2798666120670635224, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+  m_PrefabInstance: {fileID: 2092190540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2092190540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,6 +1320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4352991983450699406, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+      propertyPath: manaCounter
+      value: 
+      objectReference: {fileID: 2062619308}
     - target: {fileID: 7206427523434247581, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
       propertyPath: m_Name
       value: GameMechUI

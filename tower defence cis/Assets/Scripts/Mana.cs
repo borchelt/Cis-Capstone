@@ -5,27 +5,33 @@ using UnityEngine.UI;
 
 public class Mana : MonoBehaviour
 {
-    public  int currentManaAmount;
+    public  int currentManaAmount; //Total amount of mana available to player
     
-    public GameObject manaBar;
-    Text manaBarText;
+    public GameObject manaCounter; //Reference for ManaCounter 
+    Text manaCounterText; //Reference for text component on ManaCounter
 
-    ManaTower manaTower;
+    ManaTower manaTower; //Reference for the ManaTower script
+
 
     private void Start()
     {
-        manaBarText = manaBar.GetComponent<Text>();
+        manaCounterText = manaCounter.GetComponent<Text>();
         manaTower = FindObjectOfType<ManaTower>();
     }
 
+    /*
+    Adds mana to the current mana total after getting 
+    amount from ManaTower script
+    */
     public void AddMana()
     {
         currentManaAmount += manaTower.DetermineTowerManaAmount();
         UpdateManaBar();
     }
 
+    //Updates text in ManaCounter on GameMechUI
     public void UpdateManaBar()
     {
-        manaBarText.text = currentManaAmount.ToString();
+        manaCounterText.text = currentManaAmount.ToString();
     }
 }

@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class DragonSword : MonoBehaviour
 {
-    public int dragonSwordHP;
-
     // Start is called before the first frame update
     void Start()
     {
