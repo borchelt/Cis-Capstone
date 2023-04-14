@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8893855991712139657}
   - component: {fileID: 4614602545878108725}
+  - component: {fileID: 4312183201359737607}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 1
+  m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
@@ -111,6 +112,22 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &4312183201359737607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286540691543066619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c81a2b3928cdb549a4044d5046baab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.011
+  rate: 1
+  ramp: 1
+  light: {fileID: 4614602545878108725}
 --- !u!1 &6556492793996001238
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +338,8 @@ MonoBehaviour:
   active: 1
   overlapping: 0
   cost: 0
-  damage: 0.34
-  duration: 0.5
+  damage: 1
+  duration: 0.1
   targetTag: enemy
   small: 0
   tags:
@@ -334,7 +351,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 1000
   aoe: 1.5
-  ticks: 3
+  ticks: 1
   tickRate: 0.1
   cd: 0
   spriteHandler: {fileID: 6556492793996001238}
@@ -353,7 +370,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
