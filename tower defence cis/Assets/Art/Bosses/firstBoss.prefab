@@ -108,7 +108,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,6 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7272a2a477e4ea705151500c6f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stayClose: 0
+  patrolPointEmpty: {fileID: 0}
+  worm: 0
+  small: 0
   speed: 125
   rb: {fileID: 8069682595983378439}
   targetList: []
@@ -200,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 125
   sprite: {fileID: 0}
+  killParent: 0
+  parent: {fileID: 0}
 --- !u!114 &6056475671119989694
 MonoBehaviour:
   m_ObjectHideFlags: 0

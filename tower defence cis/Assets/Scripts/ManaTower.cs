@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ManaTower : MonoBehaviour
 {
-    Mana manaManager; //Refernce to Mana script
+    public Mana manaManager; //Refernce to Mana script
 
     public int manaTowerLevel; //Current level of Mana Tower
 
@@ -20,7 +20,8 @@ public class ManaTower : MonoBehaviour
     //Starts the coroutine for mana generation when a Mana Tower is placed
     void Start()
     {
-        manaManager = FindObjectOfType<Mana>();
+        if(manaManager == null)
+            manaManager = FindObjectOfType<Mana>();
         StartCoroutine(GenerateMana());
     }
 
@@ -97,9 +98,14 @@ public class ManaTower : MonoBehaviour
     {
         while (makeMana)
         {
+            Debug.Log("mana: " + manaManager.currentManaAmount);
             DetermineManaGenerationRate();
-            manaManager.AddMana();
+            DetermineTowerManaAmount();
+            Debug.Log("mana: determinedGen");
+            manaManager.AddMana(towerManaAmount);
+            Debug.Log("mana: added");
             yield return new WaitForSeconds(manaGenerationRate);
+            Debug.Log("mana: waited");
         }
     }
 

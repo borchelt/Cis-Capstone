@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: maxAcceleration
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5622166507090354909, guid: 72d82b23b66480947a14d8f0971d2b73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8086314581185302176, guid: 72d82b23b66480947a14d8f0971d2b73, type: 3}
       propertyPath: parent
       value: 
@@ -136,6 +140,10 @@ PrefabInstance:
       propertyPath: killParent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3786338539307078510, guid: 10d4a62346843274ab20143212f65a16, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 4533168407536590234, guid: 10d4a62346843274ab20143212f65a16, type: 3}
       propertyPath: m_Name
       value: ThirdBossUpperBody (2)
@@ -220,6 +228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThirdBossUpperBody
       objectReference: {fileID: 0}
+    - target: {fileID: 4468958820725026708, guid: 74448a266a9acea4aa6043bc00b72e62, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5095491090271880395, guid: 74448a266a9acea4aa6043bc00b72e62, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -289,6 +301,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1878453467267427007}
     m_Modifications:
+    - target: {fileID: 1462235993973133675, guid: 095a6fe3dc1a6d840bce9161ee1053cc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2173036927617851295, guid: 095a6fe3dc1a6d840bce9161ee1053cc, type: 3}
       propertyPath: m_Name
       value: ThirdBossUpperBody (1)

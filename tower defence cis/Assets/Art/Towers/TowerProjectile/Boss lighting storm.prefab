@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,9 +184,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a4323fb0e66c84ebc7644fec07c9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
+  overlapping: 0
+  cost: 0
   damage: 1
   duration: 3
   targetTag: PlayerTower
+  small: 0
   tags:
   - exploding
   - tracking
@@ -202,6 +206,9 @@ MonoBehaviour:
   spriteHandler: {fileID: 5904265942993115117}
   explosion: {fileID: 21300000, guid: 514ae3b08c69af9488270f3fff4dcd97, type: 3}
   initialCD: 0
+  collisions: 0
+  staticTrap: {fileID: 0}
+  activeTrap: {fileID: 0}
 --- !u!50 &8827235443504046658
 Rigidbody2D:
   serializedVersion: 4

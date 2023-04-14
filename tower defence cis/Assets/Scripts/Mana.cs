@@ -10,28 +10,34 @@ public class Mana : MonoBehaviour
     public GameObject manaCounter; //Reference for ManaCounter 
     Text manaCounterText; //Reference for text component on ManaCounter
 
-    ManaTower manaTower; //Reference for the ManaTower script
 
 
-    private void Start()
+
+    private void Awake()
     {
         manaCounterText = manaCounter.GetComponent<Text>();
-        manaTower = FindObjectOfType<ManaTower>();
+        Debug.Log("mana: " + manaCounterText);
     }
 
     /*
     Adds mana to the current mana total after getting 
     amount from ManaTower script
     */
-    public void AddMana()
+    public void AddMana(int manaAmount)
     {
-        currentManaAmount += manaTower.DetermineTowerManaAmount();
+        Debug.Log("mana: adding mana");
+        currentManaAmount += manaAmount;
+        Debug.Log("mana: added mana");
+        Debug.Log("mana: " + currentManaAmount);
         UpdateManaBar();
+        Debug.Log("mana: fully updated");
     }
 
     //Updates text in ManaCounter on GameMechUI
     public void UpdateManaBar()
     {
+        Debug.Log("mana: starting update");
         manaCounterText.text = currentManaAmount.ToString();
+        Debug.Log("mana: updated");
     }
 }

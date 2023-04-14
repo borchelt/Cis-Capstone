@@ -99,7 +99,7 @@ public class BasicTowerScript : MonoBehaviour
         location = shooter.transform.position;
 
         //casts a ray to check if the target is behind anything (usually a wall)
-        RaycastHit2D aimRay = Physics2D.Raycast(transform.position, targetLocation - location, range, mask);
+        RaycastHit2D aimRay = Physics2D.Raycast(transform.position, targetLocation - location, Vector2.Distance(targetLocation, location), mask);
         Debug.DrawRay(transform.position, targetLocation - location);
 
         //if the ray collides with something, dont attack

@@ -61,7 +61,7 @@ public class WaveManager : MonoBehaviour
         for(int i = 1; i <= wave.count; i++)
         {
             GameObject enemyOBJ;
-            Vector2 randomVector = new Vector2(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f));
+            Vector2 randomVector = new Vector2(Random.Range(-20.0f, 20.0f), Random.Range(-20.0f, 20.0f));
             // Enemy object is made in-game at the spawner XY coords + the random vector
             enemyOBJ = Instantiate(wave.enemy, new Vector2(transform.position.x + randomVector.x, transform.position.y + randomVector.y), Quaternion.identity);
         }

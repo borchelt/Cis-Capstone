@@ -10,6 +10,7 @@ TagManager:
   - allyLayer
   - ManaTower
   - trap
+  - NoTag
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - bossProjectileLayer
   - trapLayer
   - Ground
-  - 
+  - EnemySelfCollisonLayer
   - 
   - 
   - 

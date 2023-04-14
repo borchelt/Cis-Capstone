@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -194,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -253,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -312,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -371,6 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -430,6 +450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Footsoldier '
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -489,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -632,6 +660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -732,7 +764,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -811,6 +843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -870,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -1014,7 +1054,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1058,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -1113,6 +1157,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387972064175472680, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3272673274955903549, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
       propertyPath: m_Name
       value: Barracks (1)
@@ -1176,6 +1224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1231,6 +1283,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387972064175472680, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3272673274955903549, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
       propertyPath: m_Name
       value: Barracks (4)
@@ -1294,6 +1350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1353,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1408,6 +1472,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387972064175472680, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3272673274955903549, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
       propertyPath: m_Name
       value: Barracks
@@ -1471,6 +1539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1574,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: firstBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 8069682595983378553, guid: d49ff7abdfea5bc4d811a4c9717aab07, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d49ff7abdfea5bc4d811a4c9717aab07, type: 3}
@@ -1589,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footsoldier  (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4287800464856425867, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 4842336855611313876, guid: 36c39583b95370845ac452cbd8054aad, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1644,6 +1724,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387972064175472680, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3272673274955903549, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
       propertyPath: m_Name
       value: Barracks (3)
@@ -1703,6 +1787,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387972064175472680, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 3272673274955903549, guid: 9abb97d6909d3f845b284d397c508050, type: 3}
       propertyPath: m_Name
       value: Barracks (2)
