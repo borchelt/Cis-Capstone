@@ -7,9 +7,10 @@ using Pathfinding;
 
 public class GameplayUI : MonoBehaviour
 {
-    public static GameObject gameplayUIobj;
+    //public static GameObject gameplayUIobj;
+    public GameObject gameplayUIobj;
 
-    // variables and objects set
+    // button objects set
     public Button button1;
     public Button button2;
     public Button button3;
@@ -18,10 +19,10 @@ public class GameplayUI : MonoBehaviour
     public Button button6;
     public Button spellButton;
 
+    // array for convenience
     Button[] buttonArr;
 
     // objects for placement
-
     public GameObject[] objects;
     public GameObject selectedObj;
     Vector2 position;
@@ -36,18 +37,16 @@ public class GameplayUI : MonoBehaviour
     Mana manaManager;
     GraphUpdateObject scan;
 
+    // class object references set
+    public dropShootUI dShootOBJ;
+
     // listeners are initiated
     void Start()
     {
+        // array is set
         buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton };
+
         manaManager = FindObjectOfType<Mana>();
-        //button1.onClick.AddListener(on1);
-        //button2.onClick.AddListener(on2);
-        //button3.onClick.AddListener(on3);
-        //button4.onClick.AddListener(on4);
-        //button5.onClick.AddListener(on5);
-        //button6.onClick.AddListener(on6);
-        //spellButton.onClick.AddListener(onSpell);
     }
 
     // Update is called once per frame
@@ -157,6 +156,7 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
+    // tower placement logic
     public void startPlacement(int i)
     {
 
@@ -214,6 +214,7 @@ public class GameplayUI : MonoBehaviour
         Debug.Log("obj: proj activated");
     }
 
+    // snap grid logic
     float snapToGrid(float position)
     {
         float difference = position % gridSize;
@@ -263,6 +264,7 @@ public class GameplayUI : MonoBehaviour
 
     }
 
+    // tower prices set
     public void checkButtonPrice()
     {
         foreach(Button button in buttonArr)

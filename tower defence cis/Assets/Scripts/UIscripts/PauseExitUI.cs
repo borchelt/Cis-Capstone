@@ -5,20 +5,22 @@ using UnityEngine.UI;
 
 public class PauseExitUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object references set
     public GameObject pauseExitPrompt;
     public PauseMenuUI pauseOBJ;
-    //public MainMenuUI mainMenuOBJ;
 
+    // button objects set
     public Button yesButton;
     public Button noButton;
 
     // Start is called before the first frame update
     void Start()
     {
+        // listeners set
         yesButton.onClick.AddListener(OnYes);
         noButton.onClick.AddListener(OnNo);
 
+        // prompt deactivated on level start
         pauseExitPrompt.SetActive(false);
     }
 

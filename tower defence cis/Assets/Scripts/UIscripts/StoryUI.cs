@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class StoryUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object references set
     public GameObject storyText;
     public LevelSelectUI levelSelectOBJ;
     public Button okayButton;
 
-    // listeners are initiated
+    // listener is initiated
     void Start()
     {
         okayButton.onClick.AddListener(onOkay);
@@ -22,8 +22,9 @@ public class StoryUI : MonoBehaviour
         // exit to level select
         storyText.SetActive(false);
         levelSelectOBJ.levelList.SetActive(true);
-
-        if(GameProgress.firstStart == true)
+        
+        // deactivated on button click
+        if (GameProgress.firstStart == true)
         {
             GameProgress.firstStart = false;
         }

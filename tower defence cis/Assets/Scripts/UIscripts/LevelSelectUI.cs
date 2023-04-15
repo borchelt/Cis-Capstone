@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class LevelSelectUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object references set
     public GameObject levelList;
     public MainMenuUI mainMenuOBJ;
     public StoryUI storyOBJ;
 
+    // button objects set
     public Button tutorButton;
     public Button level1Button;
     public Button level2Button;
@@ -99,7 +100,7 @@ public class LevelSelectUI : MonoBehaviour
     // selected story
     public void onStory()
     {
-        // load story
+        // load story text UI
         levelList.SetActive(false);
         storyOBJ.storyText.SetActive(true);
     }

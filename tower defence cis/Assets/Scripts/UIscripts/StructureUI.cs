@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class StructureUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object set
     public GameObject structureMenu;
 
+    // button objects set
     public Button upgradeButton;
     public Button moveButton;
     public Button sellButton;

@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object set
     public GameObject mainMenu;
 
+    // button objects set
     public Button startButton;
     public Button resetButton;
     public Button exitButton;
 
+    // class object references set
     public LevelSelectUI levelSelectOBJ;
     public StoryUI storyOBJ;
     public ResetPromptUI resetOBJ;
@@ -31,6 +33,7 @@ public class MainMenuUI : MonoBehaviour
         resetButton.onClick.AddListener(ResetProgressPrompt);
         exitButton.onClick.AddListener(QuitGamePrompt);
 
+        // screen inactive
         CameraScript.gameScreenActive = false;
     }
 
@@ -39,9 +42,10 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.SetActive(false);
 
+        // When first selecting button, player is taken to story UI.
         if (GameProgress.firstStart == true)
         {
-            //load story UI. when player clicks 'okay', firstStart is set to false
+            // load story text
             storyOBJ.storyText.SetActive(true);
         }
         else
@@ -62,7 +66,7 @@ public class MainMenuUI : MonoBehaviour
     // action to exit the game application
     public void QuitGamePrompt()
     {
-        // load prompt
+        // load exit game prompt
        mainMenu.SetActive(false);
         exitOBJ.exitGamePrompt.SetActive(true);
     }

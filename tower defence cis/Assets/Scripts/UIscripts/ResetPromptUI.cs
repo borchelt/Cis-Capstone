@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class ResetPromptUI : MonoBehaviour
 {
-    // variables and objects set
+    // class object set
     public GameObject resetPrompt;
 
+    // button objects set
     public Button yesButton;
     public Button noButton;
 

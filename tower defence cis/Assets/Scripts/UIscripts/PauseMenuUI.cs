@@ -5,26 +5,32 @@ using UnityEngine.UI;
 
 public class PauseMenuUI : MonoBehaviour
 {
-    // variables and objects initialized here
+    // class object references set
     public GameObject pauseMenu;
     public PauseExitUI pExitOBJ;
 
+    // button objects set
     public Button resumeButton;
     public Button menuButton;
 
+    // variable set
     public static bool gameStopped = false;
 
-    // actions done at start
+    // Start is called before the first frame update
     private void Start()
     {
         // listeners for both buttons
         resumeButton.onClick.AddListener(Resume);
         menuButton.onClick.AddListener(loadExitPrompt);
 
-        // pause menu is inactive at start
+        // pause menu and exit prompt is inactive at start
         pauseMenu.SetActive(false);
         pExitOBJ.pauseExitPrompt.SetActive(false);
+
+        // ensures game time is normal
         timeController.timeRate = 1f;
+
+        // screen is active
         CameraScript.gameScreenActive = true;
     }
 
@@ -45,10 +51,12 @@ public class PauseMenuUI : MonoBehaviour
             // checks if game paused or not
             if (gameStopped)
             {
+                // game unpaused
                 Resume();
             }
             else
             {
+                //game paused
                 Pause();
             }
         }
@@ -57,6 +65,7 @@ public class PauseMenuUI : MonoBehaviour
     // action to resume game
     public void Resume()
     {
+        // puase UI disabled and game resumes
         pauseMenu.SetActive(false);
         timeController.timeRate = 1f;
         gameStopped = false;
@@ -66,6 +75,7 @@ public class PauseMenuUI : MonoBehaviour
     // action to pause game
     void Pause()
     {
+        // pause UI active and gameplay stops
         pauseMenu.SetActive(true);
         timeController.timeRate = 0f;
         gameStopped = true;
