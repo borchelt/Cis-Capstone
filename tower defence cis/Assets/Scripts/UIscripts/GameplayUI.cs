@@ -11,6 +11,9 @@ public class GameplayUI : MonoBehaviour
     public GameObject gameplayUIobj;
 
     // button objects set
+    // public Button dropShOpen
+    // public Button dropAOEopen
+    // public Button dropMineOpen
     public Button button1;
     public Button button2;
     public Button button3;
@@ -47,6 +50,14 @@ public class GameplayUI : MonoBehaviour
         buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton };
 
         manaManager = FindObjectOfType<Mana>();
+
+        // dropShOpen.onClick.AddListener(onOpenShoot);
+        // dropAOEopen.onClick.AddListener(onOpenAOE);
+        // dropMineOpen.onClick.AddListener(onOpenMine);
+
+        // dShootOBJ.dropShoot.SetActive(false);
+        // dAoeOBJ.dropAOE.SetActive(false);
+        // dMineOBJ.dropMine.SetActive(false);
     }
 
     // Update is called once per frame
@@ -126,6 +137,21 @@ public class GameplayUI : MonoBehaviour
             // no deactivate button listener for button 6
         }
         */
+    }
+
+    public void onShootOpen()
+    {
+        // dShootOBJ.dropShoot.SetActive(true);
+    }
+
+    public void onAOEOpen()
+    {
+        // dAoeOBJ.dropAOE.SetActive(true);
+    }
+
+    public void onMineOpen()
+    {
+        // dMineOBJ.dropMine.SetActive(true);
     }
 
     // activate spell use
