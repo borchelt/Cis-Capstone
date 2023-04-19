@@ -17,6 +17,8 @@ public class WaveManager : MonoBehaviour
     }
 
     //stuff for getting the score and spawning the waves
+    public float spawnMaxDistance;
+    public float spawnMinDistance;
     public List<waveDef> levelLayout;
     public int waveIndex = 0;
     bool lastWave = false;
@@ -61,7 +63,7 @@ public class WaveManager : MonoBehaviour
         for(int i = 1; i <= wave.count; i++)
         {
             GameObject enemyOBJ;
-            Vector2 randomVector = new Vector2(Random.Range(-20.0f, 20.0f), Random.Range(-20.0f, 20.0f));
+            Vector2 randomVector = getDistance();
             // Enemy object is made in-game at the spawner XY coords + the random vector
             enemyOBJ = Instantiate(wave.enemy, new Vector2(transform.position.x + randomVector.x, transform.position.y + randomVector.y), Quaternion.identity);
         }
@@ -75,6 +77,37 @@ public class WaveManager : MonoBehaviour
             return;
         }
             
+    }
+
+    Vector2 getDistance()
+    {
+        int flipVal = 1;
+        if(Random.value > .5)
+        {
+            flipVal = -1;
+        }
+        float xDist;
+        float yDist;
+        
+        xDist = Random.Range(-spawnMaxDistance, spawnMaxDistance);
+        yDist = Random.Range(-spawnMaxDistance, spawnMaxDistance);
+
+        if (xDist < spawnMinDistance && yDist < spawnMinDistance)
+        {
+            if(Random.value > .5)
+            {
+                xDist = spawnMinDistance;
+            }
+            else
+            {
+                yDist = spawnMinDistance;
+            }
+        }
+
+        return new Vector2(xDist*flipVal, yDist*flipVal);
+
+
+
     }
 
 
