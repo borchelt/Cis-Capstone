@@ -136,6 +136,14 @@ PrefabInstance:
       value: Level1SpawnManager (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
@@ -980,7 +988,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b67797a85c2aa14aae0b2706fd918f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f24e038fd2bc7cb43ae55a28cdf75c46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1233,6 +1241,14 @@ PrefabInstance:
     - target: {fileID: 4246608351122304709, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_Name
       value: Level1SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_Materials.Array.data[0]
