@@ -7,7 +7,14 @@ using UnityEngine;
 public class DragonSword : MonoBehaviour
 {
     public EnemyTakeDamage damageScriptOBJ;
-    public WinLose wlOBJ;
+    //public WinLose wlOBJ;
+    WinLose wlOBJ;
+
+
+    private void Start()
+    {
+        wlOBJ = FindObjectOfType<WinLose>();
+    }
 
     // Update is called once per frame
     void Update()

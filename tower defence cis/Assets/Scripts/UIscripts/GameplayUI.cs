@@ -157,7 +157,7 @@ public class GameplayUI : MonoBehaviour
     // activate spell use
     public void onSpell()
     {
-        startPlacement(6);
+        startPlacement(Random.Range(6, 8));
         Debug.Log("spell");
         /*
         if(spellReady == true)

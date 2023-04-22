@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1SpawnManager (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMinDistance
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -153,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.y
@@ -344,17 +352,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8822233526711146658, guid: 18a2e69c34828c54a8f2fb5fd694ee5d, type: 3}
   m_PrefabInstance: {fileID: 1689259671}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &604155972 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8822233526711146657, guid: 18a2e69c34828c54a8f2fb5fd694ee5d, type: 3}
-  m_PrefabInstance: {fileID: 1689259671}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38c7cdcc7c80ab4c949565096373a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &745576212
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageScriptOBJ: {fileID: 1476516184}
-  wlOBJ: {fileID: 604155972}
 --- !u!61 &1476516180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1244,6 +1240,14 @@ PrefabInstance:
       propertyPath: waveIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMinDistance
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304711, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1262,7 +1266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.y

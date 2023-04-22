@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2dcf4fdd95e4440a0bd05fbd337387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplayUIobj: {fileID: 0}
   button1: {fileID: 2798666121245512004}
   button2: {fileID: 2798666120225791230}
   button3: {fileID: 2798666120128494197}
@@ -480,12 +481,14 @@ MonoBehaviour:
   - {fileID: 3496034440557544093, guid: c55d8729f339cb0469fad9accddcdd75, type: 3}
   - {fileID: 7149863401767718133, guid: f9a1d628eee17dc459cc81c0cce1f160, type: 3}
   - {fileID: 3291598522713575658, guid: d9e794b6937945c48ab2ef42726b2ac1, type: 3}
-  - {fileID: 7606437054246972208, guid: 631fddda7404cf34da7ffb0128de690f, type: 3}
+  - {fileID: 5004799108553038192, guid: b22d4eb2dcc67cf4c85d03e96e1c542c, type: 3}
+  - {fileID: 3798480170991360576, guid: 18d9144295538b54cbd996e9e356928a, type: 3}
   selectedObj: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
   gridSize: 0.3
+  dShootOBJ: {fileID: 0}
 --- !u!1 &2798666120128494199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,5 +2682,5 @@ Transform:
   m_Children:
   - {fileID: 2798666120117154952}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

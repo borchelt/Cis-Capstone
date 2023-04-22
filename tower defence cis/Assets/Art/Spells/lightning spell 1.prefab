@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   overlapping: 0
-  cost: 3000
+  cost: 1000
   damage: 5
   duration: 2
   targetTag: enemy

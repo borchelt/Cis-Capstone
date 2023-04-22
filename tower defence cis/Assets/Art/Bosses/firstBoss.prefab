@@ -130,10 +130,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 17f61b2eb91d44d448d2c209671252f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da0cdef3f1720954394c62742c7b9f0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -320,4 +320,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageScriptOBJ: {fileID: 5890967190900401156}
-  wlOBJ: {fileID: 0}
