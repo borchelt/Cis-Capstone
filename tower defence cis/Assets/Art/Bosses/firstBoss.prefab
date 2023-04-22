@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 7837388815708469410}
   - component: {fileID: 1349452913267790497}
   - component: {fileID: 1768865131446761865}
+  - component: {fileID: -855226617923688488}
   m_Layer: 6
   m_Name: firstBoss
   m_TagString: enemy
@@ -306,3 +307,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.8, y: 3}
   m_Direction: 0
+--- !u!114 &-855226617923688488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322729719068427917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a154f95e2289d4dae8deca5d215457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageScriptOBJ: {fileID: 5890967190900401156}
+  wlOBJ: {fileID: 0}

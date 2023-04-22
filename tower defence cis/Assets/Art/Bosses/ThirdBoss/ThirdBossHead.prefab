@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 5565121672184975878}
   - component: {fileID: 3693672355947919365}
   - component: {fileID: 4140200320123835181}
+  - component: {fileID: -2103631833895800903}
   m_Layer: 6
   m_Name: ThirdBossHead
   m_TagString: enemy
@@ -306,3 +307,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &-2103631833895800903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928970816466512937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a154f95e2289d4dae8deca5d215457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageScriptOBJ: {fileID: 8086314581185302176}

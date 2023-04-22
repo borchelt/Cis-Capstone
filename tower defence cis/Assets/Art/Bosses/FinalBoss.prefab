@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 6678299031764225487}
   - component: {fileID: 6678299031764225486}
   - component: {fileID: 6678299031764225481}
+  - component: {fileID: -4171944383119643394}
   m_Layer: 6
   m_Name: FinalBoss
   m_TagString: enemy
@@ -333,6 +334,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 35554596503920338, guid: b89dc38fffbd8b94e8490b0974db22fa, type: 3}
   cd: 0.3
+--- !u!114 &-4171944383119643394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121244972173868571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a154f95e2289d4dae8deca5d215457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageScriptOBJ: {fileID: 967991227294538898}
 --- !u!1 &5805787631156955913
 GameObject:
   m_ObjectHideFlags: 0

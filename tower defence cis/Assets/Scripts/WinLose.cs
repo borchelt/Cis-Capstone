@@ -7,12 +7,13 @@ public class WinLose : MonoBehaviour
     public GameObject wlOBJ;
     public WinUI winOBJ;
     public LoseUI loseOBJ;
-    public WaveManager waveManagerOBJ;
+    //public WaveManager waveManagerOBJ;
 
+    // Variable for individual scene name
     public string sceneName;
 
-    public GameObject[] dragonSword = GameObject.FindGameObjectsWithTag("DragonSword");
-    public GameObject[] levelBoss;
+    //public GameObject[] dragonSword;
+    //public GameObject[] levelBoss;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,15 @@ public class WinLose : MonoBehaviour
         winOBJ.winUI.SetActive(false);
         loseOBJ.loseUI.SetActive(false);
 
-        getSceneName();
-        getBoss();
+        //getSceneName();
+        //getDragon();
+        //getBoss();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if(levelBoss == null && waveManagerOBJ.waveIndex >= 37)
         {
             levelWin();
@@ -36,6 +39,7 @@ public class WinLose : MonoBehaviour
         {
             levelLose();
         }
+        */
     }
 
     public void levelWin()
@@ -83,12 +87,12 @@ public class WinLose : MonoBehaviour
         yield return new WaitForSecondsRealtime(wait);
         GameSceneManager.Instance.LoadScene("MainMenu");
     }
-
     public void getSceneName()
     {
         //sceneName = scene
     }
 
+    /*
     public void getBoss()
     {
         if(sceneName == "level1")
@@ -96,4 +100,10 @@ public class WinLose : MonoBehaviour
             levelBoss = GameObject.FindGameObjectsWithTag("firstBoss");
         }
     }
+
+    public void getDragon()
+    {
+        dragonSword = GameObject.FindGameObjectsWithTag("DragonSword");
+    }
+    */
 }
