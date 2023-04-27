@@ -22,21 +22,28 @@ public class dropShootUI : MonoBehaviour
         shoot2.onClick.AddListener(onS2);
         shoot3.onClick.AddListener(onS3);
         closeButton.onClick.AddListener(onClose);
+
+        dropShoot.SetActive(false);
     }
 
-    public void onS1()
+    void Update()
+    {
+        gameplayOBJ.placeCheck();
+    }
+
+        public void onS1()
     {
         gameplayOBJ.startPlacement(1);
     }
 
     public void onS2()
     {
-        gameplayOBJ.startPlacement(1);
+        //gameplayOBJ.startPlacement(8);
     }
 
     public void onS3()
     {
-        gameplayOBJ.startPlacement(1);
+        //gameplayOBJ.startPlacement(9);
     }
 
     public void onClose()

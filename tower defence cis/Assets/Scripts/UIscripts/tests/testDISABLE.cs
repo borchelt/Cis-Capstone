@@ -6,6 +6,7 @@ public class testDISABLE : MonoBehaviour
 {
     public GameObject disable;
 
+    public testWL wlOBJ;
     public testStruct structOBJ;
     public testPrompts promptsOBJ;
     public testMech mechOBJ;
@@ -19,6 +20,7 @@ public class testDISABLE : MonoBehaviour
         promptsOBJ.prompts.SetActive(false);
         //mechOBJ.mech.SetActive(false);
         //dropOBJ.drop.SetActive(false);
+        wlOBJ.wlUI.SetActive(false);
         pauseOBJ.pause.SetActive(false);
     }
 

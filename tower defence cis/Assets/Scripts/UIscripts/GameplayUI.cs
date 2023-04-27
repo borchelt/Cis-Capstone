@@ -11,9 +11,10 @@ public class GameplayUI : MonoBehaviour
     public GameObject gameplayUIobj;
 
     // button objects set
-    // public Button dropShOpen
-    // public Button dropAOEopen
-    // public Button dropMineOpen
+    public Button dropShOpen;
+    public Button dropAOEopen;
+    public Button dropMineOpen;
+
     public Button button1;
     public Button button2;
     public Button button3;
@@ -42,6 +43,8 @@ public class GameplayUI : MonoBehaviour
 
     // class object references set
     public dropShootUI dShootOBJ;
+    public dropAoeUI dAoeOBJ;
+    public dropMineUI dMineOBJ;
 
     // listeners are initiated
     void Start()
@@ -51,9 +54,9 @@ public class GameplayUI : MonoBehaviour
 
         manaManager = FindObjectOfType<Mana>();
 
-        // dropShOpen.onClick.AddListener(onOpenShoot);
-        // dropAOEopen.onClick.AddListener(onOpenAOE);
-        // dropMineOpen.onClick.AddListener(onOpenMine);
+        dropShOpen.onClick.AddListener(onShootOpen);
+        dropAOEopen.onClick.AddListener(onAoeOpen);
+        dropMineOpen.onClick.AddListener(onMineOpen);
 
         // dShootOBJ.dropShoot.SetActive(false);
         // dAoeOBJ.dropAOE.SetActive(false);
@@ -63,61 +66,59 @@ public class GameplayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        placeCheck();
+    }
+
+    public void placeCheck()
+    {
         Debug.Log("obj: " + selectedObj);
         checkButtonPrice();
         getPlaceRay();
         collisionCheck();
 
-        if(selectedObj != null)
+        if (selectedObj != null)
         {
             selectedObj.transform.position = new Vector2(snapToGrid(position.x), snapToGrid(position.y));
 
-            if(Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1))
             {
                 Destroy(selectedObj);
                 place(false);
             }
-            if(Input.GetMouseButtonDown(0) && canPlace)
+            if (Input.GetMouseButtonDown(0) && canPlace)
             {
                 place(true);
             }
-            
-
         }
     }
 
     // activate placement for tower
     public void on1()
     {
-        Debug.Log("button1");
         startPlacement(0);
     }
 
     // activate placement for tower
     public void on2()
     {
-        Debug.Log("button2");
         startPlacement(1);
     }
 
     // activate placement for tower
     public void on3()
     {
-        Debug.Log("button3");
         startPlacement(2);
     }
 
     // activate placement for tower
     public void on4()
     {
-        Debug.Log("button4");
         startPlacement(3);
     }
 
     // activate placement for tower
     public void on5()
     {
-        Debug.Log("button5");
         startPlacement(4);
     }
 
@@ -125,7 +126,6 @@ public class GameplayUI : MonoBehaviour
     public void on6()
     {
 
-        Debug.Log("button6");
         startPlacement(5);
         /*
         if (trapnum >= 0)
@@ -141,17 +141,17 @@ public class GameplayUI : MonoBehaviour
 
     public void onShootOpen()
     {
-        // dShootOBJ.dropShoot.SetActive(true);
+        dShootOBJ.dropShoot.SetActive(true);
     }
 
-    public void onAOEOpen()
+    public void onAoeOpen()
     {
-        // dAoeOBJ.dropAOE.SetActive(true);
+        dAoeOBJ.dropAOE.SetActive(true);
     }
 
     public void onMineOpen()
     {
-        // dMineOBJ.dropMine.SetActive(true);
+        dMineOBJ.dropMine.SetActive(true);
     }
 
     // activate spell use
