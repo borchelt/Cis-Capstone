@@ -2920,11 +2920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: spawnMaxDistance
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: spawnMinDistance
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[0].count
@@ -3252,7 +3252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56
+      value: -25.97
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304712, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: m_LocalPosition.z
