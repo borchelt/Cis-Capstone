@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   overlapping: 0
-  cost: 650
+  cost: 400
   targetTag: NoTag
   targetList: []
   target: {fileID: 0}
