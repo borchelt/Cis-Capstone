@@ -1204,20 +1204,36 @@ PrefabInstance:
       value: Level5SpawnManager
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: spawnMinDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[0].enemy
       value: 
       objectReference: {fileID: 858810535441855698, guid: 82d05a54e12d6fe478b3ffd68a2b2a0d, type: 3}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[1].count
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: levelLayout.Array.data[1].enemy
+      value: 
+      objectReference: {fileID: 4675832983928441164, guid: eb5e649e2b92a9c4589cd37aa4252335, type: 3}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[2].count
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[3].count
-      value: 20
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
+      propertyPath: levelLayout.Array.data[4].count
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[4].enemy
@@ -1225,11 +1241,11 @@ PrefabInstance:
       objectReference: {fileID: 1790203773722776292, guid: 8e79de5b3aac6d243ae2c60a268453ae, type: 3}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[5].count
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[6].count
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[7].enemy
@@ -1237,11 +1253,11 @@ PrefabInstance:
       objectReference: {fileID: 1790203773722776292, guid: 8e79de5b3aac6d243ae2c60a268453ae, type: 3}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[8].count
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[9].count
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[10].count
@@ -1257,11 +1273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[12].count
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[13].count
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[14].count
@@ -1309,11 +1325,11 @@ PrefabInstance:
       objectReference: {fileID: 858810535441855698, guid: 82d05a54e12d6fe478b3ffd68a2b2a0d, type: 3}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[21].count
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[22].count
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[23].count
@@ -1341,7 +1357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[27].count
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[28].count
@@ -1405,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[1].timeWait
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4246608351122304710, guid: de0827fdd14c6254193ce2baa0a51421, type: 3}
       propertyPath: levelLayout.Array.data[2].timeWait
