@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Audio;
 
 public class EnemyMovement : MonoBehaviour
 {
 
+    //for audio 
+    public AudioSource walkAudio;
+    bool playsAudioOnWalk;
     //for allied units to stay close 
     GameObject parentTower;
     public bool stayClose;
@@ -51,6 +55,11 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (walkAudio == null)
+            playsAudioOnWalk = false;
+        else
+            playsAudioOnWalk = true;
+            
         //moves the reference two objects up 
         if(stayClose)
             parentTower = gameObject.transform.parent.gameObject.transform.parent.gameObject;
@@ -68,6 +77,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(playsAudioOnWalk)
+            manageSound();
         trapCd -= Time.deltaTime;
         getClosestTarget();
         setDestination();
@@ -162,6 +173,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject == target)
         {
+            if (playsAudioOnWalk)
+                walkAudio.Stop();
             //on initial collision the enemy attacks the tower faster
             if (attackCD == maxCD)
                 attackCD = chargeCD;
@@ -201,10 +214,23 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject == target)
         {
-           //on initial collision the enemy attacks the tower faster
-           attacking = true;
+            //on initial collision the enemy attacks the tower faster
+            attacking = true;
            damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
          }
+
+    }
+
+    private void manageSound()
+    {
+        if(attacking)
+        {
+            walkAudio.Stop();
+        }
+        else if(!walkAudio.isPlaying)
+        {
+            walkAudio.Play();
+        }
 
     }
 
