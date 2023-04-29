@@ -12,27 +12,46 @@ public class GameProgress : MonoBehaviour
     public static bool level4Win = false;
     public static bool level5Win = false;
 
+    LevelSelectUI levelSelectOBJ;
+
     // Update is called once per frame
     void Update()
     {
-        /*
         if (level1Win == true)
         {
-            level2Unlock();
+            levelSelectOBJ.level2Button.interactable = true;
         }
+        else
+        {
+            levelSelectOBJ.level2Button.interactable = false;
+        }
+
         if (level2Win == true)
         {
-            level3Unlock();
+            levelSelectOBJ.level3Button.interactable = true;
         }
+        else
+        {
+            levelSelectOBJ.level3Button.interactable = false;
+        }
+
         if (level3Win == true)
         {
-            level4Unlock();
+            levelSelectOBJ.level4Button.interactable = true;
         }
+        else
+        {
+            levelSelectOBJ.level4Button.interactable = false;
+        }
+
         if (level4Win == true)
         {
-            level5Unlock();
+            levelSelectOBJ.level5Button.interactable = true;
         }
-         */
+        else
+        {
+            levelSelectOBJ.level5Button.interactable = false;
+        }
     }
 
     // action to reset all game progress

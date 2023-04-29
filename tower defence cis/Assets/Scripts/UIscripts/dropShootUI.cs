@@ -15,6 +15,10 @@ public class dropShootUI : MonoBehaviour
     public GameObject dropShoot;
     public GameplayUI gameplayOBJ;
 
+    public GameObject selectedObj;
+    BasicTowerScript towerScript;
+    ProjectileScript ProjScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,19 @@ public class dropShootUI : MonoBehaviour
         public void onS1()
     {
         gameplayOBJ.startPlacement(1);
+
+        if (selectedObj.GetComponent<BasicTowerScript>() != null)
+        {
+            towerScript = selectedObj.GetComponent<BasicTowerScript>();
+            towerScript.active = false;
+        }
+
+        if (selectedObj.GetComponent<ProjectileScript>() != null)
+        {
+            ProjScript = selectedObj.GetComponent<ProjectileScript>();
+            ProjScript.active = false;
+
+        }
     }
 
     public void onS2()

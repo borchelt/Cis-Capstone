@@ -15,6 +15,10 @@ public class dropMineUI : MonoBehaviour
     public GameObject dropMine;
     public GameplayUI gameplayOBJ;
 
+    public GameObject selectedObj;
+    BasicTowerScript towerScript;
+    ProjectileScript ProjScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,19 @@ public class dropMineUI : MonoBehaviour
     public void onM1()
     {
         gameplayOBJ.startPlacement(5);
+
+        if (selectedObj.GetComponent<BasicTowerScript>() != null)
+        {
+            towerScript = selectedObj.GetComponent<BasicTowerScript>();
+            towerScript.active = false;
+        }
+
+        if (selectedObj.GetComponent<ProjectileScript>() != null)
+        {
+            ProjScript = selectedObj.GetComponent<ProjectileScript>();
+            ProjScript.active = false;
+
+        }
     }
 
     public void onM2()

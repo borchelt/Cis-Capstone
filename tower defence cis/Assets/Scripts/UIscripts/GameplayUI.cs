@@ -12,7 +12,6 @@ public class GameplayUI : MonoBehaviour
 
     // button objects set
     public Button dropShOpen;
-    public Button dropAOEopen;
     public Button dropMineOpen;
 
     public Button button1;
@@ -43,7 +42,6 @@ public class GameplayUI : MonoBehaviour
 
     // class object references set
     public dropShootUI dShootOBJ;
-    public dropAoeUI dAoeOBJ;
     public dropMineUI dMineOBJ;
 
     // listeners are initiated
@@ -55,12 +53,7 @@ public class GameplayUI : MonoBehaviour
         manaManager = FindObjectOfType<Mana>();
 
         dropShOpen.onClick.AddListener(onShootOpen);
-        dropAOEopen.onClick.AddListener(onAoeOpen);
         dropMineOpen.onClick.AddListener(onMineOpen);
-
-        // dShootOBJ.dropShoot.SetActive(false);
-        // dAoeOBJ.dropAOE.SetActive(false);
-        // dMineOBJ.dropMine.SetActive(false);
     }
 
     // Update is called once per frame
@@ -144,11 +137,6 @@ public class GameplayUI : MonoBehaviour
         dShootOBJ.dropShoot.SetActive(true);
     }
 
-    public void onAoeOpen()
-    {
-        dAoeOBJ.dropAOE.SetActive(true);
-    }
-
     public void onMineOpen()
     {
         dMineOBJ.dropMine.SetActive(true);
@@ -192,7 +180,6 @@ public class GameplayUI : MonoBehaviour
         sprite = selectedObj.GetComponent<SpriteRenderer>();
         Debug.Log("color " + sprite.color);
         originalColor = sprite.color;
-        
 
         if(selectedObj.GetComponent<BasicTowerScript>() != null)
         {
