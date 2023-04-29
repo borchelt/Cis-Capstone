@@ -17,6 +17,7 @@ public class Mana : MonoBehaviour
     {
         manaCounterText = manaCounter.GetComponent<Text>();
         Debug.Log("mana: " + manaCounterText);
+        manaCounterText.text = currentManaAmount.ToString();
     }
 
     /*
