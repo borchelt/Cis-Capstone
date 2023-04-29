@@ -11,7 +11,6 @@ public class LevelSelectUI : MonoBehaviour
     public StoryUI storyOBJ;
 
     // button objects set
-    public Button tutorButton;
     public Button level1Button;
     public Button level2Button;
     public Button level3Button;
@@ -23,7 +22,6 @@ public class LevelSelectUI : MonoBehaviour
     // listeners are initiated
     void Start()
     {
-        tutorButton.onClick.AddListener(LoadTutorLevel);
         level1Button.onClick.AddListener(LoadLevel1);
         level2Button.onClick.AddListener(LoadLevel2);
         level3Button.onClick.AddListener(LoadLevel3);
@@ -31,12 +29,6 @@ public class LevelSelectUI : MonoBehaviour
         level5Button.onClick.AddListener(LoadLevel5);
         storyButton.onClick.AddListener(onStory);
         backButton.onClick.AddListener(onBack);
-    }
-
-    // selected tutorial level
-    public void LoadTutorLevel()
-    {
-        //GameSceneManager.Instance.LoadScene("Tutorial");
     }
 
     // selected level 1
@@ -50,11 +42,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (GameProgress.level1Win == true)
         {
-            //GameSceneManager.Instance.LoadScene("Level2");
-        }
-        else
-        {
-            // cancel load
+            GameSceneManager.Instance.LoadScene("Level2");
         }
     }
 
@@ -63,11 +51,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (GameProgress.level2Win == true)
         {
-            //GameSceneManager.Instance.LoadScene("Level3");
-        }
-        else
-        {
-            // cancel load
+            GameSceneManager.Instance.LoadScene("Level3");
         }
     }
 
@@ -76,11 +60,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (GameProgress.level3Win == true)
         {
-            //GameSceneManager.Instance.LoadScene("Level4");
-        }
-        else
-        {
-            // cancel load
+            GameSceneManager.Instance.LoadScene("Level4");
         }
     }
 
@@ -89,11 +69,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (GameProgress.level4Win == true)
         {
-            //GameSceneManager.Instance.LoadScene("Level5");
-        }
-        else
-        {
-            // cancel load
+            GameSceneManager.Instance.LoadScene("Level5");
         }
     }
 

@@ -34,7 +34,7 @@ public class dropAoeUI : MonoBehaviour
 
     public void onAOE1()
     {
-        gameplayOBJ.startPlacement(3);
+        gameplayOBJ.startPlacement(4);
     }
 
     public void onAOE2()
