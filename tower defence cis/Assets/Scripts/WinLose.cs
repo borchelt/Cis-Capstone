@@ -15,6 +15,7 @@ public class WinLose : MonoBehaviour
     //public GameObject[] dragonSword;
     //public GameObject[] levelBoss;
 
+    bool hasLoaded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,15 +78,19 @@ public class WinLose : MonoBehaviour
     public void levelLose()
     {
         loseOBJ.loseUI.SetActive(true);
-        StartCoroutine(waitTime(3));
+        StartCoroutine(waitTime(5));
     }
 
     private IEnumerator waitTime(float wait)
     {
-        yield return null;
-        timeController.timeRate = 0f; // game is paused
+        //yield return null;
+        //timeController.timeRate = 0f; // game is paused
         yield return new WaitForSecondsRealtime(wait);
-        GameSceneManager.Instance.LoadScene("MainMenu");
+        if(!hasLoaded)
+        {
+            GameSceneManager.Instance.LoadScene("MainMenu");
+            hasLoaded = true;
+        }
     }
     public void getSceneName()
     {

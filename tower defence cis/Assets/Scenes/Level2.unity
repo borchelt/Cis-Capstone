@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 294092623}
   - component: {fileID: 294092622}
   - component: {fileID: 294092621}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (2)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 825232439}
   - component: {fileID: 825232438}
   - component: {fileID: 825232437}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (5)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 873194017}
   - component: {fileID: 873194016}
   - component: {fileID: 873194015}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (4)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 972766345}
   - component: {fileID: 972766344}
   - component: {fileID: 972766343}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (1)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 1007881551}
   - component: {fileID: 1007881550}
   - component: {fileID: 1007881549}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (6)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 1277626883}
   - component: {fileID: 1277626882}
   - component: {fileID: 1277626881}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (8)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1537,7 +1537,7 @@ GameObject:
   - component: {fileID: 1283605104}
   - component: {fileID: 1283605103}
   - component: {fileID: 1283605102}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (10)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1846,6 +1846,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   killParent: 0
   parent: {fileID: 0}
+  source: {fileID: 0}
+  damageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!1 &1478482578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,7 +1914,7 @@ GameObject:
   - component: {fileID: 1514335148}
   - component: {fileID: 1514335147}
   - component: {fileID: 1514335149}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -1956,8 +1959,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -315809679
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 801a230a95ce03c499d25d097b68b259, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2076,7 +2079,7 @@ GameObject:
   - component: {fileID: 1658632787}
   - component: {fileID: 1658632786}
   - component: {fileID: 1658632785}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (7)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -2520,7 +2523,7 @@ GameObject:
   - component: {fileID: 1819031637}
   - component: {fileID: 1819031636}
   - component: {fileID: 1819031635}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (9)
   m_TagString: noPlace
   m_Icon: {fileID: 0}
@@ -2685,7 +2688,7 @@ GameObject:
   - component: {fileID: 1891641727}
   - component: {fileID: 1891641726}
   - component: {fileID: 1891641725}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: River Bank (3)
   m_TagString: noPlace
   m_Icon: {fileID: 0}

@@ -47,6 +47,7 @@ public class EnemyTakeDamage : MonoBehaviour
         else if(playAudio && dead == false)
         {
             dead = true;
+            sprite.enabled = false;
             source.clip = deathSFX;
             source.Play();
         }
