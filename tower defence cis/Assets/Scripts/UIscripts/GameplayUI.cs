@@ -21,11 +21,20 @@ public class GameplayUI : MonoBehaviour
     public Button button5;
     public Button button6;
     public Button spellButton;
+    public Button subButton1_1;
+    public Button subButton1_2;
+    public Button subButton1_3;
+    public Button subButton6_1;
+    public Button subButton6_2;
+    public Button subButton6_3;
+
 
     // array for convenience
     Button[] buttonArr;
 
     // objects for placement
+    public AudioSource audioSource;
+    public AudioClip cantPlaceSound;
     public GameObject[] objects;
     public GameObject selectedObj;
     Vector2 position;
@@ -48,7 +57,7 @@ public class GameplayUI : MonoBehaviour
     void Start()
     {
         // array is set
-        buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton };
+        buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton, subButton1_1, subButton1_2, subButton1_3, subButton6_1, subButton6_2, subButton6_3};
 
         manaManager = FindObjectOfType<Mana>();
 
@@ -81,6 +90,10 @@ public class GameplayUI : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && canPlace)
             {
                 place(true);
+            }
+            else if(Input.GetMouseButtonDown(0))
+            {
+                audioSource.PlayOneShot(cantPlaceSound);
             }
         }
     }
@@ -130,6 +143,26 @@ public class GameplayUI : MonoBehaviour
             // no deactivate button listener for button 6
         }
         */
+    }
+
+    public void onSub1_2()
+    {
+        startPlacement(8);
+    }
+
+    public void onSub1_3()
+    {
+        startPlacement(9);
+    }
+
+    public void onSub6_2()
+    {
+        startPlacement(10);
+    }
+
+    public void onSub6_3()
+    {
+        startPlacement(11);
     }
 
     public void onShootOpen()
@@ -197,6 +230,7 @@ public class GameplayUI : MonoBehaviour
 
     public void place(bool subtractCost)
     {
+        audioSource.Play();
         if (selectedObj.layer == 8)
         {
             scan = new GraphUpdateObject(selectedObj.GetComponent<Collider2D>().bounds);
@@ -284,6 +318,16 @@ public class GameplayUI : MonoBehaviour
         {
             int cost;
             int index = System.Array.IndexOf(buttonArr, button);
+
+            //spaghetti code for the extra drop down buttons
+            if (index == 7)
+                index = 1;
+            if (index == 10)
+                index = 5;
+            if (index > 7)
+                index--;
+            if (index > 10)
+                index--;
             GameObject tower = objects[index];
             if(tower.GetComponent<BasicTowerScript>() != null)
             {

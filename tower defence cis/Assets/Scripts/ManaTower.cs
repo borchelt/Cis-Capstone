@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //This script is for the Mana Towers to generate mana
 
 public class ManaTower : MonoBehaviour
 {
+    //audio stuff 
+    public AudioSource audio;
+
     public Mana manaManager; //Refernce to Mana script
 
     public int manaTowerLevel; //Current level of Mana Tower
@@ -103,6 +107,7 @@ public class ManaTower : MonoBehaviour
             DetermineTowerManaAmount();
             Debug.Log("mana: determinedGen");
             manaManager.AddMana(towerManaAmount);
+            audio.Play();
             Debug.Log("mana: added");
             yield return new WaitForSeconds(manaGenerationRate);
             Debug.Log("mana: waited");

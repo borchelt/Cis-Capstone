@@ -11,6 +11,7 @@ TagManager:
   - ManaTower
   - trap
   - NoTag
+  - noPlace
   layers:
   - Default
   - TransparentFX

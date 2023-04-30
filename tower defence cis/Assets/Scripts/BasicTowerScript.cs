@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BasicTowerScript : MonoBehaviour
 {
+
+    //audio 
+    public bool usingAudio;
+    public AudioSource audio;
+
     //placement variables 
     public bool active = true;
     public bool overlapping = false;
@@ -174,6 +180,11 @@ public class BasicTowerScript : MonoBehaviour
 
             onCD = true;
             cooldown = fireRate;
+        }
+
+        if(usingAudio)
+        {
+            audio.Play();
         }
         
 

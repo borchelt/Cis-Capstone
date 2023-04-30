@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 2798666120117154954}
   - component: {fileID: 2798666120117154957}
   - component: {fileID: 2798666120117154953}
+  - component: {fileID: 6337182395473347077}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -963,7 +964,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayUIobj: {fileID: 2798666121325320065}
   dropShOpen: {fileID: 487957287974000032}
-  dropAOEopen: {fileID: 0}
   dropMineOpen: {fileID: 3066622820574730814}
   button1: {fileID: 2798666121245512004}
   button2: {fileID: 2798666120225791230}
@@ -972,6 +972,14 @@ MonoBehaviour:
   button5: {fileID: 2798666120317628849}
   button6: {fileID: 2798666120746606160}
   spellButton: {fileID: 2798666120532081923}
+  subButton1_1: {fileID: 8948415469885952801}
+  subButton1_2: {fileID: 5996451769120256546}
+  subButton1_3: {fileID: 6816359057528051324}
+  subButton6_1: {fileID: 8828665716710092163}
+  subButton6_2: {fileID: 8622832752043177925}
+  subButton6_3: {fileID: 8314500840005450280}
+  audioSource: {fileID: 6337182395473347077}
+  cantPlaceSound: {fileID: 8300000, guid: 61aa2322530f9b94ea26075f0dc40fa6, type: 3}
   objects:
   - {fileID: 4964897925059110002, guid: d6c9a29c12a0dbe478094ecbf422aa5b, type: 3}
   - {fileID: 8249391688688165472, guid: a52f4169d6531654eabfa9560d588590, type: 3}
@@ -981,14 +989,113 @@ MonoBehaviour:
   - {fileID: 3291598522713575658, guid: d9e794b6937945c48ab2ef42726b2ac1, type: 3}
   - {fileID: 5004799108553038192, guid: b22d4eb2dcc67cf4c85d03e96e1c542c, type: 3}
   - {fileID: 3798480170991360576, guid: 18d9144295538b54cbd996e9e356928a, type: 3}
+  - {fileID: 3178645087665891172, guid: 7d33412c9de34df41951a6d711d1a8f0, type: 3}
+  - {fileID: 159174051590988960, guid: aee61c899f57dbf48b98b575e766b9a7, type: 3}
+  - {fileID: 6913426966828811794, guid: 7fc03964262121a46b514a3cf0015959, type: 3}
+  - {fileID: 4319541778431466247, guid: 8eb0e73124337114d9cd969c2d502589, type: 3}
   selectedObj: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 0
   gridSize: 0.3
   dShootOBJ: {fileID: 8346686466681723478}
-  dAoeOBJ: {fileID: 0}
   dMineOBJ: {fileID: 3371110059201791542}
+--- !u!82 &6337182395473347077
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120117154956}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9926b715a4a0f2b45bed9ff15186e720, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2798666120128494199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1108,7 @@ GameObject:
   - component: {fileID: 2798666120128494195}
   - component: {fileID: 2798666120128494194}
   - component: {fileID: 2798666120128494197}
+  - component: {fileID: 2539571486145758873}
   m_Layer: 5
   m_Name: BarracksButton
   m_TagString: Untagged
@@ -1124,6 +1232,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2539571486145758873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120128494199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666120158317942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1369,7 @@ GameObject:
   - component: {fileID: 2798666120225791228}
   - component: {fileID: 2798666120225791231}
   - component: {fileID: 2798666120225791230}
+  - component: {fileID: 2788674967198958992}
   m_Layer: 5
   m_Name: ShootButton
   m_TagString: Untagged
@@ -1339,6 +1493,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2788674967198958992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120225791216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666120242920810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1685,7 @@ GameObject:
   - component: {fileID: 2798666120317628863}
   - component: {fileID: 2798666120317628862}
   - component: {fileID: 2798666120317628849}
+  - component: {fileID: 8147518390366781319}
   m_Layer: 5
   m_Name: WallsButton
   m_TagString: Untagged
@@ -1609,6 +1809,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8147518390366781319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120317628851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666120382767786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +2079,7 @@ GameObject:
   - component: {fileID: 2798666120532081921}
   - component: {fileID: 2798666120532081920}
   - component: {fileID: 2798666120532081923}
+  - component: {fileID: 6386626010821328998}
   m_Layer: 5
   m_Name: SpellButton
   m_TagString: Untagged
@@ -1956,6 +2202,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6386626010821328998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120532081925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666120642474890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2461,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' '
+  m_Text: '3000
+
+'
 --- !u!1 &2798666120746606162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,6 +2476,7 @@ GameObject:
   - component: {fileID: 2798666120746606174}
   - component: {fileID: 2798666120746606161}
   - component: {fileID: 2798666120746606160}
+  - component: {fileID: 430032379562705519}
   m_Layer: 5
   m_Name: TrapsButton
   m_TagString: Untagged
@@ -2306,6 +2600,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &430032379562705519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666120746606162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666120750780033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,6 +3062,7 @@ GameObject:
   - component: {fileID: 2798666121245512002}
   - component: {fileID: 2798666121245512005}
   - component: {fileID: 2798666121245512004}
+  - component: {fileID: 8753133939031008690}
   m_Layer: 5
   m_Name: EcoButton
   m_TagString: Untagged
@@ -2812,7 +3152,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2846,6 +3186,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8753133939031008690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666121245512006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2798666121301065814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,8 +3321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fdff09261d448468bf63dbf0832f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentManaAmount: 0
-  manaCounter: {fileID: 0}
+  currentManaAmount: 3000
+  manaCounter: {fileID: 2798666120670635224}
 --- !u!1 &2798666121325320065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,6 +3423,7 @@ GameObject:
   - component: {fileID: 2798666121544572889}
   - component: {fileID: 2798666121544572888}
   - component: {fileID: 2798666121544572891}
+  - component: {fileID: 475464482168777401}
   m_Layer: 5
   m_Name: AOEbutton
   m_TagString: Untagged
@@ -3161,6 +3547,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &475464482168777401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798666121544572893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2851313512270918946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3604,7 @@ GameObject:
   - component: {fileID: 8647522238376662383}
   - component: {fileID: 4654269216485359806}
   - component: {fileID: 5481381666509833}
+  - component: {fileID: 1572193762675325220}
   m_Layer: 5
   m_Name: TabHandle
   m_TagString: Untagged
@@ -3295,6 +3727,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1572193762675325220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851313512270918946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2977710325217274516
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,6 +3969,7 @@ MonoBehaviour:
   closeButton: {fileID: 2520214188894332408}
   dropShoot: {fileID: 6407351763165829072}
   gameplayOBJ: {fileID: 2798666120117154953}
+  selectedObj: {fileID: 0}
 --- !u!1 &3802961735708723730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +4252,7 @@ GameObject:
   - component: {fileID: 4730679207596168390}
   - component: {fileID: 241806978977508615}
   - component: {fileID: 8828665716710092163}
+  - component: {fileID: 5058349214980332048}
   m_Layer: 5
   m_Name: Trap1
   m_TagString: Untagged
@@ -3884,9 +4363,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3371110059201791542}
-        m_TargetAssemblyTypeName: dropMineUI, Assembly-CSharp
-        m_MethodName: onM1
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: on6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3896,6 +4375,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5058349214980332048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029455327703504833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4707231912977890772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,6 +4432,7 @@ GameObject:
   - component: {fileID: 3810115097220409195}
   - component: {fileID: 3067578263688142648}
   - component: {fileID: 2520214188894332408}
+  - component: {fileID: 6557362932592649834}
   m_Layer: 5
   m_Name: TabHandle
   m_TagString: Untagged
@@ -4030,6 +4555,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6557362932592649834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707231912977890772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4719545150024304258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,6 +4612,7 @@ GameObject:
   - component: {fileID: 1908901485261007826}
   - component: {fileID: 6025729736136867977}
   - component: {fileID: 487957287974000032}
+  - component: {fileID: 7341204829157965465}
   m_Layer: 5
   m_Name: ShootOpen
   m_TagString: Untagged
@@ -4164,6 +4735,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7341204829157965465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719545150024304258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4754495663707634211
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,6 +5003,7 @@ GameObject:
   - component: {fileID: 7350091037455148806}
   - component: {fileID: 4630907459989995839}
   - component: {fileID: 8948415469885952801}
+  - component: {fileID: 4865668359757938039}
   m_Layer: 5
   m_Name: Shoot1
   m_TagString: Untagged
@@ -4497,9 +5114,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8346686466681723478}
-        m_TargetAssemblyTypeName: dropShootUI, Assembly-CSharp
-        m_MethodName: onS1
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: on1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4509,6 +5126,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4865668359757938039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4973121146330710069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5258468964424621921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,6 +5183,7 @@ GameObject:
   - component: {fileID: 4899606827529531514}
   - component: {fileID: 4233601881831073254}
   - component: {fileID: 3066622820574730814}
+  - component: {fileID: 4158336898760053045}
   m_Layer: 5
   m_Name: TrapOpen
   m_TagString: Untagged
@@ -4643,6 +5306,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4158336898760053045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258468964424621921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5501799195618181447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,6 +5363,7 @@ GameObject:
   - component: {fileID: 6525697891845508487}
   - component: {fileID: 309585081703615911}
   - component: {fileID: 8314500840005450280}
+  - component: {fileID: 5029118774129499011}
   m_Layer: 5
   m_Name: Trap3
   m_TagString: Untagged
@@ -4765,9 +5474,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3371110059201791542}
-        m_TargetAssemblyTypeName: dropMineUI, Assembly-CSharp
-        m_MethodName: onM3
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: onSub6_3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4777,6 +5486,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5029118774129499011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501799195618181447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5706157323679997397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,6 +5652,7 @@ MonoBehaviour:
   closeButton: {fileID: 5481381666509833}
   dropMine: {fileID: 6727073737313341869}
   gameplayOBJ: {fileID: 2798666120117154953}
+  selectedObj: {fileID: 0}
 --- !u!1 &6407351763165829072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,6 +5825,7 @@ GameObject:
   - component: {fileID: 7887416215732145399}
   - component: {fileID: 8510572066972726962}
   - component: {fileID: 8622832752043177925}
+  - component: {fileID: 8457784342994344133}
   m_Layer: 5
   m_Name: Trap2
   m_TagString: Untagged
@@ -5180,9 +5936,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3371110059201791542}
-        m_TargetAssemblyTypeName: dropMineUI, Assembly-CSharp
-        m_MethodName: onM2
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: onSub6_2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5192,6 +5948,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8457784342994344133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898876049377420017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7206427523434247581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,6 +6021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3609623504677592760}
   - {fileID: 2798666120117154952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5932,6 +6734,7 @@ GameObject:
   - component: {fileID: 5242611223453683088}
   - component: {fileID: 2838897780987252360}
   - component: {fileID: 6816359057528051324}
+  - component: {fileID: 7603191308970667551}
   m_Layer: 5
   m_Name: Shoot3
   m_TagString: Untagged
@@ -6042,9 +6845,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8346686466681723478}
-        m_TargetAssemblyTypeName: dropShootUI, Assembly-CSharp
-        m_MethodName: onS3
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: onSub1_3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6054,6 +6857,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7603191308970667551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276916777179273712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8283844941783561570
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,6 +6914,7 @@ GameObject:
   - component: {fileID: 3255057983590465247}
   - component: {fileID: 8894702396607524050}
   - component: {fileID: 5996451769120256546}
+  - component: {fileID: 4537176369529116365}
   m_Layer: 5
   m_Name: Shoot2
   m_TagString: Untagged
@@ -6176,9 +7025,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8346686466681723478}
-        m_TargetAssemblyTypeName: dropShootUI, Assembly-CSharp
-        m_MethodName: onS2
+      - m_Target: {fileID: 2798666120117154953}
+        m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
+        m_MethodName: onSub1_2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6188,3 +7037,123 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4537176369529116365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283844941783561570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3687504910347130565}
+          m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+          m_MethodName: onClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1001 &3992138249650039079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 482344469920153477}
+    m_Modifications:
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 597.79987
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.752262
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17372471
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 518105173654614305, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+      propertyPath: m_Name
+      value: UIsfxManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+--- !u!4 &3609623504677592760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 392123117278246815, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+  m_PrefabInstance: {fileID: 3992138249650039079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3687504910347130565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 309141695610240994, guid: 024192bce75c3d4468fcf37f332d8a51, type: 3}
+  m_PrefabInstance: {fileID: 3992138249650039079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2824aee42b3fb94a9c494bd296476d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

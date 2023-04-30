@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ProjectileScript : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class ProjectileScript : MonoBehaviour
     bool hasTeleported = false;
 
     //this stuff is for the exploding tag
+    public AudioSource ExplodeAudio;
+    public AudioClip explodeNoise;
     public float aoe;
     public int ticks;
     public float tickRate;
@@ -57,6 +60,7 @@ public class ProjectileScript : MonoBehaviour
     bool trapActive = false;
     float activeCD = .5f;
     float currentCD = .5f;
+    bool hasTriggered = false;
 
     private void Start()
     {
@@ -79,7 +83,7 @@ public class ProjectileScript : MonoBehaviour
     //when hitting something, check if its an enemy or a wall and respond accordingly 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (exploded)
+        if (exploded || active == false)
             return;
 
         if (collision.gameObject.tag == targetTag)
@@ -102,6 +106,11 @@ public class ProjectileScript : MonoBehaviour
         {
             if (trapActive)
             {
+                if(!hasTriggered)
+                {
+                    hasTriggered = true;
+                    ExplodeAudio.PlayOneShot(explodeNoise);
+                }
                 sprite.sprite = activeTrap;
                 currentCD -= Time.deltaTime;
             }
@@ -114,6 +123,7 @@ public class ProjectileScript : MonoBehaviour
             {
                 sprite.sprite = staticTrap;
                 trapActive = false;
+                hasTriggered = false;
                 currentCD = activeCD;
             }
         }
@@ -218,10 +228,15 @@ public class ProjectileScript : MonoBehaviour
         {
             //if no ticks left, destroy self
             if (ticks <= 0)
+            {
+                if (ExplodeAudio.isPlaying)
+                    return;
                 Destroy(gameObject);
+            }
+                
 
             cd = tickRate;
-
+            
             //damage each enemy within the aoe
             foreach (GameObject enemy in targetList)
             {
@@ -230,7 +245,7 @@ public class ProjectileScript : MonoBehaviour
                 {
                     damageScript = enemy.GetComponent<EnemyTakeDamage>();
                     damageScript.takeDamage(damage);
-                    explosionSprite.color = Color.red;
+                    //explosionSprite.color = Color.red;
                 }
             }
 
@@ -256,8 +271,11 @@ public class ProjectileScript : MonoBehaviour
 
         if (tags.Contains("exploding") && !exploded)
         {
-            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+            //gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             exploded = true;
+            ExplodeAudio.PlayOneShot(explodeNoise);
             cd = initialCD;
             explosionSprite.sprite = explosion;
 
@@ -265,7 +283,7 @@ public class ProjectileScript : MonoBehaviour
 
         else if(exploded)
         {
-            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+            //gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             return;
         }
 

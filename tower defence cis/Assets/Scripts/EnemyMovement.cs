@@ -182,7 +182,7 @@ public class EnemyMovement : MonoBehaviour
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
         }
 
-        if(collision.gameObject.layer == 15 && targetTag == "PlayerTower")
+        if((collision.gameObject.layer == 15 || collision.gameObject.layer == 9) && targetTag == "PlayerTower")
         {
             
             ProjectileScript trap = collision.gameObject.GetComponent<ProjectileScript>();
