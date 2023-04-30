@@ -12,13 +12,14 @@ public class GameProgress : MonoBehaviour
     public static bool level4Win = false;
     public static bool level5Win = false;
 
-    public GameObject gameProg;
+    public static float l1;
 
     LevelSelectUI levelSelectOBJ;
 
     // Update is called once per frame
     void Update()
     {
+
         if (level1Win == true)
         {
             Debug.Log("Unlocked");

@@ -40,37 +40,25 @@ public class LevelSelectUI : MonoBehaviour
     // selected level 2
     public void LoadLevel2()
     {
-        if (GameProgress.level1Win == true)
-        {
-            GameSceneManager.Instance.LoadScene("Level2");
-        }
+        GameSceneManager.Instance.LoadScene("Level2");
     }
 
     // selected level 3
     public void LoadLevel3()
     {
-        if (GameProgress.level2Win == true)
-        {
-            GameSceneManager.Instance.LoadScene("Level3");
-        }
+        GameSceneManager.Instance.LoadScene("Level3");
     }
 
     // selected level 4
     public void LoadLevel4()
     {
-        if (GameProgress.level3Win == true)
-        {
-            GameSceneManager.Instance.LoadScene("Level4");
-        }
+        GameSceneManager.Instance.LoadScene("Level4");
     }
 
     // selected level 5
     public void LoadLevel5()
     {
-        if (GameProgress.level4Win == true)
-        {
-            GameSceneManager.Instance.LoadScene("Level5");
-        }
+        GameSceneManager.Instance.LoadScene("Level5");
     }
 
     // selected story
