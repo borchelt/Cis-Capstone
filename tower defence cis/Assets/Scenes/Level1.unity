@@ -595,6 +595,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   killParent: 0
   parent: {fileID: 0}
+  source: {fileID: 0}
+  damageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!1 &1478482578
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8822233526711146657, guid: 18a2e69c34828c54a8f2fb5fd694ee5d, type: 3}
       propertyPath: sceneName
-      value: Level1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8822233526711146657, guid: 18a2e69c34828c54a8f2fb5fd694ee5d, type: 3}
       propertyPath: waveManagerOBJ

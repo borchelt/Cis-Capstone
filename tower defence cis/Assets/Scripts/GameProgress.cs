@@ -12,6 +12,8 @@ public class GameProgress : MonoBehaviour
     public static bool level4Win = false;
     public static bool level5Win = false;
 
+    public GameObject gameProg;
+
     LevelSelectUI levelSelectOBJ;
 
     // Update is called once per frame
@@ -19,9 +21,10 @@ public class GameProgress : MonoBehaviour
     {
         if (level1Win == true)
         {
+            Debug.Log("Unlocked");
             levelSelectOBJ.level2Button.interactable = true;
         }
-        else
+        else if (level1Win == false)
         {
             levelSelectOBJ.level2Button.interactable = false;
         }
@@ -30,7 +33,7 @@ public class GameProgress : MonoBehaviour
         {
             levelSelectOBJ.level3Button.interactable = true;
         }
-        else
+        else if (level2Win == false)
         {
             levelSelectOBJ.level3Button.interactable = false;
         }
@@ -39,7 +42,7 @@ public class GameProgress : MonoBehaviour
         {
             levelSelectOBJ.level4Button.interactable = true;
         }
-        else
+        else if (level3Win == false)
         {
             levelSelectOBJ.level4Button.interactable = false;
         }
@@ -48,14 +51,14 @@ public class GameProgress : MonoBehaviour
         {
             levelSelectOBJ.level5Button.interactable = true;
         }
-        else
+        else if (level4Win == false)
         {
             levelSelectOBJ.level5Button.interactable = false;
         }
     }
 
     // action to reset all game progress
-    public static void ResetProgress()
+    public void ResetProgress()
     {
         // values are reset when player opts 'yes'
         firstStart = true;

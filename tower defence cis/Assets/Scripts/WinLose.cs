@@ -24,15 +24,17 @@ public class WinLose : MonoBehaviour
         loseOBJ.loseUI.SetActive(false);
 
         getSceneName();
-        getDragon();
-        getBoss();
+        //getDragon();
+        //getBoss();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(levelBoss == null && waveManagerOBJ.waveIndex >= 37)
+
+        //getSceneName();
+
+        if (levelBoss == null && waveManagerOBJ.waveIndex >= 37)
         {
             levelWin();
         }
@@ -49,6 +51,7 @@ public class WinLose : MonoBehaviour
         if(sceneName == "level1")
             if(GameProgress.level1Win == false)
             {
+                Debug.Log("Level 2 Unlocked");
                 GameProgress.level1Win = true;
             }
         if (sceneName == "level2")
@@ -99,7 +102,7 @@ public class WinLose : MonoBehaviour
         sceneName = scene.name;
     }
 
-    
+    /*
     public void getBoss()
     {
         if(sceneName == "level1")
@@ -107,10 +110,10 @@ public class WinLose : MonoBehaviour
             levelBoss = GameObject.FindGameObjectsWithTag("firstBoss");
         }
     }
-
+    
     public void getDragon()
     {
         dragonSword = GameObject.FindGameObjectsWithTag("DragonSword");
     }
-    
+    */
 }

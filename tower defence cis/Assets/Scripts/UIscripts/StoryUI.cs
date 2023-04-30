@@ -8,6 +8,7 @@ public class StoryUI : MonoBehaviour
     // class object references set
     public GameObject storyText;
     public LevelSelectUI levelSelectOBJ;
+
     public Button okayButton;
 
     // listener is initiated
