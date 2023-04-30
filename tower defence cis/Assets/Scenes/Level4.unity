@@ -633,6 +633,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   killParent: 0
   parent: {fileID: 0}
+  source: {fileID: 0}
+  damageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!1 &1478482578
 GameObject:
   m_ObjectHideFlags: 0

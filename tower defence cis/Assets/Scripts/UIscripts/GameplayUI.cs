@@ -157,12 +157,12 @@ public class GameplayUI : MonoBehaviour
 
     public void onSub6_2()
     {
-        startPlacement(10);
+        startPlacement(11);
     }
 
     public void onSub6_3()
     {
-        startPlacement(11);
+        startPlacement(12);
     }
 
     public void onShootOpen()
@@ -324,11 +324,12 @@ public class GameplayUI : MonoBehaviour
                 index = 1;
             if (index == 10)
                 index = 5;
-            if (index > 7)
-                index--;
+            //if (index > 7)
+              //  index--;
             if (index > 10)
                 index--;
             GameObject tower = objects[index];
+            Debug.Log("Tower: " + button.name + " : " + tower.name);
             if(tower.GetComponent<BasicTowerScript>() != null)
             {
                 cost = tower.GetComponent<BasicTowerScript>().cost;
@@ -350,6 +351,7 @@ public class GameplayUI : MonoBehaviour
             {
                 button.interactable = true;
             }
+
         }
     }
 }

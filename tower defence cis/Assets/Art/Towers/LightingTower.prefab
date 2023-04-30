@@ -109,7 +109,7 @@ MonoBehaviour:
   audio: {fileID: 3066424858921478882}
   active: 1
   overlapping: 0
-  cost: 700
+  cost: 900
   targetTag: enemy
   targetList: []
   target: {fileID: 0}
