@@ -162,12 +162,12 @@ public class GameplayUI : MonoBehaviour
 
     public void onSub6_2()
     {
-        startPlacement(11);
+        startPlacement(10);
     }
 
     public void onSub6_3()
     {
-        startPlacement(12);
+        startPlacement(11);
     }
 
     public void onShootOpen()
