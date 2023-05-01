@@ -993,6 +993,7 @@ MonoBehaviour:
   - {fileID: 159174051590988960, guid: aee61c899f57dbf48b98b575e766b9a7, type: 3}
   - {fileID: 6913426966828811794, guid: 7fc03964262121a46b514a3cf0015959, type: 3}
   - {fileID: 4319541778431466247, guid: 8eb0e73124337114d9cd969c2d502589, type: 3}
+  - {fileID: 7149863401767718133, guid: 376293962a22d1a4994684aefd580a56, type: 3}
   selectedObj: {fileID: 0}
   mask:
     serializedVersion: 2

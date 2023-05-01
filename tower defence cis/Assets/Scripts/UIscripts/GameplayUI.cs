@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Pathfinding;
 
 public class GameplayUI : MonoBehaviour
@@ -53,6 +54,8 @@ public class GameplayUI : MonoBehaviour
     public dropShootUI dShootOBJ;
     public dropMineUI dMineOBJ;
 
+    private string levelName;
+
     // listeners are initiated
     void Start()
     {
@@ -63,6 +66,9 @@ public class GameplayUI : MonoBehaviour
 
         dropShOpen.onClick.AddListener(onShootOpen);
         dropMineOpen.onClick.AddListener(onMineOpen);
+
+        Scene levelScene = SceneManager.GetActiveScene();
+        levelName = levelScene.name;
     }
 
     // Update is called once per frame
@@ -122,17 +128,24 @@ public class GameplayUI : MonoBehaviour
         startPlacement(3);
     }
 
-    // activate placement for tower
+    // activate placement for wall
     public void on5()
     {
-        startPlacement(4);
+        if (levelName == "Level1" || levelName == "Level2" || levelName == "Level3" || levelName == "Level4")
+        {
+            startPlacement(4);
+        }
+        else if (levelName == "Level5")
+        {
+            startPlacement(12);
+        }
     }
 
     // activate placement for trap
     public void on6()
     {
-
         startPlacement(5);
+        
         /*
         if (trapnum >= 0)
         {
