@@ -20,6 +20,7 @@ public class ManaTower : MonoBehaviour
     private float boostedManaGenerationRate; //Used for decreasing wait time after Mana Tower is upgraded
 
     private bool makeMana = true; //Boolean for looping coroutine
+    public bool active = true;
 
     //Starts the coroutine for mana generation when a Mana Tower is placed
     void Start()
@@ -106,8 +107,11 @@ public class ManaTower : MonoBehaviour
             DetermineManaGenerationRate();
             DetermineTowerManaAmount();
             Debug.Log("mana: determinedGen");
-            manaManager.AddMana(towerManaAmount);
-            audio.Play();
+            if(active)
+            {
+                manaManager.AddMana(towerManaAmount);
+                audio.Play();
+            }
             Debug.Log("mana: added");
             yield return new WaitForSeconds(manaGenerationRate);
             Debug.Log("mana: waited");
