@@ -5116,7 +5116,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2798666120117154953}
         m_TargetAssemblyTypeName: GameplayUI, Assembly-CSharp
-        m_MethodName: on1
+        m_MethodName: on2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6024,7 +6024,7 @@ Transform:
   - {fileID: 3609623504677592760}
   - {fileID: 2798666120117154952}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7293676465870816435
 GameObject:

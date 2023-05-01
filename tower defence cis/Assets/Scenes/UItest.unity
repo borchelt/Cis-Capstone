@@ -622,6 +622,7 @@ MonoBehaviour:
   yesButton: {fileID: 1797130052}
   noButton: {fileID: 1723974366}
   mainMenuOBJ: {fileID: 0}
+  progOBJ: {fileID: 0}
 --- !u!114 &319766542
 MonoBehaviour:
   m_ObjectHideFlags: 0

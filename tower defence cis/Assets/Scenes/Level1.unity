@@ -1082,6 +1082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMechUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8948415469885952801, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: on2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4352991983450699406, guid: 532e3673846b0f74a86a5d4876c4da1d, type: 3}
     m_AddedGameObjects:

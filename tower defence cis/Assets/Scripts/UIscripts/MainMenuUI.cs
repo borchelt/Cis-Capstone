@@ -30,6 +30,7 @@ public class MainMenuUI : MonoBehaviour
         storyOBJ.storyText.SetActive(false);
         resetOBJ.resetPrompt.SetActive(false);
         exitOBJ.exitGamePrompt.SetActive(false);
+        tut.tutOBJ.SetActive(false);
 
         if(GameProgress.level5Win == true)
         {
@@ -66,6 +67,12 @@ public class MainMenuUI : MonoBehaviour
         {
             // load level select
             levelSelectOBJ.levelList.SetActive(true);
+        }
+
+        if (GameProgress.level5Win == true)
+        {
+            // load story text
+            endOBJ.endScreen.SetActive(true);
         }
     }
 

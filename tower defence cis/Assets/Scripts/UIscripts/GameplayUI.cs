@@ -145,6 +145,11 @@ public class GameplayUI : MonoBehaviour
         */
     }
 
+    public void onSub1_1()
+    {
+        startPlacement(1);
+    }
+
     public void onSub1_2()
     {
         startPlacement(8);
