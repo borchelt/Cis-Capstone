@@ -15,6 +15,13 @@ public class EndUI : MonoBehaviour
     void Start()
     {
         okayButton.onClick.AddListener(onOkay);
+
+        Debug.Log("Game Progress: " + GameProgress.level5Win);
+        //if(GameProgress.level5Win == true)
+        //{
+        //    endScreen.SetActive(true);
+        //    mainMenuOBJ.mainMenu.SetActive(false);
+        //}
     }
 
     // exits to the level select screen

@@ -111,6 +111,8 @@ MonoBehaviour:
   targetList: []
   target: {fileID: 0}
   speed: 50
+  ExplodeAudio: {fileID: 0}
+  explodeNoise: {fileID: 0}
   aoe: 0
   ticks: 0
   tickRate: 0

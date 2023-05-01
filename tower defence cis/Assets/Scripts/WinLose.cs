@@ -48,28 +48,29 @@ public class WinLose : MonoBehaviour
 
     public void levelWin()
     {
-        if(sceneName == "level1")
+        Debug.Log("Scene: " + sceneName);
+        if(sceneName == "Level1")
             if(GameProgress.level1Win == false)
             {
                 Debug.Log("Level 2 Unlocked");
                 GameProgress.level1Win = true;
             }
-        if (sceneName == "level2")
+        if (sceneName == "Level2")
             if (GameProgress.level2Win == false)
             {
                 GameProgress.level2Win = true;
             }
-        if (sceneName == "level3")
+        if (sceneName == "Level3")
             if (GameProgress.level3Win == false)
             {
                 GameProgress.level3Win = true;
             }
-        if (sceneName == "level4")
+        if (sceneName == "Level4")
             if (GameProgress.level4Win == false)
             {
                 GameProgress.level4Win = true;
             }
-        if (sceneName == "level5")
+        if (sceneName == "Level5")
             if (GameProgress.level5Win == false)
             {
                 GameProgress.level5Win = true;
