@@ -38,6 +38,7 @@ public class dropMineUI : MonoBehaviour
 
     public void onM1()
     {
+        /*
         gameplayOBJ.startPlacement(5);
 
         if (selectedObj.GetComponent<BasicTowerScript>() != null)
@@ -52,6 +53,7 @@ public class dropMineUI : MonoBehaviour
             ProjScript.active = false;
 
         }
+        */
     }
 
     public void onM2()

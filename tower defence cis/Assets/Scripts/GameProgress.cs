@@ -22,7 +22,6 @@ public class GameProgress : MonoBehaviour
 
         if (level1Win == true)
         {
-            Debug.Log("Unlocked");
             levelSelectOBJ.level2Button.interactable = true;
         }
         else if (level1Win == false)

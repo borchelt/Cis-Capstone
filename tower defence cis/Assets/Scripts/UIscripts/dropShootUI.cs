@@ -37,6 +37,7 @@ public class dropShootUI : MonoBehaviour
 
         public void onS1()
     {
+        /*
         gameplayOBJ.startPlacement(1);
 
         if (selectedObj.GetComponent<BasicTowerScript>() != null)
@@ -51,6 +52,7 @@ public class dropShootUI : MonoBehaviour
             ProjScript.active = false;
 
         }
+        */
     }
 
     public void onS2()

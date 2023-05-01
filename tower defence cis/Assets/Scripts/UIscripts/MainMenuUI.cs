@@ -12,12 +12,15 @@ public class MainMenuUI : MonoBehaviour
     public Button startButton;
     public Button resetButton;
     public Button exitButton;
+    public Button tutorButton;
 
     // class object references set
     public LevelSelectUI levelSelectOBJ;
     public StoryUI storyOBJ;
     public ResetPromptUI resetOBJ;
     public ExitGamePrompt exitOBJ;
+    public EndUI endOBJ;
+    public TutOBJ tut;
 
     private void Start()
     {
@@ -28,10 +31,21 @@ public class MainMenuUI : MonoBehaviour
         resetOBJ.resetPrompt.SetActive(false);
         exitOBJ.exitGamePrompt.SetActive(false);
 
+        if(GameProgress.level5Win == true)
+        {
+            endOBJ.endScreen.SetActive(true);
+            mainMenu.SetActive(false);
+        }
+        else
+        {
+            endOBJ.endScreen.SetActive(false);
+        }
+
         // button listeners are initiated
         startButton.onClick.AddListener(OnStart);
         resetButton.onClick.AddListener(ResetProgressPrompt);
         exitButton.onClick.AddListener(QuitGamePrompt);
+        tutorButton.onClick.AddListener(OnTutor);
 
         // screen inactive
         CameraScript.gameScreenActive = false;
@@ -53,6 +67,12 @@ public class MainMenuUI : MonoBehaviour
             // load level select
             levelSelectOBJ.levelList.SetActive(true);
         }
+    }
+
+    public void OnTutor()
+    {
+        mainMenu.SetActive(false);
+        tut.tutOBJ.SetActive(true);
     }
 
     // action to load the prompt for resetting game progress
