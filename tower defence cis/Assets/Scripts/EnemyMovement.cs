@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     Vector2 targetLocation;
     Vector2 location;
     Vector2 targetVector;
-    AIDestinationSetter pathfinder;
+    public AIDestinationSetter pathfinder;
     float trapCd = .1f; 
 
     //attack variables 
@@ -48,6 +48,8 @@ public class EnemyMovement : MonoBehaviour
     public int damage;
     public bool attacking; 
     public EnemyTakeDamage damageScript;
+
+    public bool tunnelVision;
 
     //for calculating wave spawns
     public int score;
@@ -80,7 +82,8 @@ public class EnemyMovement : MonoBehaviour
         if(playsAudioOnWalk)
             manageSound();
         trapCd -= Time.deltaTime;
-        getClosestTarget();
+        if(!tunnelVision)
+            getClosestTarget();
         setDestination();
             
         //movement();

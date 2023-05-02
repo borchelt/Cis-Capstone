@@ -153,7 +153,7 @@ public class GameplayUI : MonoBehaviour
         }
         else if (levelName == "Level5")
         {
-            startPlacement(12);
+            startPlacement(13);
         }
     }
 
@@ -172,25 +172,25 @@ public class GameplayUI : MonoBehaviour
     // activate placement for bomb tower
     public void onSub1_2()
     {
-        startPlacement(8);
+        startPlacement(9);
     }
 
     // activate placement for mage tower
     public void onSub1_3()
     {
-        startPlacement(9);
+        startPlacement(10);
     }
 
     // activate placement for pit trap
     public void onSub6_2()
     {
-        startPlacement(10);
+        startPlacement(11);
     }
 
     // activate placement for mine trap
     public void onSub6_3()
     {
-        startPlacement(11);
+        startPlacement(12);
     }
 
     // opens shoot tower dropdown menu
@@ -208,7 +208,7 @@ public class GameplayUI : MonoBehaviour
     // activate spell use
     public void onSpell()
     {
-        startPlacement(Random.Range(6, 8));
+        startPlacement(Random.Range(6, 9));
     }
 
     // mathematics for tower placement
@@ -361,7 +361,7 @@ public class GameplayUI : MonoBehaviour
                 index = 5;
             //if (index > 7)
             //  index--;
-            if (index > 10)
+            if (index > 11)
                 index--;
             GameObject tower = objects[index];
             Debug.Log("Tower: " + button.name + " : " + tower.name);
