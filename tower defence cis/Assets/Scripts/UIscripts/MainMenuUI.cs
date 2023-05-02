@@ -20,7 +20,9 @@ public class MainMenuUI : MonoBehaviour
     public ResetPromptUI resetOBJ;
     public ExitGamePrompt exitOBJ;
     public EndUI endOBJ;
+
     public TutOBJ tut;
+    public TutorP1 p1OBJ;
 
     private void Start()
     {
@@ -80,6 +82,8 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.SetActive(false);
         tut.tutOBJ.SetActive(true);
+        p1OBJ.tPage1.SetActive(true);
+        //tut.clicked = true;
     }
 
     // action to load the prompt for resetting game progress
