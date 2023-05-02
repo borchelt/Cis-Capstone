@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    // class object set
+    // script object reference set
     public GameObject mainMenu;
 
     // button objects set
@@ -21,12 +21,15 @@ public class MainMenuUI : MonoBehaviour
     public ExitGamePrompt exitOBJ;
     public EndUI endOBJ;
 
+    // tutorial object references set
     public TutOBJ tut;
     public TutorP1 p1OBJ;
 
+    // Start is called before the first frame update
     private void Start()
     {
-        // menu ui is loaded in case it didn't load. Other UI is disabled at start
+        // menu ui is loaded in case it didn't load. Other UI in the Main Menu scene is disabled at start
+        // NOTE: the coding that disables tutorial pages UI at start are in the TutOBJ class
         mainMenu.SetActive(true);
         levelSelectOBJ.levelList.SetActive(false);
         storyOBJ.storyText.SetActive(false);
@@ -34,6 +37,7 @@ public class MainMenuUI : MonoBehaviour
         exitOBJ.exitGamePrompt.SetActive(false);
         tut.tutOBJ.SetActive(false);
 
+        // end screen appears after completing level 5
         if(GameProgress.level5Win == true)
         {
             endOBJ.endScreen.SetActive(true);
@@ -78,12 +82,12 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
+    // opens up the tutorial booklet
     public void OnTutor()
     {
         mainMenu.SetActive(false);
         tut.tutOBJ.SetActive(true);
         p1OBJ.tPage1.SetActive(true);
-        //tut.clicked = true;
     }
 
     // action to load the prompt for resetting game progress

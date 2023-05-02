@@ -31,37 +31,37 @@ public class LevelSelectUI : MonoBehaviour
         backButton.onClick.AddListener(onBack);
     }
 
-    // selected level 1
+    // selected level 1. Loads the level
     public void LoadLevel1()
     {
         GameSceneManager.Instance.LoadScene("Level1");
     }
 
-    // selected level 2
+    // selected level 2. Loads the level
     public void LoadLevel2()
     {
         GameSceneManager.Instance.LoadScene("Level2");
     }
 
-    // selected level 3
+    // selected level 3. Loads the level
     public void LoadLevel3()
     {
         GameSceneManager.Instance.LoadScene("Level3");
     }
 
-    // selected level 4
+    // selected level 4. Loads the level
     public void LoadLevel4()
     {
         GameSceneManager.Instance.LoadScene("Level4");
     }
 
-    // selected level 5
+    // selected level 5. Loads the level
     public void LoadLevel5()
     {
         GameSceneManager.Instance.LoadScene("Level5");
     }
 
-    // selected story
+    // selected story. loads story screen
     public void onStory()
     {
         // load story text UI

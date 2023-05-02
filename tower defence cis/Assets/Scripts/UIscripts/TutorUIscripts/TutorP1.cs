@@ -5,22 +5,26 @@ using UnityEngine.UI;
 
 public class TutorP1 : MonoBehaviour
 {
-    // class object references set
+    // Object set for script
     public GameObject tPage1;
+
+    // class object references set
     public TutorP2 p2OBJ;
     public TutOBJ tut;
     public MainMenuUI mainMenuOBJ;
 
+    // Button Objects set
     public Button nextButton;
     public Button mainButton;
 
-    // listener is initiated
+    // listeners are initiated
     void Start()
     {
         nextButton.onClick.AddListener(onNext);
         mainButton.onClick.AddListener(onMain);
     }
 
+    // Next to page 3
     public void onNext()
     {
         tPage1.SetActive(false);

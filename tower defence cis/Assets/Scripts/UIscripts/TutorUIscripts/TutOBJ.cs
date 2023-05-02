@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TutOBJ : MonoBehaviour
 {
+    // Object set for script
     public GameObject tutOBJ;
-    //public bool clicked = false;
 
+    // Tutorial page references set
     public TutorP1 p1OBJ;
     public TutorP2 p2OBJ;
     public TutorP3 p3OBJ;
@@ -14,6 +15,7 @@ public class TutOBJ : MonoBehaviour
     public TutorP5 p5OBJ;
     public TutorP6 p6OBJ;
 
+    // All pages are inactive at start. tutorButton in MainMenu activates first page
     private void Start()
     {
         p1OBJ.tPage1.SetActive(false);

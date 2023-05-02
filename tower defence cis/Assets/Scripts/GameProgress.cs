@@ -58,7 +58,7 @@ public class GameProgress : MonoBehaviour
     }
 
     // action to reset all game progress
-    public void ResetProgress()
+    public static void ResetProgress()
     {
         // values are reset when player opts 'yes'
         firstStart = true;

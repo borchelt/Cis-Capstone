@@ -8,13 +8,14 @@ using Pathfinding;
 
 public class GameplayUI : MonoBehaviour
 {
-    //public static GameObject gameplayUIobj;
+    // script object reference
     public GameObject gameplayUIobj;
 
-    // button objects set
+    // openning drop menu button objects set
     public Button dropShOpen;
     public Button dropMineOpen;
 
+     // structure placement buttons set
     public Button button1;
     public Button button2;
     public Button button3;
@@ -22,6 +23,8 @@ public class GameplayUI : MonoBehaviour
     public Button button5;
     public Button button6;
     public Button spellButton;
+
+    // drop menu button objects set
     public Button subButton1_1;
     public Button subButton1_2;
     public Button subButton1_3;
@@ -30,14 +33,18 @@ public class GameplayUI : MonoBehaviour
     public Button subButton6_3;
 
 
-    // array for convenience
+    // array for gathering buttons
     Button[] buttonArr;
 
-    // objects for placement
+    // audio objects set
     public AudioSource audioSource;
     public AudioClip cantPlaceSound;
+
+    // objects for placement
     public GameObject[] objects;
     public GameObject selectedObj;
+
+    // objects and variables set for placement mathematics and grid snapping
     Vector2 position;
     RaycastHit rayHit;
     public LayerMask mask;
@@ -46,38 +53,45 @@ public class GameplayUI : MonoBehaviour
     ManaTower manaScript;
     public float gridSize;
     bool canPlace;
+
+    // sprite adjusters and mana object reference set
     Color originalColor;
     SpriteRenderer sprite;
     Mana manaManager;
     GraphUpdateObject scan;
 
-    // class object references set
+    // drop menu references set
     public dropShootUI dShootOBJ;
     public dropMineUI dMineOBJ;
 
+    // level name variable
     private string levelName;
 
-    // listeners are initiated
+    // Start is called before the first frame update
     void Start()
     {
-        // array is set
+        // button array is set
         buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton, subButton1_1, subButton1_2, subButton1_3, subButton6_1, subButton6_2, subButton6_3 };
 
+        // mana manager is set
         manaManager = FindObjectOfType<Mana>();
 
+        // listeners are initiated
         dropShOpen.onClick.AddListener(onShootOpen);
         dropMineOpen.onClick.AddListener(onMineOpen);
 
+        // scene name is set as variable
         Scene levelScene = SceneManager.GetActiveScene();
         levelName = levelScene.name;
     }
 
-    // Update is called once per frame
+    // Checks placement of structure on every game tick
     void Update()
     {
         placeCheck();
     }
 
+    // checks placement of structure
     public void placeCheck()
     {
         Debug.Log("obj: " + selectedObj);
@@ -85,6 +99,7 @@ public class GameplayUI : MonoBehaviour
         getPlaceRay();
         collisionCheck();
 
+        // if no enemy, object, or other structure is underneath the hovering tower, the player can place the tower
         if (selectedObj != null)
         {
             selectedObj.transform.position = new Vector2(snapToGrid(position.x), snapToGrid(position.y));
@@ -105,25 +120,25 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-    // activate placement for tower
+    // activate placement for mana tower
     public void on1()
     {
         startPlacement(0);
     }
 
-    // activate placement for tower
+    // activate placement for shoot tower
     public void on2()
     {
         startPlacement(1);
     }
 
-    // activate placement for tower
+    // activate placement for barracks tower
     public void on3()
     {
         startPlacement(2);
     }
 
-    // activate placement for tower
+    // activate placement for AOE tower
     public void on4()
     {
         startPlacement(3);
@@ -142,53 +157,49 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
-    // activate placement for trap
+    // activate placement for spike trap
     public void on6()
     {
         startPlacement(5);
-
-        /*
-        if (trapnum >= 0)
-        {
-
-        }
-        else
-        {
-            // no deactivate button listener for button 6
-        }
-        */
     }
 
+    // // activate placement for shoot tower
     public void onSub1_1()
     {
         startPlacement(1);
     }
 
+    // activate placement for bomb tower
     public void onSub1_2()
     {
         startPlacement(8);
     }
 
+    // activate placement for mage tower
     public void onSub1_3()
     {
         startPlacement(9);
     }
 
+    // activate placement for pit trap
     public void onSub6_2()
     {
         startPlacement(10);
     }
 
+    // activate placement for mine trap
     public void onSub6_3()
     {
         startPlacement(11);
     }
 
+    // opens shoot tower dropdown menu
     public void onShootOpen()
     {
         dShootOBJ.dropShoot.SetActive(true);
     }
 
+    // opens traps dropdown menu
     public void onMineOpen()
     {
         dMineOBJ.dropMine.SetActive(true);
@@ -198,20 +209,9 @@ public class GameplayUI : MonoBehaviour
     public void onSpell()
     {
         startPlacement(Random.Range(6, 8));
-        Debug.Log("spell");
-        /*
-        if(spellReady == true)
-        {
-            // activate spell placement
-            spellReady = false;
-        }
-        else
-        {
-            // spell timer is still active
-        }
-        */
     }
 
+    // mathematics for tower placement
     public void getPlaceRay()
     {
         Vector2 placeRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -254,6 +254,7 @@ public class GameplayUI : MonoBehaviour
         }
     }
 
+    // method for placing the tower
     public void place(bool subtractCost)
     {
         audioSource.Play();
@@ -306,6 +307,7 @@ public class GameplayUI : MonoBehaviour
         return position;
     }
 
+    // method to check if there are obstructions to tower placement
     public void collisionCheck()
     {
         if (towerScript != null)
@@ -344,7 +346,7 @@ public class GameplayUI : MonoBehaviour
 
     }
 
-    // tower prices set
+    // method to assign and check mana prices for structures
     public void checkButtonPrice()
     {
         foreach (Button button in buttonArr)
