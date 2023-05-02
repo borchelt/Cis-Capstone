@@ -43,6 +43,7 @@ public class GameplayUI : MonoBehaviour
     public LayerMask mask;
     BasicTowerScript towerScript;
     ProjectileScript ProjScript;
+    ManaTower manaScript;
     public float gridSize;
     bool canPlace;
     Color originalColor;
@@ -60,7 +61,7 @@ public class GameplayUI : MonoBehaviour
     void Start()
     {
         // array is set
-        buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton, subButton1_1, subButton1_2, subButton1_3, subButton6_1, subButton6_2, subButton6_3};
+        buttonArr = new Button[] { button1, button2, button3, button4, button5, button6, spellButton, subButton1_1, subButton1_2, subButton1_3, subButton6_1, subButton6_2, subButton6_3 };
 
         manaManager = FindObjectOfType<Mana>();
 
@@ -97,7 +98,7 @@ public class GameplayUI : MonoBehaviour
             {
                 place(true);
             }
-            else if(Input.GetMouseButtonDown(0))
+            else if (Input.GetMouseButtonDown(0))
             {
                 audioSource.PlayOneShot(cantPlaceSound);
             }
@@ -145,7 +146,7 @@ public class GameplayUI : MonoBehaviour
     public void on6()
     {
         startPlacement(5);
-        
+
         /*
         if (trapnum >= 0)
         {
@@ -227,12 +228,19 @@ public class GameplayUI : MonoBehaviour
 
         Debug.Log("obj: spawned: " + selectedObj);
         selectedObj = Instantiate(objects[i], position, transform.rotation);
-        
+
         sprite = selectedObj.GetComponent<SpriteRenderer>();
         Debug.Log("color " + sprite.color);
         originalColor = sprite.color;
 
-        if(selectedObj.GetComponent<BasicTowerScript>() != null)
+        if (selectedObj.GetComponent<ManaTower>() != null)
+        {
+            manaScript = selectedObj.GetComponent<ManaTower>();
+            manaScript.active = false;
+        }
+
+
+        if (selectedObj.GetComponent<BasicTowerScript>() != null)
         {
             towerScript = selectedObj.GetComponent<BasicTowerScript>();
             towerScript.active = false;
@@ -255,17 +263,17 @@ public class GameplayUI : MonoBehaviour
             scan.updatePhysics = true;
             AstarPath.active.UpdateGraphs(scan);
         }
-        
+
         sprite = null;
         selectedObj = null;
         Debug.Log("obj: placed");
-        if(towerScript && subtractCost)
+        if (towerScript && subtractCost)
         {
             towerScript.active = true;
             manaManager.currentManaAmount -= towerScript.cost;
             manaManager.UpdateManaBar();
         }
-            
+
         towerScript = null;
         Debug.Log("obj: tower activated");
         if (ProjScript && subtractCost)
@@ -277,6 +285,13 @@ public class GameplayUI : MonoBehaviour
 
         ProjScript = null;
         Debug.Log("obj: proj activated");
+        if (manaScript && subtractCost)
+        {
+            manaScript.active = true;
+        }
+
+        manaScript = null;
+
     }
 
     // snap grid logic
@@ -284,7 +299,7 @@ public class GameplayUI : MonoBehaviour
     {
         float difference = position % gridSize;
         position -= difference;
-        if(difference > gridSize/2)
+        if (difference > gridSize / 2)
         {
             position += gridSize;
         }
@@ -293,14 +308,14 @@ public class GameplayUI : MonoBehaviour
 
     public void collisionCheck()
     {
-       if(towerScript !=null)
-       {
+        if (towerScript != null)
+        {
             if (!towerScript.overlapping)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
                     sprite.color = originalColor;
-                
+
             }
             else
             {
@@ -308,10 +323,10 @@ public class GameplayUI : MonoBehaviour
                 canPlace = false;
                 sprite.color = Color.red;
             }
-       }
-       else if (ProjScript != null)
-       {
-           if (!ProjScript.overlapping)
+        }
+        else if (ProjScript != null)
+        {
+            if (!ProjScript.overlapping)
             {
                 canPlace = true;
                 if (originalColor != null && sprite != null)
@@ -323,8 +338,8 @@ public class GameplayUI : MonoBehaviour
                 canPlace = false;
                 sprite.color = Color.red;
             }
-       }
-        
+        }
+
 
 
     }
@@ -332,7 +347,7 @@ public class GameplayUI : MonoBehaviour
     // tower prices set
     public void checkButtonPrice()
     {
-        foreach(Button button in buttonArr)
+        foreach (Button button in buttonArr)
         {
             int cost;
             int index = System.Array.IndexOf(buttonArr, button);
@@ -343,12 +358,12 @@ public class GameplayUI : MonoBehaviour
             if (index == 10)
                 index = 5;
             //if (index > 7)
-              //  index--;
+            //  index--;
             if (index > 10)
                 index--;
             GameObject tower = objects[index];
             Debug.Log("Tower: " + button.name + " : " + tower.name);
-            if(tower.GetComponent<BasicTowerScript>() != null)
+            if (tower.GetComponent<BasicTowerScript>() != null)
             {
                 cost = tower.GetComponent<BasicTowerScript>().cost;
             }
@@ -361,7 +376,7 @@ public class GameplayUI : MonoBehaviour
                 cost = 0;
             }
 
-            if(cost > manaManager.currentManaAmount)
+            if (cost > manaManager.currentManaAmount)
             {
                 button.interactable = false;
             }

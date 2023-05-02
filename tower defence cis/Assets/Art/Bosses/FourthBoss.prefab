@@ -142,7 +142,7 @@ MonoBehaviour:
   targetTag: PlayerTower
   allySpawnTargetWeight: 15
   targetingSpawns: 0
-  attackCD: 3
+  attackCD: 1
   chargeCD: 1
   damage: 5
   attacking: 0
@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369326e75e3c22f4a90bcce25a908269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingAudio: 0
+  audio: {fileID: 0}
   active: 1
   overlapping: 0
   cost: 0

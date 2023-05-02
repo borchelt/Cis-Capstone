@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: manaCounter
       value: 
       objectReference: {fileID: 2062619308}
+    - target: {fileID: 3742732970160557695, guid: bd7ef51ab4ee493439e3fa4bf6395ed9, type: 3}
+      propertyPath: currentManaAmount
+      value: 4000
+      objectReference: {fileID: 0}
     - target: {fileID: 7089077014020973428, guid: bd7ef51ab4ee493439e3fa4bf6395ed9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

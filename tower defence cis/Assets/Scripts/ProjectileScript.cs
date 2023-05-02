@@ -129,6 +129,7 @@ public class ProjectileScript : MonoBehaviour
         }
         if (tags.Contains("instant"))
         {
+            gameObject.transform.parent = null;
             gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
         }
 
