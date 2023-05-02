@@ -215,6 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369326e75e3c22f4a90bcce25a908269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingAudio: 0
+  audio: {fileID: 0}
   active: 1
   overlapping: 0
   cost: 1000
@@ -250,6 +252,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   killParent: 0
   parent: {fileID: 0}
+  source: {fileID: 0}
+  damageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!58 &4889974792366142683
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -315,8 +320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 15
-  stuckTime: 15
+  time: 30
+  stuckTime: 30
   countdown: 0
 --- !u!1 &7075923564553803712
 GameObject:

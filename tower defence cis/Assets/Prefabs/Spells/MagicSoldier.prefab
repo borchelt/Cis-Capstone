@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66e7272a2a477e4ea705151500c6f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkAudio: {fileID: 0}
   stayClose: 0
   patrolPointEmpty: {fileID: 6635351702590421157, guid: 9d600d17c28668e4d98f578d994ff12e, type: 3}
   worm: 0
@@ -138,11 +139,13 @@ MonoBehaviour:
   targetTag: enemy
   allySpawnTargetWeight: 999
   targetingSpawns: 0
+  pathfinder: {fileID: 0}
   attackCD: 1
   chargeCD: 1
   damage: 1
   attacking: 0
   damageScript: {fileID: 0}
+  tunnelVision: 0
   score: 0
 --- !u!58 &1090146389681536492
 CircleCollider2D:
@@ -176,6 +179,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   killParent: 0
   parent: {fileID: 0}
+  source: {fileID: 0}
+  damageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!114 &2660416864643640731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a35605feb541d4bb872c903af05707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  time: 15
   stuckTime: 3
   countdown: 0
 --- !u!1 &5999440740694035485
