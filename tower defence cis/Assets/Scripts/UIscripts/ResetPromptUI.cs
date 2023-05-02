@@ -14,7 +14,6 @@ public class ResetPromptUI : MonoBehaviour
 
     // MainMenuUI object to access the class object
     public MainMenuUI mainMenuOBJ;
-    public GameProgress progOBJ;
 
     // listeners are initiated
     void Start()
@@ -27,7 +26,8 @@ public class ResetPromptUI : MonoBehaviour
     public void OnYes()
     {
         // game progress resets
-        progOBJ.ResetProgress();
+        GameProgress.ResetProgress();
+
         // exit out of prompt to main menu
         resetPrompt.SetActive(false);
         mainMenuOBJ.mainMenu.SetActive(true);

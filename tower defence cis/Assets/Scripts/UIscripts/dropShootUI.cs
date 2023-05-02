@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class dropShootUI : MonoBehaviour
 {
+    // NOTE: The listeners for the buttons are in GameMechanic Script
+
     // button objects set
     public Button shoot1;
     public Button shoot2;
@@ -15,56 +17,24 @@ public class dropShootUI : MonoBehaviour
     public GameObject dropShoot;
     public GameplayUI gameplayOBJ;
 
+    // Script object set
     public GameObject selectedObj;
-    BasicTowerScript towerScript;
-    ProjectileScript ProjScript;
 
-    // Start is called before the first frame update
+    // listener initiated. drop menu is closed at start
     void Start()
     {
-        shoot1.onClick.AddListener(onS1);
-        shoot2.onClick.AddListener(onS2);
-        shoot3.onClick.AddListener(onS3);
         closeButton.onClick.AddListener(onClose);
 
         dropShoot.SetActive(false);
     }
 
+    // checks placement
     void Update()
     {
         gameplayOBJ.placeCheck();
     }
 
-        public void onS1()
-    {
-        /*
-        gameplayOBJ.startPlacement(1);
-
-        if (selectedObj.GetComponent<BasicTowerScript>() != null)
-        {
-            towerScript = selectedObj.GetComponent<BasicTowerScript>();
-            towerScript.active = false;
-        }
-
-        if (selectedObj.GetComponent<ProjectileScript>() != null)
-        {
-            ProjScript = selectedObj.GetComponent<ProjectileScript>();
-            ProjScript.active = false;
-
-        }
-        */
-    }
-
-    public void onS2()
-    {
-        //gameplayOBJ.startPlacement(8);
-    }
-
-    public void onS3()
-    {
-        //gameplayOBJ.startPlacement(9);
-    }
-
+    // closes drop menu
     public void onClose()
     {
         dropShoot.SetActive(false);

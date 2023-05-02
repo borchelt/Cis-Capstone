@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class TutorP6 : MonoBehaviour
 {
-    // class object references set
+    // Object set for script
     public GameObject tPage6;
+
+    // class object references set
     public TutorP5 p5OBJ;
     public TutOBJ tut;
     public MainMenuUI mainMenuOBJ;
@@ -14,13 +16,14 @@ public class TutorP6 : MonoBehaviour
     public Button mainButton;
     public Button prevButton;
 
-    // listener is initiated
+    // listeners are initiated
     void Start()
     {
         mainButton.onClick.AddListener(onMain);
         prevButton.onClick.AddListener(onPrev);
     }
 
+    // back to page 5
     public void onPrev()
     {
         p5OBJ.tPage5.SetActive(true);
