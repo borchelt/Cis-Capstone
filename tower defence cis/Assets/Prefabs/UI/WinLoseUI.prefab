@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0.745283, b: 0.1499179, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6226415, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -688,7 +688,7 @@ Transform:
   - {fileID: 8822233524784007796}
   - {fileID: 8822233524772647195}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8822233526711146657
 MonoBehaviour:
@@ -705,4 +705,7 @@ MonoBehaviour:
   wlOBJ: {fileID: 8822233526711146659}
   winOBJ: {fileID: 8822233524772647207}
   loseOBJ: {fileID: 8822233524784007792}
+  waveManagerOBJ: {fileID: 0}
   sceneName: Level1
+  dragonSword: []
+  levelBoss: []
