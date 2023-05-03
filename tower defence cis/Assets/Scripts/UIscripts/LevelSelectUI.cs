@@ -22,6 +22,7 @@ public class LevelSelectUI : MonoBehaviour
     // listeners are initiated
     void Start()
     {
+
         level1Button.onClick.AddListener(LoadLevel1);
 
         level2Button.onClick.AddListener(LoadLevel2);
