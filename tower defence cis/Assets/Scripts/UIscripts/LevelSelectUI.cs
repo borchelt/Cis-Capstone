@@ -23,42 +23,57 @@ public class LevelSelectUI : MonoBehaviour
     void Start()
     {
         level1Button.onClick.AddListener(LoadLevel1);
+
         level2Button.onClick.AddListener(LoadLevel2);
+
         level3Button.onClick.AddListener(LoadLevel3);
+
         level4Button.onClick.AddListener(LoadLevel4);
+
         level5Button.onClick.AddListener(LoadLevel5);
+
         storyButton.onClick.AddListener(onStory);
         backButton.onClick.AddListener(onBack);
+    }
+
+    private void Update()
+    {
+        checkButton();
     }
 
     // selected level 1. Loads the level
     public void LoadLevel1()
     {
+        
         GameSceneManager.Instance.LoadScene("Level1");
     }
 
     // selected level 2. Loads the level
     public void LoadLevel2()
     {
-        GameSceneManager.Instance.LoadScene("Level2");
+        if (GameProgress.level1Win)
+            GameSceneManager.Instance.LoadScene("Level2");
     }
 
     // selected level 3. Loads the level
     public void LoadLevel3()
     {
-        GameSceneManager.Instance.LoadScene("Level3");
+        if (GameProgress.level2Win)
+            GameSceneManager.Instance.LoadScene("Level3");
     }
 
     // selected level 4. Loads the level
     public void LoadLevel4()
     {
-        GameSceneManager.Instance.LoadScene("Level4");
+        if (GameProgress.level3Win)
+            GameSceneManager.Instance.LoadScene("Level4");
     }
 
     // selected level 5. Loads the level
     public void LoadLevel5()
     {
-        GameSceneManager.Instance.LoadScene("Level5");
+        if (GameProgress.level4Win)
+            GameSceneManager.Instance.LoadScene("Level5");
     }
 
     // selected story. loads story screen
@@ -74,5 +89,29 @@ public class LevelSelectUI : MonoBehaviour
     {
         levelList.SetActive(false);
         mainMenuOBJ.mainMenu.SetActive(true);
+    }
+
+    //enables/disables buttons based on what levels have been beaten
+    public void checkButton()
+    {
+        if (!GameProgress.level1Win)
+            level2Button.interactable = false;
+        else
+            level2Button.interactable = true;
+
+        if (!GameProgress.level2Win)
+            level3Button.interactable = false;
+        else
+            level3Button.interactable = true;
+
+        if (!GameProgress.level3Win)
+            level4Button.interactable = false;
+        else
+            level4Button.interactable = true;
+
+        if (!GameProgress.level4Win)
+            level5Button.interactable = false;
+        else
+            level5Button.interactable = true;
     }
 }

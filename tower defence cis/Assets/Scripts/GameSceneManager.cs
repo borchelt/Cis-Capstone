@@ -9,6 +9,7 @@ public class GameSceneManager : MonoBehaviour
     public static GameSceneManager Instance;
     public float uiLoadTime = 0.5f;
     private AsyncOperation asyncOperation;
+    private bool loading = false;
 
     // done when script is loaded
     private void Awake()
@@ -31,7 +32,14 @@ public class GameSceneManager : MonoBehaviour
     {
         // time set, in case of integration from paused game
         timeController.timeRate = 1f;
-        StartCoroutine(LoadNewScene(sceneName));
+        if (loading)
+            return;
+        else
+        {
+            StartCoroutine(LoadNewScene(sceneName));
+            loading = true;
+        }
+        
     }
 
     // the instance to load a scene
@@ -49,5 +57,8 @@ public class GameSceneManager : MonoBehaviour
         {
             yield return null;  // wait a frame
         }
+
+        if (asyncOperation.isDone)
+            loading = false;
     }
 }
