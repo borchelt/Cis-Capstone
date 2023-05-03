@@ -393,12 +393,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "One of three random spells, costs 1000 Mana.\n\nThe Ghost Soldier spell
+  m_text: "One of three random spells, costs 1000 mana.\n\nThe Ghost Soldier spell
     is a form of defense, using mana to create a temporary version of the Barracks
     Tower that will simultaneously spawn five ally units.\n\n\nThe Lightning Storm
     spell is an offense type spell that does damage over time in a large area. \n\nThe
     Gravity Spell pulls nearby enemies towards it, use it to group enemies together
-    for more effective AOE Damage!\n"
+    for more effective AOE damage!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2725,7 +2725,7 @@ MonoBehaviour:
     will also mean the player loses the game.
 
 
-    2.) This is the Mana you have.
+    2.) This is the mana you have.
 
 
     3.)
@@ -3137,12 +3137,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Shooter Tower: 850 Mana
+  m_text: 'Shooter Tower: 850 mana
 
-    Bomber Tower: 450 Mana
+    Bomber Tower: 450 mana
 
     Mage Tower: 900
-    Mana
+    mana
 
 
     The Shooter Tower is the second tower type the player can build and
@@ -5783,7 +5783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pit Trap: 300 Mana
+  m_text: 'Pit Trap: 300 mana
 
 
     The second type of trap starts as a pile of leaves
@@ -10050,7 +10050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wall: 500 Mana
+  m_text: 'Wall: 500 mana
 
 
     Walls are used to temporarily halt enemy movement.'
@@ -11884,7 +11884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mine Trap: 300 Mana
+  m_text: 'Mine Trap: 300 mana
 
 
     The third and final type of trap is a mine that
@@ -12521,7 +12521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AOE Tower: 900 Mana
+  m_text: 'AOE Tower: 900 mana
 
 
     The AOE (or Area of Effect) Tower is the third
@@ -13810,9 +13810,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mana Tower: 400 Mana\n\n\nThe Mana Tower is the economy building for this
-    game, one of the four tower types the player can build. Its purpose is to generate
-    Mana, the game\u2019s currency, at set intervals so the player can  build more
+  m_text: "Mana Tower: 400 mana\n\n\nThe Mana Tower is the economy building for this
+    game, one of the four tower types the player can  build. Its purpose is to generate
+    mana, the game\u2019s currency, at set intervals so the player can build more
     towers as well as use spells and alter the terrain with walls or traps."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14725,7 +14725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spike Trap: 300 Mana
+  m_text: 'Spike Trap: 300 mana
 
 
     The first type of trap starts as a puddle of
@@ -15805,7 +15805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Barracks Tower: 300 Mana
+  m_text: 'Barracks Tower: 300 mana
 
 
     The Barracks is the fourth and final type
@@ -17448,10 +17448,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: " - Prioritize economy, with at least two Mana Towers placed. If no towers
-    are placed and you run out of Mana, you're toast!\n\n - Surround the Dragon Sword
+    are placed and you run out of mana, you're toast!\n\n - Surround the Dragon Sword
     with towers. (Note that enemies can pass through towers but not walls).\n\n -
     Keep the Mana Towers as close as possible to the Dragon Sword, or behind the
-    defense type towers.\n\n - If you have the Mana to do it, be quick on placing
+    defense type towers.\n\n - If you have the mana to do it, be quick on placing
     towers. Enemies can swarm in before you know it. If you want to get a good look
     of your surroundings, use the mouse wheel to zoom in and out of the battleground.\n\n-
     While holding a tower, enemies will follow it. Use this to your advantage."
