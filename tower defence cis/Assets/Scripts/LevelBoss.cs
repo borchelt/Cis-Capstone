@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class LevelBoss : MonoBehaviour
 {
+    // object references set
     public EnemyTakeDamage damageScriptOBJ;
-    //public WinLose wlOBJ;
     WinLose wlOBJ;
 
-
+    // WinLose object reference is set
     private void Start()
     {
         wlOBJ = FindObjectOfType<WinLose>();
     }
 
-    // Update is called once per frame
+    // checks the status of the level boss. if destroyed, the player wins
     void Update()
     {
         if (damageScriptOBJ.hp <= 0)

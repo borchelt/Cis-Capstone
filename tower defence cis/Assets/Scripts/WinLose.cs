@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class WinLose : MonoBehaviour
 {
+
+    // script object reference set
     public GameObject wlOBJ;
+
+    // object references set
     public WinUI winOBJ;
     public LoseUI loseOBJ;
     public WaveManager waveManagerOBJ;
@@ -13,26 +17,25 @@ public class WinLose : MonoBehaviour
     // Variable for individual scene name
     public string sceneName;
 
+    // object references for DragonSword and the relevant level boss
     public GameObject[] dragonSword;
     public GameObject[] levelBoss;
 
+    // boolean variable for scene loading
     bool hasLoaded = false;
-    // Start is called before the first frame update
+
+    // instances are set and catches the level name
     void Start()
     {
         winOBJ.winUI.SetActive(false);
         loseOBJ.loseUI.SetActive(false);
 
         getSceneName();
-        //getDragon();
-        //getBoss();
     }
 
-    // Update is called once per frame
+    // checks if either the level boss or the DragonSword is destroyed
     void Update()
     {
-
-        //getSceneName();
 
         if (levelBoss == null && waveManagerOBJ.waveIndex >= 37)
         {
@@ -46,9 +49,10 @@ public class WinLose : MonoBehaviour
         
     }
 
+    // method that occurs when the player completing the level successfully
     public void levelWin()
     {
-        Debug.Log("Scene: " + sceneName);
+        // checks level name, then changes the level success state of that scene
         if(sceneName == "Level1")
             if(GameProgress.level1Win == false)
             {
@@ -76,20 +80,22 @@ public class WinLose : MonoBehaviour
                 GameProgress.level5Win = true;
             }
 
+        // "you win" screen is activated and the game stops for a few seconds to load back to main menu
         winOBJ.winUI.SetActive(true);
         StartCoroutine(waitTime(3));
     }
 
+    // method that occurs when the player loses
     public void levelLose()
     {
+        // "you lsoe" screen is activated and the game stops for a few seconds to load back to main menu
         loseOBJ.loseUI.SetActive(true);
         StartCoroutine(waitTime(5));
     }
 
+    // method that occurs before loading to the main menu
     private IEnumerator waitTime(float wait)
     {
-        //yield return null;
-        //timeController.timeRate = 0f; // game is paused
         yield return new WaitForSecondsRealtime(wait);
         if(!hasLoaded)
         {
@@ -97,24 +103,11 @@ public class WinLose : MonoBehaviour
             hasLoaded = true;
         }
     }
+
+    // method for receiving the level name
     public void getSceneName()
     {
         Scene scene = SceneManager.GetActiveScene();
         sceneName = scene.name;
     }
-
-    /*
-    public void getBoss()
-    {
-        if(sceneName == "level1")
-        {
-            levelBoss = GameObject.FindGameObjectsWithTag("firstBoss");
-        }
-    }
-    
-    public void getDragon()
-    {
-        dragonSword = GameObject.FindGameObjectsWithTag("DragonSword");
-    }
-    */
 }

@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class DragonSword : MonoBehaviour
 {
+    // object references set
     public EnemyTakeDamage damageScriptOBJ;
-    //public WinLose wlOBJ;
     WinLose wlOBJ;
 
-
+    // sets the WinLose object refrence
     private void Start()
     {
         wlOBJ = FindObjectOfType<WinLose>();
     }
 
-    // Update is called once per frame
+    // checks the status of the DragonSword. if destroyed, the player loses
     void Update()
     {
         if (damageScriptOBJ.hp <= 0)
