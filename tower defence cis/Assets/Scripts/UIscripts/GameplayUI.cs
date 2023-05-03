@@ -354,17 +354,20 @@ public class GameplayUI : MonoBehaviour
             int cost;
             int index = System.Array.IndexOf(buttonArr, button);
 
+            Debug.Log("tower: " + index);
             //spaghetti code for the extra drop down buttons
             if (index == 7)
                 index = 1;
-            if (index == 10)
+            if (index > 7)
+                index++;
+            if (index == 11)
                 index = 5;
             //if (index > 7)
             //  index--;
             if (index > 11)
                 index--;
             GameObject tower = objects[index];
-            Debug.Log("Tower: " + button.name + " : " + tower.name);
+            Debug.Log("Tower: " + button.name + " : " + tower.name + ": " + index);
             if (tower.GetComponent<BasicTowerScript>() != null)
             {
                 cost = tower.GetComponent<BasicTowerScript>().cost;
