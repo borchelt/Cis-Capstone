@@ -266,7 +266,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 11
+  m_Mass: 12
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -306,7 +306,6 @@ MonoBehaviour:
   attacking: 0
   damageScript: {fileID: 0}
   tunnelVision: 0
-  score: 50
 --- !u!114 &8411740866766465989
 MonoBehaviour:
   m_ObjectHideFlags: 0
