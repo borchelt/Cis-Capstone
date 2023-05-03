@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScareEnemies : MonoBehaviour
+public class PullEnemies : MonoBehaviour
 {
     public GameObject[] targetList;
     public Vector2 location;

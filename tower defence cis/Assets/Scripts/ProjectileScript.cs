@@ -270,6 +270,9 @@ public class ProjectileScript : MonoBehaviour
             //subtract one from the tick count
             ticks--;
 
+            //play the explosion audio 
+            ExplodeAudio.PlayOneShot(explodeNoise);
+
         }
 
         //lower the cooldown
@@ -294,7 +297,7 @@ public class ProjectileScript : MonoBehaviour
             //gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             exploded = true;
-            ExplodeAudio.PlayOneShot(explodeNoise);
+            
             cd = initialCD;
             explosionSprite.sprite = explosion;
 

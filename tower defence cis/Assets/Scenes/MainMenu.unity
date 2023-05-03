@@ -393,19 +393,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lightning or Soldier summon spell: 1,000 Mana
-
-
-    The Ghost Soldier
-    spell is a form of defense, using mana to create a temporary version of the Barracks
-    Tower that will simultaneously spawn five ally units.
-
-    
-
-    The Lightning
-    Storm spell an offense type spell.
-
-'
+  m_text: "One of three random spells, costs 1000 mana.\n\nThe Ghost Soldier spell
+    is a form of defense, using mana to create a temporary version of the Barracks
+    Tower that will simultaneously spawn five ally units.\n\n\nThe Lightning Storm
+    spell is an offense type spell that does damage over time in a large area. \n\nThe
+    Gravity Spell pulls nearby enemies towards it, use it to group enemies together
+    for more effective AOE Damage!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -433,8 +426,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.4
-  m_fontSizeBase: 17.4
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

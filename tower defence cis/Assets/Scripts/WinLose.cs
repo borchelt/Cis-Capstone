@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class WinLose : MonoBehaviour
 {
-
+    //audio
+    public AudioSource song;
+    public AudioClip winAudio;
+    public AudioClip loseAudio;
+    bool hasplayed = false;
     // script object reference set
     public GameObject wlOBJ;
 
@@ -52,8 +56,15 @@ public class WinLose : MonoBehaviour
     // method that occurs when the player completing the level successfully
     public void levelWin()
     {
+        if (!hasplayed)
+        {
+            song.Stop();
+            song.clip = winAudio;
+            song.Play();
+            hasplayed = true;
+        }
         // checks level name, then changes the level success state of that scene
-        if(sceneName == "Level1")
+        if (sceneName == "Level1")
             if(GameProgress.level1Win == false)
             {
                 Debug.Log("Level 2 Unlocked");
@@ -88,9 +99,18 @@ public class WinLose : MonoBehaviour
     // method that occurs when the player loses
     public void levelLose()
     {
-        // "you lsoe" screen is activated and the game stops for a few seconds to load back to main menu
+        if(!hasplayed)
+        {
+            song.Stop();
+            song.clip = loseAudio;
+            song.Play();
+            hasplayed = true;
+        }
+        
+
+        // "you lose" screen is activated and the game stops for a few seconds to load back to main menu
         loseOBJ.loseUI.SetActive(true);
-        StartCoroutine(waitTime(5));
+        StartCoroutine(waitTime(3));
     }
 
     // method that occurs before loading to the main menu
