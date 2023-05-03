@@ -393,7 +393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "One of three random spells, costs 1000 mana.\n\nThe Ghost Soldier spell
+  m_text: "One of three random spells, costs 1000 Mana.\n\nThe Ghost Soldier spell
     is a form of defense, using mana to create a temporary version of the Barracks
     Tower that will simultaneously spawn five ally units.\n\n\nThe Lightning Storm
     spell is an offense type spell that does damage over time in a large area. \n\nThe
@@ -3286,7 +3286,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: The dragon received a vision that an enemy clan intends to steal its most
-    prized possession, the Dragon Sword. With this grave news, the Dragon intends
+    prized possession, the Dragon Sword. With this grave news, the dragon intends
     to use magic to set up defenses from the invading enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13812,9 +13812,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Mana Tower: 450 Mana\n\n\nThe Mana Tower is the economy building for this
     game, one of the four tower types the player can build. Its purpose is to generate
-    mana, the game\u2019s currency, at set intervals so the player can upgrade towers
-    they have placed or build more as well as use spells and alter the terrain with
-    walls or traps."
+    Mana, the game\u2019s currency, at set intervals so the player can  build more
+    towers as well as use spells and alter the terrain with walls or traps."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17448,13 +17447,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " - Prioritize economy, with at least two mana towers placed. If no towers
-    are placed and you run out of Mana, you're toast!\n\n - Surround the Dragon with
-    towers. (Note that enemies can pass through towers but not walls).\n\n - Keep
-    the Mana towers as close as possible to the Dragon Sword, or behind the defense
-    type towers.\n\n - If you have the Mana to do it, be quick on placing towers.
-    Enemies can swarm in before you know it. If you want to get a good look of your
-    surroundings, use the mouse wheel to zoom in and out of the battleground.\n\n-
+  m_text: " - Prioritize economy, with at least two Mana Towers placed. If no towers
+    are placed and you run out of Mana, you're toast!\n\n - Surround the Dragon Sword
+    with towers. (Note that enemies can pass through towers but not walls).\n\n -
+    Keep the Mana Towers as close as possible to the Dragon Sword, or behind the
+    defense type towers.\n\n - If you have the Mana to do it, be quick on placing
+    towers. Enemies can swarm in before you know it. If you want to get a good look
+    of your surroundings, use the mouse wheel to zoom in and out of the battleground.\n\n-
     While holding a tower, enemies will follow it. Use this to your advantage."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
