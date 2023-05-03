@@ -88,9 +88,11 @@ public class BasicTowerScript : MonoBehaviour
     //fires a projectile
     private void fireProjectile()
     {
+        //checks for number of active projectiles
         if (shooter.transform.childCount >= projectileLimit)
             return;
 
+        //fires directly up if no targets in range and prefire used
         if (prefire && target == null)
         {
             targetLocation = transform.up;
@@ -182,6 +184,7 @@ public class BasicTowerScript : MonoBehaviour
             cooldown = fireRate;
         }
 
+        //plays audio on fire
         if(usingAudio)
         {
             audio.Play();
@@ -201,7 +204,7 @@ public class BasicTowerScript : MonoBehaviour
             onCD = false;
     }
 
-
+    //checks for overlapping objects during placement 
     void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("collision: " + collision.gameObject.tag);
@@ -213,6 +216,7 @@ public class BasicTowerScript : MonoBehaviour
 
     }
 
+    //updates if no longer colliding with an object
     void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("exit: " + collision.gameObject.tag);

@@ -5,8 +5,8 @@ using UnityEngine;
 public class timeController : MonoBehaviour
 {
     public static float timeRate;
-    //public float timeRate;                original line
 
+    //keeps the time consistent 
     void Update()
     {
         Time.timeScale = timeRate;   

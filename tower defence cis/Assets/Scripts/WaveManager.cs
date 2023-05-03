@@ -8,9 +8,7 @@ public class WaveManager : MonoBehaviour
     [System.Serializable]
     public class waveDef
     {
-        //each wave has an enemy type, number of enemies, and a score limit
-        // - score limits define how many enemies can be on the field before the next wave spawns
-        // - each enemy contributes score, if the total score is under the score limit the next wave is spawned 
+        //each wave has an enemy type, number of enemies, and a time limit limit
         public GameObject enemy;
         public int count;
         public float timeWait;
@@ -26,30 +24,18 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //lower the cooldown
         levelLayout[waveIndex].timeWait -= Time.deltaTime;
+        //deal with the waves
         waveManager();
     }
 
-    //finds the current score of the scene
-    //void checkWaveScore()
-    //{
-     //   currentScore = 0;
-     //   targetList = GameObject.FindGameObjectsWithTag("enemy");
-     //
-     //   foreach(GameObject enemy in targetList)
-     //   {
-     //      EnemyMovement scorefinder = enemy.GetComponent<EnemyMovement>();
-     //       if(scorefinder!=null)
-     //           currentScore += scorefinder.score;
-
-     //   }
-        
-    //}
-
-    //if the current score is lower than the score limit, spawn the next wave
+    //manages the waves
     void waveManager()
     {
         Debug.Log("threshhold: " + levelLayout[waveIndex].timeWait);
+
+        //spawns the wave on cooldown and moves to the next one
         if (levelLayout[waveIndex].timeWait <= 0 && !lastWave)
         {
             waveDef wave = levelLayout[waveIndex];
@@ -79,8 +65,10 @@ public class WaveManager : MonoBehaviour
             
     }
 
+    //getDistance uses a random vector but makes sure it isnt too close to 0
     Vector2 getDistance()
     {
+        //either multiply the final value by 1 or -1
         int flipVal = 1;
         if(Random.value > .5)
         {
@@ -89,9 +77,11 @@ public class WaveManager : MonoBehaviour
         float xDist;
         float yDist;
         
-        xDist = Random.Range(-spawnMaxDistance, spawnMaxDistance);
-        yDist = Random.Range(-spawnMaxDistance, spawnMaxDistance);
+        //get the random x and y coordinates 
+        xDist = Random.Range(0, spawnMaxDistance);
+        yDist = Random.Range(0, spawnMaxDistance);
 
+        //if too close to 0, set the values to the minimum value
         if (xDist < spawnMinDistance && yDist < spawnMinDistance)
         {
             if(Random.value > .5)
@@ -104,6 +94,7 @@ public class WaveManager : MonoBehaviour
             }
         }
 
+        //flip the vectors to add negative options 
         return new Vector2(xDist*flipVal, yDist*flipVal);
 
 

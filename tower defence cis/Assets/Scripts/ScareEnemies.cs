@@ -33,7 +33,7 @@ public class ScareEnemies : MonoBehaviour
         //setting up a for each loop
         location = transform.position;
 
-        //for each possible target, check if it is closer than the last target and update the current target to be the closest one
+        //for each target in range, set it to tunnel vision and pull it towards the spell
         foreach (GameObject enemy in targetList)
         {
             float distance = Vector2.Distance(enemy.transform.position, location);
@@ -50,6 +50,7 @@ public class ScareEnemies : MonoBehaviour
 
     }
 
+    //on destroy, break the spell on enemies nearby 
     private void OnDestroy()
     {
         foreach (GameObject enemy in targetList)

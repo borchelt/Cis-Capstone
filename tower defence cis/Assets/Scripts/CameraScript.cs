@@ -24,9 +24,10 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-       
+       //get camera movement using keyboard 
         if (gameScreenActive == true && PauseMenuUI.gameStopped == false )
         {
+            //get the original postion of the camera
             position = transform.position;
 
             if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
@@ -49,13 +50,17 @@ public class CameraScript : MonoBehaviour
                 position.x += speed * Time.deltaTime;
             }
 
+            //get camera movment from mouse dragging
             mouseDrag();
 
+            //limit camera movement 
             position.x = Mathf.Clamp(position.x, -xMax, xMax);
             position.y = Mathf.Clamp(position.y, -yMax, yMax);
 
+            //update position of the camera 
             transform.position = position;
 
+            //zoom in and out with scroll wheel
             if (Input.mouseScrollDelta.y > 0)
             {
                 cam.orthographicSize -= zoom * Time.deltaTime;
@@ -72,22 +77,26 @@ public class CameraScript : MonoBehaviour
         }
     }
     
+    //drags the camera around with the mouse
     void mouseDrag()
     {
             
         if (gameScreenActive == true)
         {
+            //if clicking
             if (Input.GetMouseButton(0))
             {
 
-                
+                //gets the vector between the mouse and the camera 
                 mouseVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - position;
 
                 if (!mouseDown)
                 {
+                    //set mouseDown to true and update the mouse position
                     mouseDown = true;
                     mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+                    //check if the mouse is over the ui 
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                         canDrag = false;
@@ -99,12 +108,14 @@ public class CameraScript : MonoBehaviour
                 }
 
             }
+            //if not clicking
             else
             {
                 mouseDown = false;
                 canDrag = true;
             }
 
+            //update the camera position based on the mouse
             if (mouseDown && canDrag)
             {
                 position = mousePos - mouseVec;

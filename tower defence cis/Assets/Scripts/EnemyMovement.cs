@@ -10,16 +10,20 @@ public class EnemyMovement : MonoBehaviour
     //for audio 
     public AudioSource walkAudio;
     bool playsAudioOnWalk;
+
     //for allied units to stay close 
     GameObject parentTower;
     public bool stayClose;
     public GameObject patrolPointEmpty;
     GameObject destination;
 
+    //for the third boss
     public bool worm;
-    public bool small;
     bool worming;
     float wormCD;
+
+    //for trap sorting
+    public bool small;
 
     //enemy movement speed
     public float speed;
@@ -49,23 +53,23 @@ public class EnemyMovement : MonoBehaviour
     public bool attacking; 
     public EnemyTakeDamage damageScript;
 
+    //for the gravity spell
     public bool tunnelVision;
-
-    //for calculating wave spawns
-    public int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        //check if there is audio for when the enemy is moving
         if (walkAudio == null)
             playsAudioOnWalk = false;
         else
             playsAudioOnWalk = true;
             
-        //moves the reference two objects up 
+        //moves the parent tower reference two objects up for summoned allies  
         if(stayClose)
             parentTower = gameObject.transform.parent.gameObject.transform.parent.gameObject;
 
+        //setting up initial variables
         pathfinder = GetComponent<AIDestinationSetter>();
         maxCD = attackCD;
 
@@ -79,14 +83,18 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //handle sound 
         if(playsAudioOnWalk)
             manageSound();
+        //this stops enemies from taking trap damage every frame
         trapCd -= Time.deltaTime;
+        
+        //find the closest target ifthe enemy doesnt have tunnel vision
         if(!tunnelVision)
             getClosestTarget();
         setDestination();
             
-        //movement();
+       //handles attacks
         if (attacking)
             attack();
     }
@@ -176,8 +184,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject == target)
         {
+            //stop playing movement audio if colliding with the target
             if (playsAudioOnWalk)
                 walkAudio.Stop();
+
             //on initial collision the enemy attacks the tower faster
             if (attackCD == maxCD)
                 attackCD = chargeCD;
@@ -185,15 +195,18 @@ public class EnemyMovement : MonoBehaviour
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
         }
 
+        //detects & triggers traps
         if((collision.gameObject.layer == 15 || collision.gameObject.layer == 9) && targetTag == "PlayerTower")
         {
             
             ProjectileScript trap = collision.gameObject.GetComponent<ProjectileScript>();
+            //doesn't trigger the trap if it's not small for a small trap or if the trap isnt active
             if (!trap.active)
                 return;
             if (!small && trap.small)
                 return;
 
+            //triggers the trap
             trap.trapAnim();
             damageScript = gameObject.GetComponent<EnemyTakeDamage>();
             damageScript.takeDamage(trap.damage);
@@ -224,6 +237,7 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    //deals with the walking audio
     private void manageSound()
     {
         if(attacking)
@@ -249,14 +263,16 @@ public class EnemyMovement : MonoBehaviour
             damageScript.takeDamage(damage);
             attackCD = maxCD;
             
-            //re asses targetingspawns after each attack, simulates soldiers distracting enemies .
+            //re asses targetingspawns after each attack, simulates soldiers distracting enemies
             if (Random.Range(0, 100) >= 100 - allySpawnTargetWeight)
                 targetingSpawns = true;
             else
                 targetingSpawns = false;
 
+            //if the enemy is a worm it will attack before having a chance to run away temporarily
             if (worm && Random.Range(0,6) >= 3)
             {
+                //set a patrol point at a random vector
                 float range = 30;
                 Vector3 patrolPoint = new Vector3(Random.Range(-range, range), Random.Range(-range, range)) + transform.position;
                 destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);
@@ -270,9 +286,10 @@ public class EnemyMovement : MonoBehaviour
             attackCD -= Time.deltaTime;
     }
 
-    //checks if the target is within the tower's range if an ally unit, if not within range, it creates a random point to move to to simulate patroling 
+    //deals with setting the target location of an enemy 
     private void setDestination()
     {
+        //if a worm is currently running away, count the cooldown until it starts attacking again
         if (worming)
         {
             wormCD -= Time.deltaTime;
@@ -293,6 +310,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (destination == null)
             {
+                //set a patrol point at a random vector
                 float range = parentTower.GetComponent<BasicTowerScript>().range;
                 Vector3 patrolPoint = new Vector3(Random.Range(-range, range), Random.Range(-range, range)) + parentTower.transform.position;
                 destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);
@@ -302,8 +320,10 @@ public class EnemyMovement : MonoBehaviour
                 pathfinder.target = destination.transform;
         }
 
+        //special movement stuff for worms
         if (worm)
         {
+            //makes a patrol point past the target for the worm to follow
             Vector3 vector = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
             Vector3 patrolPoint = vector + pathfinder.target.transform.position;
             destination = Instantiate(patrolPointEmpty, patrolPoint, Quaternion.identity);

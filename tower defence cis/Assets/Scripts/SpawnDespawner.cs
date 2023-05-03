@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnDespawner : MonoBehaviour
 {
-    //despawns footsoldiers after a while, this is to prevent stuck soldiers etc
+    //despawns objects after a while
     public float time;
     public float stuckTime;
     public float countdown;
@@ -27,7 +27,7 @@ public class SpawnDespawner : MonoBehaviour
         checkDeath();
     }
 
-    //checks if the soldier hasnt moved
+    //checks if the object hasnt moved
     void checkStuck()
     {
         position = transform.position;

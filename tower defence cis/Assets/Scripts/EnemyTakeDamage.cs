@@ -22,6 +22,7 @@ public class EnemyTakeDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //checks for audio
         if (source == null)
             playAudio = false;
         else
@@ -35,27 +36,34 @@ public class EnemyTakeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //handles enemies changing color when damaged 
         handleColorCD();
+        //handles dying
         die();
     }
 
     //reduce health by however much damage
     public void takeDamage(float damage)
     {
+        //changes the audio to play if the target is only damaged and not killed
         if (hp - damage > 0 && playAudio)
             source.clip = damageSFX;
+
+        //dies and plays the death sound effect
         else if(playAudio && dead == false)
         {
             dead = true;
             sprite.enabled = false;
+            gameObject.layer = 16;
             source.clip = deathSFX;
             source.Play();
         }
 
+        //plays the damage sound if damaged, using the same cooldown as changing color
         if (playAudio && dead == false && colorCD > 0f)
             source.Play();
             
-
+        //change sprite color and take damage
         sprite.color = Color.red;
         hp -= damage;
     }
@@ -65,6 +73,7 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (hp <= 0 && sprite.color == originalColor)
         {
+            //wont destroy the object if it's death sound is still playing
             if (playAudio && source.isPlaying)
                 return;
             if(killParent)

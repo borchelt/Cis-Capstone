@@ -64,6 +64,7 @@ public class ProjectileScript : MonoBehaviour
 
     private void Start()
     {
+        //get components
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -74,6 +75,7 @@ public class ProjectileScript : MonoBehaviour
             explosionSprite.enabled = false;
         }
 
+        //if instant, hide the sprite (this prevents single frames of instant projectiles over the tower that spawns them)
         if (tags.Contains("instant"))
         {
             sprite.enabled = false;
@@ -83,9 +85,11 @@ public class ProjectileScript : MonoBehaviour
     //when hitting something, check if its an enemy or a wall and respond accordingly 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //womt check if the projectile has exploded or if it is still being placed
         if (exploded || active == false)
             return;
 
+        //if it collides with an enemy, deal damage and check to destroy itself
         if (collision.gameObject.tag == targetTag)
         {
             damageScript = collision.gameObject.GetComponent<EnemyTakeDamage>();
@@ -93,6 +97,7 @@ public class ProjectileScript : MonoBehaviour
             checkDestroy();
         }
 
+        //if it runs into a wall check to destroy itself
         if (collision.gameObject.layer == 8 && !tags.Contains("ghost"))
             checkDestroy();
 
@@ -102,8 +107,10 @@ public class ProjectileScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //deals with traps
         if(tags.Contains("trap"))
         {
+            //if the trap is triggered, play audio and change the sprite
             if (trapActive)
             {
                 if(!hasTriggered)
@@ -112,13 +119,19 @@ public class ProjectileScript : MonoBehaviour
                     ExplodeAudio.PlayOneShot(explodeNoise);
                 }
                 sprite.sprite = activeTrap;
+
+                //count down to changing the trap back to a passive state
                 currentCD -= Time.deltaTime;
             }
+
+            //if the trap isnt triggered, set it back to its original state
             if(trapActive == false)
             {
                 sprite.sprite = staticTrap;
                 currentCD = activeCD;
             }
+
+            //if the cooldown is reached, set it back to its original state
             if (currentCD <= 0)
             {
                 sprite.sprite = staticTrap;
@@ -127,12 +140,16 @@ public class ProjectileScript : MonoBehaviour
                 currentCD = activeCD;
             }
         }
+
+        //deals with instants
         if (tags.Contains("instant"))
         {
+            //fixes rotation
             gameObject.transform.parent = null;
             gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
         }
 
+        //if the projectile is active
         if (active)
         {
            
@@ -262,6 +279,7 @@ public class ProjectileScript : MonoBehaviour
     //checks if a projectile should explode instead of being destroyed
     public void checkDestroy()
     {
+        //if the projectile is persistent, let it check multiple times before being destroyed
         if (tags.Contains("persistent") && duration > 0 && collisions > 0)
         {
             collisions -= 1;
@@ -269,7 +287,7 @@ public class ProjectileScript : MonoBehaviour
         }
             
            
-
+        //if the projectile still needs to explode, explode it
         if (tags.Contains("exploding") && !exploded)
         {
 
@@ -282,18 +300,21 @@ public class ProjectileScript : MonoBehaviour
 
         }
 
+        //if the projectile has exploded, ignore it.
         else if(exploded)
         {
             //gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             return;
         }
 
+        //otherwise, destroy the projectile
         else
         {
             Destroy(gameObject);
         }
     }
 
+    //checks if the projectile is overlapping with anything for placement
     void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("collision: " + collision.gameObject.tag);
@@ -305,6 +326,7 @@ public class ProjectileScript : MonoBehaviour
 
     }
 
+    //updates the overlapping status 
     void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("exit: " + collision.gameObject.tag);
@@ -316,6 +338,7 @@ public class ProjectileScript : MonoBehaviour
 
     }
 
+    //animates the trap when called 
     public void trapAnim()
     {
         if(tags.Contains("trap"))
