@@ -13810,7 +13810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mana Tower: 450 Mana\n\n\nThe Mana Tower is the economy building for this
+  m_text: "Mana Tower: 400 Mana\n\n\nThe Mana Tower is the economy building for this
     game, one of the four tower types the player can build. Its purpose is to generate
     Mana, the game\u2019s currency, at set intervals so the player can  build more
     towers as well as use spells and alter the terrain with walls or traps."
